@@ -30,7 +30,7 @@ Develop ios project as soon as possible.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'GMOcBase/Classes/**/*'
+  s.source_files = 'GMOcBase/Logic/**/*', 'GMOcBase/UI/**/*'
   
   # s.resource_bundles = {
   #   'GMOcBase' => ['GMOcBase/Assets/*.png']

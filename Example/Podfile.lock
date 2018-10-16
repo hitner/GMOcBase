@@ -1,21 +1,8 @@
 PODS:
-  - Expecta (1.0.6)
-  - Expecta+Snapshots (3.1.1):
-    - Expecta (~> 1.0)
-    - FBSnapshotTestCase/Core (~> 2.0)
-    - Specta (~> 1.0)
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
   - GMOcBase (0.1.0)
   - Specta (1.0.7)
 
 DEPENDENCIES:
-  - Expecta
-  - Expecta+Snapshots
-  - FBSnapshotTestCase
   - GMOcBase (from `../`)
   - Specta
 
@@ -24,12 +11,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
-  Expecta+Snapshots: dcff217eef506dabd6dfdc7864ea2da321fafbb8
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  GMOcBase: e10d52bed68f7dafd17d1dcb233b8a689b7a5529
+  GMOcBase: 0ea91d52a51fb90d23a49635aa55c0920c4c5ac3
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
 
-PODFILE CHECKSUM: 05d7fab0d54e7ea01a706603756a366f30c2499c
+PODFILE CHECKSUM: 8b9ad054bbd17cbd4f256da7f5358af9bb9740f7
 
 COCOAPODS: 1.4.0
