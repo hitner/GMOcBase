@@ -1,0 +1,14 @@
+use_frameworks!
+
+target 'GMOcBase_Example' do
+  pod 'GMOcBase', :path => '../'
+
+  target 'GMOcBase_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+    pod 'Expecta'
+    pod 'FBSnapshotTestCase'
+    pod 'Expecta+Snapshots'
+  end
+end
