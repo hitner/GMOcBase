@@ -1,19 +1,16 @@
 PODS:
   - GMOcBase (0.1.0)
-  - Specta (1.0.7)
 
 DEPENDENCIES:
   - GMOcBase (from `../`)
-  - Specta
 
 EXTERNAL SOURCES:
   GMOcBase:
     :path: ../
 
 SPEC CHECKSUMS:
-  GMOcBase: 0ea91d52a51fb90d23a49635aa55c0920c4c5ac3
-  Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
+  GMOcBase: 1611ab6a21002727f86178e409fbe4c1fc0cdf1b
 
-PODFILE CHECKSUM: 8b9ad054bbd17cbd4f256da7f5358af9bb9740f7
+PODFILE CHECKSUM: f43e6fcb43d7731d5acd57f31cdeae68b2b85a63
 
 COCOAPODS: 1.4.0

@@ -8,11 +8,19 @@
 
 #import "GMAppDelegate.h"
 
+#import "GMMainTabBarController.h"
+
 @implementation GMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    if (!self.window) {
+        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    }
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window setRootViewController: [GMMainTabBarController sharedController]];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

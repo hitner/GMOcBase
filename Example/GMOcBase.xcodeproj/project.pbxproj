@@ -24,6 +24,8 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		8718AE5F5954C9C15608A757 /* Pods_GMOcBase_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A98458AAC1DBC1308B5F6A /* Pods_GMOcBase_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9CE21771584009F2ED3 /* GMHttpManager.m */; };
+		F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,9 +65,13 @@
 		621946A979004EBF12CB99AD /* GMOcBase.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GMOcBase.podspec; path = ../GMOcBase.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7826CC7820FD75358DD0A88E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A6E9E112F1A1FD636C9CAB03 /* Pods_GMOcBase_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMOcBase_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC04ECFBAA657CBED4E0BBF9 /* Pods-GMOcBase_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMOcBase_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GMOcBase_Tests/Pods-GMOcBase_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F17CF9CD21771584009F2ED3 /* GMHttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMHttpManager.h; sourceTree = "<group>"; };
+		F17CF9CE21771584009F2ED3 /* GMHttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMHttpManager.m; sourceTree = "<group>"; };
+		F17CF9D021772158009F2ED3 /* GMMainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMainTabBarController.h; sourceTree = "<group>"; };
+		F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMMainTabBarController.m; sourceTree = "<group>"; };
 		FACF5AFE41AAE9E1697894CD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,11 +149,10 @@
 		6003F593195388D20070C39A /* Example for GMOcBase */ = {
 			isa = PBXGroup;
 			children = (
+				F17CF9CA217713CE009F2ED3 /* TopBusiness */,
+				F17CF9C921771393009F2ED3 /* Foundation */,
 				6003F59C195388D20070C39A /* GMAppDelegate.h */,
 				6003F59D195388D20070C39A /* GMAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* GMViewController.h */,
-				6003F5A6195388D20070C39A /* GMViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -194,6 +199,43 @@
 				7826CC7820FD75358DD0A88E /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		F17CF9C921771393009F2ED3 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				F17CF9CB21771405009F2ED3 /* Core */,
+				F17CF9CC2177152C009F2ED3 /* BaseBusiness */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		F17CF9CA217713CE009F2ED3 /* TopBusiness */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TopBusiness;
+			sourceTree = "<group>";
+		};
+		F17CF9CB21771405009F2ED3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F17CF9CD21771584009F2ED3 /* GMHttpManager.h */,
+				F17CF9CE21771584009F2ED3 /* GMHttpManager.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F17CF9CC2177152C009F2ED3 /* BaseBusiness */ = {
+			isa = PBXGroup;
+			children = (
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				6003F5A5195388D20070C39A /* GMViewController.h */,
+				6003F5A6195388D20070C39A /* GMViewController.m */,
+				F17CF9D021772158009F2ED3 /* GMMainTabBarController.h */,
+				F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */,
+			);
+			path = BaseBusiness;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,8 +449,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* GMAppDelegate.m in Sources */,
+				F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */,
 				6003F5A7195388D20070C39A /* GMViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +583,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -554,6 +599,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
