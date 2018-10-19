@@ -26,6 +26,10 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9CE21771584009F2ED3 /* GMHttpManager.m */; };
 		F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */; };
+		F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D42178330A009F2ED3 /* GMCore.m */; };
+		F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D7217834C6009F2ED3 /* GMBaseViewController.m */; };
+		F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */; };
+		F17CF9DD217834E1009F2ED3 /* GMTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +76,13 @@
 		F17CF9CE21771584009F2ED3 /* GMHttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMHttpManager.m; sourceTree = "<group>"; };
 		F17CF9D021772158009F2ED3 /* GMMainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMainTabBarController.h; sourceTree = "<group>"; };
 		F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMMainTabBarController.m; sourceTree = "<group>"; };
+		F17CF9D32178330A009F2ED3 /* GMCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMCore.h; sourceTree = "<group>"; };
+		F17CF9D42178330A009F2ED3 /* GMCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMCore.m; sourceTree = "<group>"; };
+		F17CF9D6217834C6009F2ED3 /* GMBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMBaseViewController.h; sourceTree = "<group>"; };
+		F17CF9D7217834C6009F2ED3 /* GMBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMBaseViewController.m; sourceTree = "<group>"; };
+		F17CF9D9217834E1009F2ED3 /* GMTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
+		F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
+		F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMTestViewController.xib; sourceTree = "<group>"; };
 		FACF5AFE41AAE9E1697894CD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,6 +233,8 @@
 			children = (
 				F17CF9CD21771584009F2ED3 /* GMHttpManager.h */,
 				F17CF9CE21771584009F2ED3 /* GMHttpManager.m */,
+				F17CF9D32178330A009F2ED3 /* GMCore.h */,
+				F17CF9D42178330A009F2ED3 /* GMCore.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -234,6 +247,11 @@
 				6003F5A6195388D20070C39A /* GMViewController.m */,
 				F17CF9D021772158009F2ED3 /* GMMainTabBarController.h */,
 				F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */,
+				F17CF9D6217834C6009F2ED3 /* GMBaseViewController.h */,
+				F17CF9D7217834C6009F2ED3 /* GMBaseViewController.m */,
+				F17CF9D9217834E1009F2ED3 /* GMTestViewController.h */,
+				F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */,
+				F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */,
 			);
 			path = BaseBusiness;
 			sourceTree = "<group>";
@@ -322,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				F17CF9DD217834E1009F2ED3 /* GMTestViewController.xib in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -448,8 +467,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */,
+				F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */,
 				6003F59E195388D20070C39A /* GMAppDelegate.m in Sources */,
 				F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */,
+				F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* GMViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */,

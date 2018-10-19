@@ -7,6 +7,7 @@
 //
 
 #import "GMMainTabBarController.h"
+#import "GMTestViewController.h"
 
 @interface GMMainTabBarController ()
 
@@ -26,7 +27,7 @@
 
 - (instancetype)init {
     self = [super init];
-    UIViewController * vc1 = [[UIViewController alloc] init];
+    UIViewController * vc1 = [[GMTestViewController alloc] init];
     vc1.view.backgroundColor = [UIColor redColor];
     UIViewController * vc2 = [[UIViewController alloc] init];
     UIViewController * vc3 = [[UIViewController alloc] init];
