@@ -8,7 +8,12 @@
 
 #import "GMTestViewController.h"
 
+#import "GMMainTabBarController.h"
+
 #import "GMCore.h"
+#import "GMFaceTrackViewController.h"
+#import "GMAVUtility.h"
+
 
 @interface GMTestViewController ()
 
@@ -23,15 +28,15 @@
    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (IBAction)touchUpInsideFaceTrack:(id)sender {
+    [GMAVUtility requestVideoAuthorization:@"" completionHandler:^{
+                        GMFaceTrackViewController * vc = [[GMFaceTrackViewController alloc] init];
+                        [self.navigationController pushViewController:vc animated:YES];
+    }];
 }
-*/
+
 - (IBAction)touchUpInsideButton:(id)sender {
     [[GMCore singletonCore].concurrentQueue addOperationWithBlock:^{
         NSLog(@"start operation");

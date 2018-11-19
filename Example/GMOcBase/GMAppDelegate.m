@@ -8,7 +8,7 @@
 
 #import "GMAppDelegate.h"
 
-#import "GMMainTabBarController.h"
+#import "GMNavigationViewController.h"
 
 @implementation GMAppDelegate
 
@@ -19,7 +19,7 @@
         self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     }
     self.window.backgroundColor = [UIColor whiteColor];
-    [self.window setRootViewController: [GMMainTabBarController sharedController]];
+    [self.window setRootViewController: [GMNavigationViewController sharedObject]];
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "GMMainTabBarController.h"
+
 #import "GMTestViewController.h"
 
 @interface GMMainTabBarController ()
@@ -31,12 +32,13 @@
     vc1.view.backgroundColor = [UIColor redColor];
     UIViewController * vc2 = [[UIViewController alloc] init];
     UIViewController * vc3 = [[UIViewController alloc] init];
-    UINavigationController * navi1 = [[UINavigationController alloc] initWithRootViewController:vc1];
-    navi1.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"首页" image:nil selectedImage:nil];
-    UINavigationController * navi2 = [[UINavigationController alloc] initWithRootViewController:vc2];
-    navi2.tabBarItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemContacts tag:1];
-    UINavigationController * navi3 = [[UINavigationController alloc] initWithRootViewController:vc3];
-    self.viewControllers = @[navi1, navi2, navi3];
+    
+
+    vc1.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"首页" image:nil selectedImage:nil];
+
+    vc2.tabBarItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemContacts tag:1];
+
+    self.viewControllers = @[vc1, vc2, vc3];
     return self;
 }
 

@@ -14,7 +14,6 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* GMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* GMAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* GMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* GMViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -24,12 +23,15 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		8718AE5F5954C9C15608A757 /* Pods_GMOcBase_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A98458AAC1DBC1308B5F6A /* Pods_GMOcBase_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */; };
 		F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9CE21771584009F2ED3 /* GMHttpManager.m */; };
 		F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */; };
 		F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D42178330A009F2ED3 /* GMCore.m */; };
 		F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D7217834C6009F2ED3 /* GMBaseViewController.m */; };
 		F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */; };
 		F17CF9DD217834E1009F2ED3 /* GMTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */; };
+		F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6797219AFCBF007BDA24 /* GMFaceTrackViewController.m */; };
+		F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB679B219BF313007BDA24 /* GMAVUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +59,6 @@
 		6003F59B195388D20070C39A /* GMOcBase-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GMOcBase-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* GMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* GMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* GMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* GMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* GMOcBase_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMOcBase_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -72,6 +72,9 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A6E9E112F1A1FD636C9CAB03 /* Pods_GMOcBase_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMOcBase_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC04ECFBAA657CBED4E0BBF9 /* Pods-GMOcBase_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMOcBase_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GMOcBase_Tests/Pods-GMOcBase_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F14547D721A2AA3300E26638 /* GMMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMacro.h; sourceTree = "<group>"; };
+		F14547D921A2B1C900E26638 /* GMNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMNavigationViewController.h; sourceTree = "<group>"; };
+		F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMNavigationViewController.m; sourceTree = "<group>"; };
 		F17CF9CD21771584009F2ED3 /* GMHttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMHttpManager.h; sourceTree = "<group>"; };
 		F17CF9CE21771584009F2ED3 /* GMHttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMHttpManager.m; sourceTree = "<group>"; };
 		F17CF9D021772158009F2ED3 /* GMMainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMainTabBarController.h; sourceTree = "<group>"; };
@@ -83,6 +86,10 @@
 		F17CF9D9217834E1009F2ED3 /* GMTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
 		F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
 		F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMTestViewController.xib; sourceTree = "<group>"; };
+		F1BB6796219AFCBF007BDA24 /* GMFaceTrackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMFaceTrackViewController.h; sourceTree = "<group>"; };
+		F1BB6797219AFCBF007BDA24 /* GMFaceTrackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMFaceTrackViewController.m; sourceTree = "<group>"; };
+		F1BB679A219BF313007BDA24 /* GMAVUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMAVUtility.h; sourceTree = "<group>"; };
+		F1BB679B219BF313007BDA24 /* GMAVUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMAVUtility.m; sourceTree = "<group>"; };
 		FACF5AFE41AAE9E1697894CD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,10 +219,34 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		F14547D821A2AC7700E26638 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				F17CF9D9217834E1009F2ED3 /* GMTestViewController.h */,
+				F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */,
+				F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		F14547DC21A2BA5600E26638 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				F14547D921A2B1C900E26638 /* GMNavigationViewController.h */,
+				F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */,
+				F17CF9D021772158009F2ED3 /* GMMainTabBarController.h */,
+				F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */,
+				F17CF9D6217834C6009F2ED3 /* GMBaseViewController.h */,
+				F17CF9D7217834C6009F2ED3 /* GMBaseViewController.m */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
 		F17CF9C921771393009F2ED3 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
 				F17CF9CB21771405009F2ED3 /* Core */,
+				F1BB6799219BF2BF007BDA24 /* Utility */,
 				F17CF9CC2177152C009F2ED3 /* BaseBusiness */,
 			);
 			path = Foundation;
@@ -231,10 +262,11 @@
 		F17CF9CB21771405009F2ED3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F17CF9CD21771584009F2ED3 /* GMHttpManager.h */,
-				F17CF9CE21771584009F2ED3 /* GMHttpManager.m */,
+				F14547D721A2AA3300E26638 /* GMMacro.h */,
 				F17CF9D32178330A009F2ED3 /* GMCore.h */,
 				F17CF9D42178330A009F2ED3 /* GMCore.m */,
+				F17CF9CD21771584009F2ED3 /* GMHttpManager.h */,
+				F17CF9CE21771584009F2ED3 /* GMHttpManager.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -242,18 +274,30 @@
 		F17CF9CC2177152C009F2ED3 /* BaseBusiness */ = {
 			isa = PBXGroup;
 			children = (
+				F14547DC21A2BA5600E26638 /* Framework */,
+				F14547D821A2AC7700E26638 /* Homepage */,
+				F1BB6795219ADCC1007BDA24 /* FaceTrack */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* GMViewController.h */,
-				6003F5A6195388D20070C39A /* GMViewController.m */,
-				F17CF9D021772158009F2ED3 /* GMMainTabBarController.h */,
-				F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */,
-				F17CF9D6217834C6009F2ED3 /* GMBaseViewController.h */,
-				F17CF9D7217834C6009F2ED3 /* GMBaseViewController.m */,
-				F17CF9D9217834E1009F2ED3 /* GMTestViewController.h */,
-				F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */,
-				F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */,
 			);
 			path = BaseBusiness;
+			sourceTree = "<group>";
+		};
+		F1BB6795219ADCC1007BDA24 /* FaceTrack */ = {
+			isa = PBXGroup;
+			children = (
+				F1BB6796219AFCBF007BDA24 /* GMFaceTrackViewController.h */,
+				F1BB6797219AFCBF007BDA24 /* GMFaceTrackViewController.m */,
+			);
+			path = FaceTrack;
+			sourceTree = "<group>";
+		};
+		F1BB6799219BF2BF007BDA24 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F1BB679A219BF313007BDA24 /* GMAVUtility.h */,
+				F1BB679B219BF313007BDA24 /* GMAVUtility.m */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +354,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = hitner;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = RGU37X3Z9W;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -467,12 +514,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */,
 				F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */,
+				F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */,
 				F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */,
+				F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */,
 				6003F59E195388D20070C39A /* GMAppDelegate.m in Sources */,
 				F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */,
 				F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */,
-				6003F5A7195388D20070C39A /* GMViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */,
 			);
@@ -602,6 +651,7 @@
 			baseConfigurationReference = 2A22D64ED3BDAED90DB3A791 /* Pods-GMOcBase_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RGU37X3Z9W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";
@@ -618,6 +668,7 @@
 			baseConfigurationReference = 4CB33F27FD973891F7305E0A /* Pods-GMOcBase_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RGU37X3Z9W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";
