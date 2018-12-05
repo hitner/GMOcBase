@@ -23,6 +23,10 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		8718AE5F5954C9C15608A757 /* Pods_GMOcBase_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A98458AAC1DBC1308B5F6A /* Pods_GMOcBase_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		F111557B21B7BFB300AA2DEA /* UIView+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F111557A21B7BFB300AA2DEA /* UIView+GM.m */; };
+		F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83D421A3FD87000DE61B /* UIColor+GM.m */; };
+		F13F83DA21A55389000DE61B /* 3DDog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F13F83D921A55389000DE61B /* 3DDog.scnassets */; };
+		F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */; };
 		F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */; };
 		F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9CE21771584009F2ED3 /* GMHttpManager.m */; };
 		F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */; };
@@ -72,6 +76,13 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A6E9E112F1A1FD636C9CAB03 /* Pods_GMOcBase_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMOcBase_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC04ECFBAA657CBED4E0BBF9 /* Pods-GMOcBase_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMOcBase_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GMOcBase_Tests/Pods-GMOcBase_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F111557921B7BFB300AA2DEA /* UIView+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+GM.h"; sourceTree = "<group>"; };
+		F111557A21B7BFB300AA2DEA /* UIView+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+GM.m"; sourceTree = "<group>"; };
+		F13F83D321A3FD87000DE61B /* UIColor+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+GM.h"; sourceTree = "<group>"; };
+		F13F83D421A3FD87000DE61B /* UIColor+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GM.m"; sourceTree = "<group>"; };
+		F13F83D921A55389000DE61B /* 3DDog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = 3DDog.scnassets; sourceTree = "<group>"; };
+		F13F83DB21A5646F000DE61B /* GMSceneExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMSceneExampleViewController.h; sourceTree = "<group>"; };
+		F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMSceneExampleViewController.m; sourceTree = "<group>"; };
 		F14547D721A2AA3300E26638 /* GMMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMacro.h; sourceTree = "<group>"; };
 		F14547D921A2B1C900E26638 /* GMNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMNavigationViewController.h; sourceTree = "<group>"; };
 		F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMNavigationViewController.m; sourceTree = "<group>"; };
@@ -219,6 +230,27 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		F13F83D221A3FD43000DE61B /* CocoaCategory */ = {
+			isa = PBXGroup;
+			children = (
+				F13F83D321A3FD87000DE61B /* UIColor+GM.h */,
+				F13F83D421A3FD87000DE61B /* UIColor+GM.m */,
+				F111557921B7BFB300AA2DEA /* UIView+GM.h */,
+				F111557A21B7BFB300AA2DEA /* UIView+GM.m */,
+			);
+			path = CocoaCategory;
+			sourceTree = "<group>";
+		};
+		F13F83D821A55350000DE61B /* 3DScene */ = {
+			isa = PBXGroup;
+			children = (
+				F13F83D921A55389000DE61B /* 3DDog.scnassets */,
+				F13F83DB21A5646F000DE61B /* GMSceneExampleViewController.h */,
+				F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */,
+			);
+			path = 3DScene;
+			sourceTree = "<group>";
+		};
 		F14547D821A2AC7700E26638 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +306,7 @@
 		F17CF9CC2177152C009F2ED3 /* BaseBusiness */ = {
 			isa = PBXGroup;
 			children = (
+				F13F83D821A55350000DE61B /* 3DScene */,
 				F14547DC21A2BA5600E26638 /* Framework */,
 				F14547D821A2AC7700E26638 /* Homepage */,
 				F1BB6795219ADCC1007BDA24 /* FaceTrack */,
@@ -294,6 +327,7 @@
 		F1BB6799219BF2BF007BDA24 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F13F83D221A3FD43000DE61B /* CocoaCategory */,
 				F1BB679A219BF313007BDA24 /* GMAVUtility.h */,
 				F1BB679B219BF313007BDA24 /* GMAVUtility.m */,
 			);
@@ -388,6 +422,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				F17CF9DD217834E1009F2ED3 /* GMTestViewController.xib in Resources */,
+				F13F83DA21A55389000DE61B /* 3DDog.scnassets in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -520,9 +555,12 @@
 				F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */,
 				F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */,
 				6003F59E195388D20070C39A /* GMAppDelegate.m in Sources */,
+				F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */,
 				F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */,
 				F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */,
+				F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				F111557B21B7BFB300AA2DEA /* UIView+GM.m in Sources */,
 				F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,7 +693,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -672,7 +710,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

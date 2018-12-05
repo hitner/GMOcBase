@@ -15,6 +15,8 @@
 #import "GMAVUtility.h"
 
 
+#import "GMSceneExampleViewController.h"
+
 @interface GMTestViewController ()
 
 @end
@@ -37,8 +39,27 @@
     }];
 }
 
+- (IBAction)touchUpInside3DScene:(id)sender {
+    GMSceneExampleViewController * scene = [[GMSceneExampleViewController alloc] init];
+    [self.navigationController pushViewController:scene animated:YES];
+    
+}
+
+
+
+
 - (IBAction)touchUpInsideButton:(id)sender {
-    [[GMCore singletonCore].concurrentQueue addOperationWithBlock:^{
+    NSMutableArray * ma = [[NSMutableArray alloc] initWithArray:@[@(1),@(3),@(2)]];
+    [ma sortUsingComparator:^NSComparisonResult(NSNumber*  _Nonnull obj1, NSNumber*  _Nonnull obj2) {
+        if (obj1.integerValue > obj2.integerValue) {
+            return NSOrderedAscending;
+        }
+        else {
+            return NSOrderedDescending;
+        }
+    }];
+    
+    /*[[GMCore singletonCore].concurrentQueue addOperationWithBlock:^{
         NSLog(@"start operation");
         CGFloat k = 9.2324234f;
         CGFloat sum = k;
@@ -56,7 +77,7 @@
             NSLog(@"sum:%@", @(sum));
         }];
         
-    }];
+    }];*/
 }
 
 

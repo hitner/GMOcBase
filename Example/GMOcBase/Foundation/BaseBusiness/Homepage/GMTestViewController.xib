@@ -44,6 +44,14 @@
                         <action selector="touchUpInsideFaceTrack:" destination="-1" eventType="touchUpInside" id="voW-Ke-CUr"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ds-ck-ma2">
+                    <rect key="frame" x="245" y="194" width="70" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="3D-Scene"/>
+                    <connections>
+                        <action selector="touchUpInside3DScene:" destination="-1" eventType="touchUpInside" id="m3a-Nf-lYI"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
