@@ -24,6 +24,7 @@
 		8718AE5F5954C9C15608A757 /* Pods_GMOcBase_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A98458AAC1DBC1308B5F6A /* Pods_GMOcBase_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		F111557B21B7BFB300AA2DEA /* UIView+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F111557A21B7BFB300AA2DEA /* UIView+GM.m */; };
+		F111557E21B7CBD300AA2DEA /* NSString+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F111557D21B7CBD300AA2DEA /* NSString+GM.m */; };
 		F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83D421A3FD87000DE61B /* UIColor+GM.m */; };
 		F13F83DA21A55389000DE61B /* 3DDog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F13F83D921A55389000DE61B /* 3DDog.scnassets */; };
 		F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */; };
@@ -78,6 +79,8 @@
 		DC04ECFBAA657CBED4E0BBF9 /* Pods-GMOcBase_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMOcBase_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GMOcBase_Tests/Pods-GMOcBase_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F111557921B7BFB300AA2DEA /* UIView+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+GM.h"; sourceTree = "<group>"; };
 		F111557A21B7BFB300AA2DEA /* UIView+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+GM.m"; sourceTree = "<group>"; };
+		F111557C21B7CBD300AA2DEA /* NSString+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+GM.h"; sourceTree = "<group>"; };
+		F111557D21B7CBD300AA2DEA /* NSString+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+GM.m"; sourceTree = "<group>"; };
 		F13F83D321A3FD87000DE61B /* UIColor+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+GM.h"; sourceTree = "<group>"; };
 		F13F83D421A3FD87000DE61B /* UIColor+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GM.m"; sourceTree = "<group>"; };
 		F13F83D921A55389000DE61B /* 3DDog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = 3DDog.scnassets; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 				F13F83D421A3FD87000DE61B /* UIColor+GM.m */,
 				F111557921B7BFB300AA2DEA /* UIView+GM.h */,
 				F111557A21B7BFB300AA2DEA /* UIView+GM.m */,
+				F111557C21B7CBD300AA2DEA /* NSString+GM.h */,
+				F111557D21B7CBD300AA2DEA /* NSString+GM.m */,
 			);
 			path = CocoaCategory;
 			sourceTree = "<group>";
@@ -560,6 +565,7 @@
 				F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */,
 				F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				F111557E21B7CBD300AA2DEA /* NSString+GM.m in Sources */,
 				F111557B21B7BFB300AA2DEA /* UIView+GM.m in Sources */,
 				F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */,
 			);
