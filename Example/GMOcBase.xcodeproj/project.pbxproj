@@ -23,10 +23,11 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		8718AE5F5954C9C15608A757 /* Pods_GMOcBase_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A98458AAC1DBC1308B5F6A /* Pods_GMOcBase_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		F102F0D021C3B4020054898F /* GMFloatableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F102F0CF21C3B4020054898F /* GMFloatableView.m */; };
 		F111557B21B7BFB300AA2DEA /* UIView+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F111557A21B7BFB300AA2DEA /* UIView+GM.m */; };
 		F111557E21B7CBD300AA2DEA /* NSString+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F111557D21B7CBD300AA2DEA /* NSString+GM.m */; };
 		F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83D421A3FD87000DE61B /* UIColor+GM.m */; };
-		F13F83DA21A55389000DE61B /* 3DDog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F13F83D921A55389000DE61B /* 3DDog.scnassets */; };
+		F13F83DA21A55389000DE61B /* dog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F13F83D921A55389000DE61B /* dog.scnassets */; };
 		F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */; };
 		F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */; };
 		F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9CE21771584009F2ED3 /* GMHttpManager.m */; };
@@ -77,13 +78,15 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A6E9E112F1A1FD636C9CAB03 /* Pods_GMOcBase_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMOcBase_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC04ECFBAA657CBED4E0BBF9 /* Pods-GMOcBase_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMOcBase_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GMOcBase_Tests/Pods-GMOcBase_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F102F0CE21C3B4020054898F /* GMFloatableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMFloatableView.h; sourceTree = "<group>"; };
+		F102F0CF21C3B4020054898F /* GMFloatableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMFloatableView.m; sourceTree = "<group>"; };
 		F111557921B7BFB300AA2DEA /* UIView+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+GM.h"; sourceTree = "<group>"; };
 		F111557A21B7BFB300AA2DEA /* UIView+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+GM.m"; sourceTree = "<group>"; };
 		F111557C21B7CBD300AA2DEA /* NSString+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+GM.h"; sourceTree = "<group>"; };
 		F111557D21B7CBD300AA2DEA /* NSString+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+GM.m"; sourceTree = "<group>"; };
 		F13F83D321A3FD87000DE61B /* UIColor+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+GM.h"; sourceTree = "<group>"; };
 		F13F83D421A3FD87000DE61B /* UIColor+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GM.m"; sourceTree = "<group>"; };
-		F13F83D921A55389000DE61B /* 3DDog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = 3DDog.scnassets; sourceTree = "<group>"; };
+		F13F83D921A55389000DE61B /* dog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = dog.scnassets; sourceTree = "<group>"; };
 		F13F83DB21A5646F000DE61B /* GMSceneExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMSceneExampleViewController.h; sourceTree = "<group>"; };
 		F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMSceneExampleViewController.m; sourceTree = "<group>"; };
 		F14547D721A2AA3300E26638 /* GMMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMacro.h; sourceTree = "<group>"; };
@@ -233,6 +236,15 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		F102F0CD21C3A8710054898F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F102F0CE21C3B4020054898F /* GMFloatableView.h */,
+				F102F0CF21C3B4020054898F /* GMFloatableView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F13F83D221A3FD43000DE61B /* CocoaCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,7 +261,7 @@
 		F13F83D821A55350000DE61B /* 3DScene */ = {
 			isa = PBXGroup;
 			children = (
-				F13F83D921A55389000DE61B /* 3DDog.scnassets */,
+				F13F83D921A55389000DE61B /* dog.scnassets */,
 				F13F83DB21A5646F000DE61B /* GMSceneExampleViewController.h */,
 				F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */,
 			);
@@ -335,6 +347,7 @@
 				F13F83D221A3FD43000DE61B /* CocoaCategory */,
 				F1BB679A219BF313007BDA24 /* GMAVUtility.h */,
 				F1BB679B219BF313007BDA24 /* GMAVUtility.m */,
+				F102F0CD21C3A8710054898F /* View */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -427,7 +440,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				F17CF9DD217834E1009F2ED3 /* GMTestViewController.xib in Resources */,
-				F13F83DA21A55389000DE61B /* 3DDog.scnassets in Resources */,
+				F13F83DA21A55389000DE61B /* dog.scnassets in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -559,6 +572,7 @@
 				F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */,
 				F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */,
 				F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */,
+				F102F0D021C3B4020054898F /* GMFloatableView.m in Sources */,
 				6003F59E195388D20070C39A /* GMAppDelegate.m in Sources */,
 				F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */,
 				F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */,
