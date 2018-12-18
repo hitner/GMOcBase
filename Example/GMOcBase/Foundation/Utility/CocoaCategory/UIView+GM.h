@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)halfHeight;
 
 - (void)roundingCorners:(UIRectCorner)corners;
+
+- (void)enableFloatable:(BOOL)constrainToBound;
+
 @end
 
 NS_ASSUME_NONNULL_END

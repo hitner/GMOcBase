@@ -8,20 +8,30 @@
 
 #import "GMSceneExampleViewController.h"
 #import "GMFloatableView.h"
+#import "GMDebugControlView.h"
+#import "GMFaceTrack.h"
+#import "GMMacro.h"
+#import "UIView+GM.h"
 
 @import SceneKit;
 
-@interface GMSceneExampleViewController ()<GMFloatableViewDelegate>
+@interface GMSceneExampleViewController ()<GMFloatableViewDelegate, GMDebugControlViewDelegate, GMFaceTrackDelegate>
 @property(nonatomic, weak) SCNView * theView;
 @property(nonatomic, weak) SCNScene * theScene;
 
 @property(nonatomic, weak) GMFloatableView * floatableView;
+@property(nonatomic, weak) GMDebugControlView * debugControlView;
+
+@property(nonatomic) GMFaceTrack * faceTrack;
 @end
 
 @implementation GMSceneExampleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
     // Do any additional setup after loading the view.
     SCNView * scnView = [[SCNView alloc] initWithFrame:[UIScreen mainScreen].bounds options:nil];
     self.theView = scnView;
@@ -34,32 +44,63 @@
     scnView.allowsCameraControl = YES;
     [self.view addSubview:scnView];
     
-    [self addContorlButton];
+    [self removeAnimationForEye];
+    
     [self addAssistView];
+    [self beginFaceTrack];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.faceTrack stop];
+}
+
+
+- (void)beginFaceTrack {
+    self.faceTrack = [[GMFaceTrack alloc] init];
+    self.faceTrack.delegate = self;
+    UIView * resultView = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 160, 160*heightWidthRadio)];
+    [self.faceTrack showPreviewOnView:resultView withFrame:resultView.bounds];
+    [self.faceTrack start];
+    [self.view addSubview:resultView];
+    [resultView enableFloatable:YES];
 }
 
 - (void)addAssistView
 {
-    GMFloatableView * floatView = [[GMFloatableView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+    GMFloatableView * floatView = [[GMFloatableView alloc] initWithFrame:CGRectMake(0, 0, 350, 150)];
+    floatView.delegate = self;
     [self.view addSubview:floatView];
     self.floatableView = floatView;
+    
+    UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(0, 10, 300, 30 )];
+    [floatView addSubview:slider];
+    [slider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    [self addContorlButton];
 }
 
+- (void)sliderChanged:(UISlider*)slider {
+    
+    NSLog(@"slider value:%@", @(slider.value));
+    SCNNode * leftEye = [self.theScene.rootNode childNodeWithName:@"eyes_skins_up02" recursively:YES];
+    leftEye.eulerAngles = SCNVector3Make(100*slider.value* M_PI / 180, 0, 0);
+}
 
 - (void)addContorlButton {
-    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 300, 50, 30)];
+    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 50, 60, 40)];
     [btn setTintColor:[UIColor redColor]];
     [btn setBackgroundColor:[UIColor blueColor] ];
     [btn setTitle:@"START" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(start:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
+    [self.floatableView addSubview:btn];
     
-    UIButton * btn2 = [[UIButton alloc]initWithFrame:CGRectMake(0, 380, 50, 30)];
+    UIButton * btn2 = [[UIButton alloc]initWithFrame:CGRectMake(100, 50, 60, 40)];
     [btn2 setTintColor:[UIColor redColor]];
     [btn2 setBackgroundColor:[UIColor blueColor] ];
     [btn2 setTitle:@"STOP" forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(stop:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn2];
+    [self.floatableView addSubview:btn2];
 }
 
 - (void)start:(id)sender {
@@ -153,7 +194,7 @@
     
     NSURL * url = [[NSBundle mainBundle] URLForResource:@"dog" withExtension:@"scnassets"];
     NSBundle * sceneBundle = [NSBundle bundleWithURL:url];
-    NSURL * file = [sceneBundle URLForResource:@"skinning" withExtension:@"dae"];
+    NSURL * file = [sceneBundle URLForResource:@"body" withExtension:@"dae"];
     SCNSceneSource * sceneSource = [SCNSceneSource sceneSourceWithURL:file options:nil];
     
     NSArray * a = [sceneSource identifiersOfEntriesWithClass:[CAAnimation class]];
@@ -179,11 +220,56 @@
         }
     }
     
-    
-    NSURL * targetUrl = [NSURL URLWithString:@"skinning.dae" relativeToURL:url];
     NSError * error;
+    /*NSURL * targetUrl = [NSURL URLWithString:@"test.dae" relativeToURL:url];
     SCNScene * one = [SCNScene sceneWithURL:targetUrl options:@{} error:&error];
+    */
     
-    return one;
+    
+    return [sceneSource sceneWithOptions:nil error:&error];
+}
+
+- (void)removeAnimationForEye {
+    SCNNode * leftEye = [self.theScene.rootNode childNodeWithName:@"eyes_skins_up02" recursively:YES];
+    NSArray * keys = [leftEye animationKeys];
+    for (NSString *key in keys) {
+        SCNAnimationPlayer * animationPlayer = [leftEye animationPlayerForKey:key];
+        SCNAnimation * animation = animationPlayer.animation;
+        NSLog(@"animation:%@",animation.keyPath);
+    }
+    [leftEye removeAllAnimations];
+    
+}
+
+#pragma mark - delegate
+
+- (void)didTouchUpInsideFloatableView:(GMFloatableView *)view {
+    NSLog(@"floatable view");
+    
+    
+}
+
+#pragma mark - debug view
+
+- (GMDebugControlView*)debugControlView {
+    if (_debugControlView) {
+        GMDebugControlView * debugView = [[GMDebugControlView alloc]initWithFrame:self.view.bounds];
+        debugView.delegate = self;
+        debugView.dataSource = [self debugItems];
+        [self.view addSubview:debugView];
+        _debugControlView = debugView;
+    }
+    return _debugControlView;
+}
+
+- (NSArray*)debugItems {
+    return @[];
+    
+}
+
+#pragma mark - track result
+- (void)faceObservation:(VNFaceObservation *)observation inTrack:(GMFaceTrack *)track {
+    
+    
 }
 @end

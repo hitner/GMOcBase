@@ -32,4 +32,51 @@
     maskLayer.path = maskPath.CGPath;
     self.layer.mask = maskLayer;
 }
+
+- (void)enableFloatable:(BOOL)constrainToBound {
+    self.userInteractionEnabled = YES;
+    UIPanGestureRecognizer * recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureRecognizer:)];
+    [self addGestureRecognizer:recognizer];
+}
+
+- (void)handlePanGestureRecognizer:(UIPanGestureRecognizer*)recognizer {
+    static CGPoint stateBeganCenter;
+    switch (recognizer.state) {
+        case UIGestureRecognizerStateBegan:
+            stateBeganCenter = self.center;
+            break;
+        case UIGestureRecognizerStateChanged:
+        {
+            CGPoint translation = [recognizer translationInView:self];
+            self.center = CGPointMake(stateBeganCenter.x + translation.x, stateBeganCenter.y + translation.y);
+        }
+            break;
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateCancelled:
+        {
+            CGRect bound = self.superview.bounds;
+            if (!CGRectContainsRect(bound, self.frame)) {
+                CGRect newFrame = self.frame;
+                if (CGRectGetMinX(newFrame) < 0) {
+                    newFrame.origin.x = 0;
+                }
+                if (CGRectGetMaxX(newFrame) > CGRectGetWidth(bound)) {
+                    newFrame.origin.x = CGRectGetWidth(bound) - CGRectGetWidth(newFrame);
+                }
+                if (CGRectGetMinY(newFrame) < 0) {
+                    newFrame.origin.y = 0;
+                }
+                if (CGRectGetMaxY(newFrame) > CGRectGetHeight(bound)) {
+                    newFrame.origin.y = CGRectGetHeight(bound) - CGRectGetHeight(newFrame);
+                }
+                [UIView animateWithDuration:0.25 animations:^{
+                    self.frame = newFrame;
+                }];
+            }
+        }
+        default:
+            break;
+    }
+}
+
 @end

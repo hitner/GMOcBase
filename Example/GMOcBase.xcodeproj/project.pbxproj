@@ -30,6 +30,10 @@
 		F13F83DA21A55389000DE61B /* dog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F13F83D921A55389000DE61B /* dog.scnassets */; };
 		F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */; };
 		F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */; };
+		F15D739D21C79AA9005CBF05 /* GMDebugControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = F15D739C21C79AA9005CBF05 /* GMDebugControlView.m */; };
+		F15D73A021C79C4B005CBF05 /* GMDebugItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F15D739F21C79C4B005CBF05 /* GMDebugItem.m */; };
+		F15D73A221C79E71005CBF05 /* DebugView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F15D73A121C79E71005CBF05 /* DebugView.xib */; };
+		F15D73A521C88C90005CBF05 /* GMFaceTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = F15D73A421C88C90005CBF05 /* GMFaceTrack.m */; };
 		F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9CE21771584009F2ED3 /* GMHttpManager.m */; };
 		F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */; };
 		F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D42178330A009F2ED3 /* GMCore.m */; };
@@ -92,6 +96,13 @@
 		F14547D721A2AA3300E26638 /* GMMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMacro.h; sourceTree = "<group>"; };
 		F14547D921A2B1C900E26638 /* GMNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMNavigationViewController.h; sourceTree = "<group>"; };
 		F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMNavigationViewController.m; sourceTree = "<group>"; };
+		F15D739B21C79AA9005CBF05 /* GMDebugControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMDebugControlView.h; sourceTree = "<group>"; };
+		F15D739C21C79AA9005CBF05 /* GMDebugControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMDebugControlView.m; sourceTree = "<group>"; };
+		F15D739E21C79C4B005CBF05 /* GMDebugItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMDebugItem.h; sourceTree = "<group>"; };
+		F15D739F21C79C4B005CBF05 /* GMDebugItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMDebugItem.m; sourceTree = "<group>"; };
+		F15D73A121C79E71005CBF05 /* DebugView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugView.xib; sourceTree = "<group>"; };
+		F15D73A321C88C90005CBF05 /* GMFaceTrack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMFaceTrack.h; sourceTree = "<group>"; };
+		F15D73A421C88C90005CBF05 /* GMFaceTrack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMFaceTrack.m; sourceTree = "<group>"; };
 		F17CF9CD21771584009F2ED3 /* GMHttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMHttpManager.h; sourceTree = "<group>"; };
 		F17CF9CE21771584009F2ED3 /* GMHttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMHttpManager.m; sourceTree = "<group>"; };
 		F17CF9D021772158009F2ED3 /* GMMainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMainTabBarController.h; sourceTree = "<group>"; };
@@ -239,6 +250,7 @@
 		F102F0CD21C3A8710054898F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F15D739A21C746DA005CBF05 /* DebugView */,
 				F102F0CE21C3B4020054898F /* GMFloatableView.h */,
 				F102F0CF21C3B4020054898F /* GMFloatableView.m */,
 			);
@@ -291,6 +303,18 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
+		F15D739A21C746DA005CBF05 /* DebugView */ = {
+			isa = PBXGroup;
+			children = (
+				F15D739B21C79AA9005CBF05 /* GMDebugControlView.h */,
+				F15D739C21C79AA9005CBF05 /* GMDebugControlView.m */,
+				F15D739E21C79C4B005CBF05 /* GMDebugItem.h */,
+				F15D739F21C79C4B005CBF05 /* GMDebugItem.m */,
+				F15D73A121C79E71005CBF05 /* DebugView.xib */,
+			);
+			path = DebugView;
+			sourceTree = "<group>";
+		};
 		F17CF9C921771393009F2ED3 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +361,8 @@
 			children = (
 				F1BB6796219AFCBF007BDA24 /* GMFaceTrackViewController.h */,
 				F1BB6797219AFCBF007BDA24 /* GMFaceTrackViewController.m */,
+				F15D73A321C88C90005CBF05 /* GMFaceTrack.h */,
+				F15D73A421C88C90005CBF05 /* GMFaceTrack.m */,
 			);
 			path = FaceTrack;
 			sourceTree = "<group>";
@@ -443,6 +469,7 @@
 				F13F83DA21A55389000DE61B /* dog.scnassets in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				F15D73A221C79E71005CBF05 /* DebugView.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,12 +594,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F15D73A521C88C90005CBF05 /* GMFaceTrack.m in Sources */,
 				F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */,
 				F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */,
 				F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */,
 				F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */,
 				F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */,
 				F102F0D021C3B4020054898F /* GMFloatableView.m in Sources */,
+				F15D739D21C79AA9005CBF05 /* GMDebugControlView.m in Sources */,
 				6003F59E195388D20070C39A /* GMAppDelegate.m in Sources */,
 				F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */,
 				F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */,
@@ -582,6 +611,7 @@
 				F111557E21B7CBD300AA2DEA /* NSString+GM.m in Sources */,
 				F111557B21B7BFB300AA2DEA /* UIView+GM.m in Sources */,
 				F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */,
+				F15D73A021C79C4B005CBF05 /* GMDebugItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

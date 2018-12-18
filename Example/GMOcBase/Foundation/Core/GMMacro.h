@@ -33,6 +33,8 @@ __instance = [[__TYPE__ alloc] init];       \
 return __instance;                          \
 }
 
+//高宽比
+#define heightWidthRadio (CGRectGetHeight([UIScreen mainScreen].bounds)/CGRectGetWidth([UIScreen mainScreen].bounds))
 
 
 #endif /* GMMacro_h */

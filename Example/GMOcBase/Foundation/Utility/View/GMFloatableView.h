@@ -15,17 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 - (void)didTouchUpInsideFloatableView:(GMFloatableView*)view;
-
+- (void)doubleClickOnView:(GMFloatableView*)view;
 @end
 
 
-@interface GMFloatableView : UIView
+@interface GMFloatableView : UIControl
 
 @property (nonatomic, weak) id<GMFloatableViewDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame;
-
-+ (void)enableFloatableToView:(UIView*)view delegate:(id<GMFloatableViewDelegate>) delegate;
 
 @end
 
