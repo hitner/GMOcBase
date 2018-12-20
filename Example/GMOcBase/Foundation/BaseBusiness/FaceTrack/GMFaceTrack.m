@@ -318,7 +318,7 @@
             CGRect  rect = VNImageRectForNormalizedRect(obser.boundingBox,self.drawSize.width,self.drawSize.height);
             CGRect visualRect = CGRectMake(rect.origin.x, self.drawSize.height - CGRectGetMaxY(rect), CGRectGetWidth(rect), CGRectGetHeight(rect));
             if (@available(iOS 12.0, *)) {
-                NSLog(@"track roll:%@, yaw:%@, rect:%d,%d,%d,%d", obser.roll, obser.yaw, (int)rect.origin.x, (int)rect.origin.y, (int)rect.size.width, (int)rect.size.height);
+                //NSLog(@"track roll:%@, yaw:%@, rect:%d,%d,%d,%d", obser.roll, obser.yaw, (int)rect.origin.x, (int)rect.origin.y, (int)rect.size.width, (int)rect.size.height);
                 
             } else {
                 // Fallback on earlier versions

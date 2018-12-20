@@ -12,8 +12,11 @@
 #import "GMFaceTrack.h"
 #import "GMMacro.h"
 #import "UIView+GM.h"
+#import "GM2DProcess.h"
+
 
 @import SceneKit;
+@import Vision;
 
 @interface GMSceneExampleViewController ()<GMFloatableViewDelegate, GMDebugControlViewDelegate, GMFaceTrackDelegate>
 @property(nonatomic, weak) SCNView * theView;
@@ -61,7 +64,7 @@
     self.faceTrack.delegate = self;
     UIView * resultView = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 160, 160*heightWidthRadio)];
     [self.faceTrack showPreviewOnView:resultView withFrame:resultView.bounds];
-    [self.faceTrack start];
+    //[self.faceTrack start];
     [self.view addSubview:resultView];
     [resultView enableFloatable:YES];
 }
@@ -83,8 +86,8 @@
 - (void)sliderChanged:(UISlider*)slider {
     
     NSLog(@"slider value:%@", @(slider.value));
-    SCNNode * leftEye = [self.theScene.rootNode childNodeWithName:@"eyes_skins_up02" recursively:YES];
-    leftEye.eulerAngles = SCNVector3Make(100*slider.value* M_PI / 180, 0, 0);
+    [self updateLeftEyeOpening:slider.value];
+    [self updateRightEyeOpening:slider.value];
 }
 
 - (void)addContorlButton {
@@ -101,17 +104,25 @@
     [btn2 setTitle:@"STOP" forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(stop:) forControlEvents:UIControlEventTouchUpInside];
     [self.floatableView addSubview:btn2];
+    
+    btn2 = [[UIButton alloc]initWithFrame:CGRectMake(180, 50, 60, 40)];
+    [btn2 setTintColor:[UIColor redColor]];
+    [btn2 setBackgroundColor:[UIColor blueColor] ];
+    [btn2 setTitle:@"FACE" forState:UIControlStateNormal];
+    [btn2 addTarget:self action:@selector(startFace:) forControlEvents:UIControlEventTouchUpInside];
+    [self.floatableView addSubview:btn2];
 }
 
 - (void)start:(id)sender {
     NSLog(@"start ...");
-    SCNNode * skelton = [self.theScene.rootNode childNodeWithName:@"skeleton" recursively:YES];
-    NSLog(@"%@",skelton.skinner);
     [self.theScene setPaused:NO];
 }
 - (void)stop:(id)sender {
     NSLog(@"stop ...");
     [self.theScene setPaused:YES];
+}
+- (void)startFace:(id)sender {
+    [self.faceTrack start];
 }
 /*
 #pragma mark - Navigation
@@ -194,7 +205,7 @@
     
     NSURL * url = [[NSBundle mainBundle] URLForResource:@"dog" withExtension:@"scnassets"];
     NSBundle * sceneBundle = [NSBundle bundleWithURL:url];
-    NSURL * file = [sceneBundle URLForResource:@"body" withExtension:@"dae"];
+    NSURL * file = [sceneBundle URLForResource:@"test02" withExtension:@"dae"];
     SCNSceneSource * sceneSource = [SCNSceneSource sceneSourceWithURL:file options:nil];
     
     NSArray * a = [sceneSource identifiersOfEntriesWithClass:[CAAnimation class]];
@@ -230,7 +241,7 @@
 }
 
 - (void)removeAnimationForEye {
-    SCNNode * leftEye = [self.theScene.rootNode childNodeWithName:@"eyes_skins_up02" recursively:YES];
+    SCNNode * leftEye = [self.theScene.rootNode childNodeWithName:@"eyes_l_skins_up" recursively:YES];
     NSArray * keys = [leftEye animationKeys];
     for (NSString *key in keys) {
         SCNAnimationPlayer * animationPlayer = [leftEye animationPlayerForKey:key];
@@ -269,7 +280,102 @@
 
 #pragma mark - track result
 - (void)faceObservation:(VNFaceObservation *)observation inTrack:(GMFaceTrack *)track {
+    CGFloat normalizedHeight = track.videoResolution.height/ track.videoResolution.width;
+    CGRect boundingRect = VNImageRectForNormalizedRect(observation.boundingBox, 1, normalizedHeight);
+    CGAffineTransform trans2 =  CGAffineTransformMakeTranslation(boundingRect.origin.x, boundingRect.origin.y);
+    CGAffineTransform trans = CGAffineTransformScale(trans2, CGRectGetWidth(boundingRect),  CGRectGetHeight(boundingRect));
+    
+    VNFaceLandmarks2D * mark = observation.landmarks;
     
     
+    
+    //头左右倾斜角度
+    CGFloat leftRightSlope = 0;
+    CGFloat slope = 0;
+    CGFloat constant = 0;
+    BOOL km = [GM2DProcess linearLeastSquares:mark.medianLine.normalizedPoints
+                                    transform:trans
+                                        count:mark.medianLine.pointCount
+                                        slope:&slope
+                                     constant:&constant];
+    if (km) {
+        if (slope > 0) {
+            leftRightSlope = - (M_PI_2 - atanf(slope));
+        }
+        else {
+            leftRightSlope = M_PI_2 + atanf(slope);
+        }
+        if (leftRightSlope < M_PI*5.0/180.0 && leftRightSlope > -M_PI*5.0/180.0) {
+            leftRightSlope = 0;
+        }
+    }
+    else {
+        NSLog(@"vertical x = %f",constant);
+    }
+    
+    
+    //计算脸部重心和大小
+    CGSize faceSize ;
+    CGPoint faceWeightPoint;
+    [GM2DProcess weightPoint:&faceWeightPoint
+                   forPoints:mark.faceContour.normalizedPoints
+                   transform:trans
+                       count:mark.faceContour.pointCount];
+    
+    CGAffineTransform transsize = CGAffineTransformRotate(trans, -leftRightSlope); //垂直方向计算脸的大小
+    [GM2DProcess size:&faceSize forPoints:mark.faceContour.normalizedPoints transform:transsize count:mark.faceContour.pointCount];
+    
+    //NSLog(@"weight point(%f,%f), size:%f,%f", faceWeightPoint.x, faceWeightPoint.y, faceSize.width, faceSize.height);
+    //依据重心位置求解
+    CGFloat shouldX = constant;
+    if (slope) {
+        shouldX = (faceWeightPoint.y - constant)/slope;
+    }
+    CGFloat yRotate = -2.0*(faceWeightPoint.x - shouldX )/faceSize.width;
+    //NSLog(@"y rotation:%f",yRotate);
+    
+    [self updateHeadRotation:SCNVector3Make(0, yRotate, leftRightSlope)];
+    
+    //眼睛参数
+    CGSize leftEyeSize;
+    CGFloat leftEyeRotate;
+    static CGFloat max = -100;
+    static CGFloat min = 100;
+    static CGFloat average = 0.22;
+    [GM2DProcess size:&leftEyeSize forPoints:mark.leftEye.normalizedPoints transform:transsize count:mark.leftEye.pointCount];
+    leftEyeRotate = leftEyeSize.height/leftEyeSize.width;
+    
+    if (faceSize.width > 0.4 && leftEyeRotate < 0.3 && leftEyeRotate> 0.18) {
+        if (max < leftEyeRotate) {
+            max = leftEyeRotate;
+        }
+        if (min > leftEyeRotate) {
+            min = leftEyeRotate;
+        }
+        average = 0.2*leftEyeRotate + 0.8*average;
+    NSLog(@"left eye rotate:%f, max:%f, min:%f",leftEyeRotate, max, min);
+    }
+    else {
+        NSLog(@"bad eye");
+    }
+    [self updateLeftEyeOpening:(leftEyeRotate - min)/(max - min)];
 }
+
+- (void)updateHeadRotation:(SCNVector3) vector3 {
+    
+    SCNNode * leftEye = [self.theScene.rootNode childNodeWithName:@"head" recursively:YES];
+    leftEye.eulerAngles = vector3;
+}
+
+- (void)updateLeftEyeOpening:(CGFloat)scale {
+    NSLog(@"left eye scale:%f",scale);
+    SCNNode * leftEye = [self.theScene.rootNode childNodeWithName:@"eyes_r_skins_up" recursively:YES];
+    leftEye.eulerAngles = SCNVector3Make(100*scale* M_PI / 180, 0, 0);
+}
+
+- (void)updateRightEyeOpening:(CGFloat)scale {
+    SCNNode * leftEye = [self.theScene.rootNode childNodeWithName:@"eyes_l_skins_up" recursively:YES];
+    leftEye.eulerAngles = SCNVector3Make(100*scale* M_PI / 180, 0, 0);
+}
+
 @end

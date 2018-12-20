@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (id)jsonObject;
 
+- (NSInteger)integerValueOfHex;
+
 @end
 
 NS_ASSUME_NONNULL_END

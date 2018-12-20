@@ -26,6 +26,7 @@
 		F102F0D021C3B4020054898F /* GMFloatableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F102F0CF21C3B4020054898F /* GMFloatableView.m */; };
 		F111557B21B7BFB300AA2DEA /* UIView+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F111557A21B7BFB300AA2DEA /* UIView+GM.m */; };
 		F111557E21B7CBD300AA2DEA /* NSString+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F111557D21B7CBD300AA2DEA /* NSString+GM.m */; };
+		F12EB7C821CA3E4A0049C8A8 /* GM1DWaveFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = F12EB7C721CA3E4A0049C8A8 /* GM1DWaveFilter.m */; };
 		F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83D421A3FD87000DE61B /* UIColor+GM.m */; };
 		F13F83DA21A55389000DE61B /* dog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F13F83D921A55389000DE61B /* dog.scnassets */; };
 		F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */; };
@@ -34,6 +35,7 @@
 		F15D73A021C79C4B005CBF05 /* GMDebugItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F15D739F21C79C4B005CBF05 /* GMDebugItem.m */; };
 		F15D73A221C79E71005CBF05 /* DebugView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F15D73A121C79E71005CBF05 /* DebugView.xib */; };
 		F15D73A521C88C90005CBF05 /* GMFaceTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = F15D73A421C88C90005CBF05 /* GMFaceTrack.m */; };
+		F15D73AC21C8E722005CBF05 /* GM2DProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = F15D73AB21C8E722005CBF05 /* GM2DProcess.m */; };
 		F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9CE21771584009F2ED3 /* GMHttpManager.m */; };
 		F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */; };
 		F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D42178330A009F2ED3 /* GMCore.m */; };
@@ -88,6 +90,8 @@
 		F111557A21B7BFB300AA2DEA /* UIView+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+GM.m"; sourceTree = "<group>"; };
 		F111557C21B7CBD300AA2DEA /* NSString+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+GM.h"; sourceTree = "<group>"; };
 		F111557D21B7CBD300AA2DEA /* NSString+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+GM.m"; sourceTree = "<group>"; };
+		F12EB7C621CA3E4A0049C8A8 /* GM1DWaveFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GM1DWaveFilter.h; sourceTree = "<group>"; };
+		F12EB7C721CA3E4A0049C8A8 /* GM1DWaveFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GM1DWaveFilter.m; sourceTree = "<group>"; };
 		F13F83D321A3FD87000DE61B /* UIColor+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+GM.h"; sourceTree = "<group>"; };
 		F13F83D421A3FD87000DE61B /* UIColor+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GM.m"; sourceTree = "<group>"; };
 		F13F83D921A55389000DE61B /* dog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = dog.scnassets; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 		F15D73A121C79E71005CBF05 /* DebugView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugView.xib; sourceTree = "<group>"; };
 		F15D73A321C88C90005CBF05 /* GMFaceTrack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMFaceTrack.h; sourceTree = "<group>"; };
 		F15D73A421C88C90005CBF05 /* GMFaceTrack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMFaceTrack.m; sourceTree = "<group>"; };
+		F15D73AA21C8E722005CBF05 /* GM2DProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GM2DProcess.h; sourceTree = "<group>"; };
+		F15D73AB21C8E722005CBF05 /* GM2DProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GM2DProcess.m; sourceTree = "<group>"; };
 		F17CF9CD21771584009F2ED3 /* GMHttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMHttpManager.h; sourceTree = "<group>"; };
 		F17CF9CE21771584009F2ED3 /* GMHttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMHttpManager.m; sourceTree = "<group>"; };
 		F17CF9D021772158009F2ED3 /* GMMainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMainTabBarController.h; sourceTree = "<group>"; };
@@ -315,6 +321,17 @@
 			path = DebugView;
 			sourceTree = "<group>";
 		};
+		F15D73A621C8E599005CBF05 /* algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				F15D73AA21C8E722005CBF05 /* GM2DProcess.h */,
+				F15D73AB21C8E722005CBF05 /* GM2DProcess.m */,
+				F12EB7C621CA3E4A0049C8A8 /* GM1DWaveFilter.h */,
+				F12EB7C721CA3E4A0049C8A8 /* GM1DWaveFilter.m */,
+			);
+			path = algorithm;
+			sourceTree = "<group>";
+		};
 		F17CF9C921771393009F2ED3 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +391,7 @@
 				F1BB679A219BF313007BDA24 /* GMAVUtility.h */,
 				F1BB679B219BF313007BDA24 /* GMAVUtility.m */,
 				F102F0CD21C3A8710054898F /* View */,
+				F15D73A621C8E599005CBF05 /* algorithm */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -595,10 +613,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F15D73A521C88C90005CBF05 /* GMFaceTrack.m in Sources */,
+				F15D73AC21C8E722005CBF05 /* GM2DProcess.m in Sources */,
 				F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */,
 				F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */,
 				F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */,
 				F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */,
+				F12EB7C821CA3E4A0049C8A8 /* GM1DWaveFilter.m in Sources */,
 				F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */,
 				F102F0D021C3B4020054898F /* GMFloatableView.m in Sources */,
 				F15D739D21C79AA9005CBF05 /* GMDebugControlView.m in Sources */,

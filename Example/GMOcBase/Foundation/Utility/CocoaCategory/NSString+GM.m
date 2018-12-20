@@ -22,4 +22,12 @@
     }
 }
 
+- (NSInteger)integerValueOfHex {
+    unsigned long long outVal = 0;
+    NSScanner* scanner = [NSScanner scannerWithString:self];
+    BOOL ret = [scanner scanHexLongLong:&outVal];
+    NSAssert(ret, @"integerValueOfHex error");
+    return outVal;
+}
+
 @end
