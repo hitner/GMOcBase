@@ -42,6 +42,7 @@
 		F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D7217834C6009F2ED3 /* GMBaseViewController.m */; };
 		F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */; };
 		F17CF9DD217834E1009F2ED3 /* GMTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */; };
+		F1A0923E21ED8896003C1856 /* GMCalculateLandmark.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A0923D21ED8896003C1856 /* GMCalculateLandmark.m */; };
 		F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6797219AFCBF007BDA24 /* GMFaceTrackViewController.m */; };
 		F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB679B219BF313007BDA24 /* GMAVUtility.m */; };
 /* End PBXBuildFile section */
@@ -120,6 +121,8 @@
 		F17CF9D9217834E1009F2ED3 /* GMTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
 		F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
 		F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMTestViewController.xib; sourceTree = "<group>"; };
+		F1A0923C21ED8896003C1856 /* GMCalculateLandmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMCalculateLandmark.h; sourceTree = "<group>"; };
+		F1A0923D21ED8896003C1856 /* GMCalculateLandmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMCalculateLandmark.m; sourceTree = "<group>"; };
 		F1BB6796219AFCBF007BDA24 /* GMFaceTrackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMFaceTrackViewController.h; sourceTree = "<group>"; };
 		F1BB6797219AFCBF007BDA24 /* GMFaceTrackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMFaceTrackViewController.m; sourceTree = "<group>"; };
 		F1BB679A219BF313007BDA24 /* GMAVUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMAVUtility.h; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 				F13F83D921A55389000DE61B /* dog.scnassets */,
 				F13F83DB21A5646F000DE61B /* GMSceneExampleViewController.h */,
 				F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */,
+				F1A0923C21ED8896003C1856 /* GMCalculateLandmark.h */,
+				F1A0923D21ED8896003C1856 /* GMCalculateLandmark.m */,
 			);
 			path = 3DScene;
 			sourceTree = "<group>";
@@ -628,6 +633,7 @@
 				F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */,
 				F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				F1A0923E21ED8896003C1856 /* GMCalculateLandmark.m in Sources */,
 				F111557E21B7CBD300AA2DEA /* NSString+GM.m in Sources */,
 				F111557B21B7BFB300AA2DEA /* UIView+GM.m in Sources */,
 				F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */,

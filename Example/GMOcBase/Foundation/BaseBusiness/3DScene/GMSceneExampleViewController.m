@@ -13,7 +13,7 @@
 #import "GMMacro.h"
 #import "UIView+GM.h"
 #import "GM2DProcess.h"
-
+#import "GMCalculateLandmark.h"
 
 @import SceneKit;
 @import Vision;
@@ -26,6 +26,8 @@
 @property(nonatomic, weak) GMDebugControlView * debugControlView;
 
 @property(nonatomic) GMFaceTrack * faceTrack;
+@property(nonatomic) GMCalculateLandmark * calculateLandmark;
+
 @end
 
 @implementation GMSceneExampleViewController
@@ -51,6 +53,7 @@
     
     [self addAssistView];
     [self beginFaceTrack];
+    self.calculateLandmark = [[GMCalculateLandmark alloc] init];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -289,30 +292,15 @@
     
     
     
-    //头左右倾斜角度
-    CGFloat leftRightSlope = 0;
+    //头以鼻子为中心的旋转角度
+    
     CGFloat slope = 0;
     CGFloat constant = 0;
-    BOOL km = [GM2DProcess linearLeastSquares:mark.medianLine.normalizedPoints
+    CGFloat leftRightSlope = [self.calculateLandmark slopeForPoint:mark.medianLine.normalizedPoints
                                     transform:trans
                                         count:mark.medianLine.pointCount
                                         slope:&slope
                                      constant:&constant];
-    if (km) {
-        if (slope > 0) {
-            leftRightSlope = - (M_PI_2 - atanf(slope));
-        }
-        else {
-            leftRightSlope = M_PI_2 + atanf(slope);
-        }
-        if (leftRightSlope < M_PI*5.0/180.0 && leftRightSlope > -M_PI*5.0/180.0) {
-            leftRightSlope = 0;
-        }
-    }
-    else {
-        NSLog(@"vertical x = %f",constant);
-    }
-    
     
     //计算脸部重心和大小
     CGSize faceSize ;
@@ -326,39 +314,24 @@
     [GM2DProcess size:&faceSize forPoints:mark.faceContour.normalizedPoints transform:transsize count:mark.faceContour.pointCount];
     
     //NSLog(@"weight point(%f,%f), size:%f,%f", faceWeightPoint.x, faceWeightPoint.y, faceSize.width, faceSize.height);
-    //依据重心位置求解
+    //依据重心位置求解摆头角度
     CGFloat shouldX = constant;
     if (slope) {
         shouldX = (faceWeightPoint.y - constant)/slope;
     }
     CGFloat yRotate = -2.0*(faceWeightPoint.x - shouldX )/faceSize.width;
     //NSLog(@"y rotation:%f",yRotate);
-    
     [self updateHeadRotation:SCNVector3Make(0, yRotate, leftRightSlope)];
     
     //眼睛参数
-    CGSize leftEyeSize;
-    CGFloat leftEyeRotate;
-    static CGFloat max = -100;
-    static CGFloat min = 100;
-    static CGFloat average = 0.22;
-    [GM2DProcess size:&leftEyeSize forPoints:mark.leftEye.normalizedPoints transform:transsize count:mark.leftEye.pointCount];
-    leftEyeRotate = leftEyeSize.height/leftEyeSize.width;
-    
-    if (faceSize.width > 0.4 && leftEyeRotate < 0.3 && leftEyeRotate> 0.18) {
-        if (max < leftEyeRotate) {
-            max = leftEyeRotate;
-        }
-        if (min > leftEyeRotate) {
-            min = leftEyeRotate;
-        }
-        average = 0.2*leftEyeRotate + 0.8*average;
-    NSLog(@"left eye rotate:%f, max:%f, min:%f",leftEyeRotate, max, min);
-    }
-    else {
-        NSLog(@"bad eye");
-    }
-    [self updateLeftEyeOpening:(leftEyeRotate - min)/(max - min)];
+    CGFloat leftOpening = [self.calculateLandmark eyeOpeningForPoint:mark.leftEye.normalizedPoints
+                                                          transform:trans
+                                                              count:mark.leftEye.pointCount];
+    CGFloat rightOpening = [self.calculateLandmark eyeOpeningForPoint:mark.rightEye.normalizedPoints
+                                                           transform:trans
+                                                               count:mark.rightEye.pointCount];
+    [self updateLeftEyeOpening:leftOpening];
+    [self updateRightEyeOpening:rightOpening];
 }
 
 - (void)updateHeadRotation:(SCNVector3) vector3 {
@@ -368,14 +341,17 @@
 }
 
 - (void)updateLeftEyeOpening:(CGFloat)scale {
-    NSLog(@"left eye scale:%f",scale);
+    //NSLog(@"left eye scale:%f",scale);
     SCNNode * leftEye = [self.theScene.rootNode childNodeWithName:@"eyes_r_skins_up" recursively:YES];
-    leftEye.eulerAngles = SCNVector3Make(100*scale* M_PI / 180, 0, 0);
+    [self updateEyeOpening:leftEye scale:scale];
 }
 
 - (void)updateRightEyeOpening:(CGFloat)scale {
-    SCNNode * leftEye = [self.theScene.rootNode childNodeWithName:@"eyes_l_skins_up" recursively:YES];
-    leftEye.eulerAngles = SCNVector3Make(100*scale* M_PI / 180, 0, 0);
+    SCNNode * rightEye = [self.theScene.rootNode childNodeWithName:@"eyes_l_skins_up" recursively:YES];
+    [self updateEyeOpening:rightEye scale:scale];
 }
 
+- (void)updateEyeOpening:(SCNNode*)eye scale:(CGFloat)scale {
+    eye.eulerAngles = SCNVector3Make(100.0* (1.0-scale)* M_PI / 180, 0, 0);;
+}
 @end
