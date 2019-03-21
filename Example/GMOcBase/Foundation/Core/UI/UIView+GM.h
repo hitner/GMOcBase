@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)enableFloatable:(BOOL)constrainToBound;
 
+/* 添加模糊效果，作为subview*/
+- (UIVisualEffectView *)addBlurEffect:(UIBlurEffectStyle)style;
 @end
 
 NS_ASSUME_NONNULL_END

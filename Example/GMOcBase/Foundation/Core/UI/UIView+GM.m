@@ -79,4 +79,13 @@
     }
 }
 
+- (UIVisualEffectView *)addBlurEffect:(UIBlurEffectStyle)style {
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:style];
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    [effectView setUserInteractionEnabled:NO];
+    effectView.frame = self.bounds;
+    [self addSubview:effectView];
+    return effectView;
+}
+
 @end

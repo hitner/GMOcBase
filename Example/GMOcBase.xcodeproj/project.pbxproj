@@ -42,6 +42,7 @@
 		F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D7217834C6009F2ED3 /* GMBaseViewController.m */; };
 		F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */; };
 		F17CF9DD217834E1009F2ED3 /* GMTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */; };
+		F18EF37522422926008B46BC /* GMAppProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = F18EF37422422926008B46BC /* GMAppProfile.m */; };
 		F1A0923E21ED8896003C1856 /* GMCalculateLandmark.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A0923D21ED8896003C1856 /* GMCalculateLandmark.m */; };
 		F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6797219AFCBF007BDA24 /* GMFaceTrackViewController.m */; };
 		F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB679B219BF313007BDA24 /* GMAVUtility.m */; };
@@ -121,6 +122,9 @@
 		F17CF9D9217834E1009F2ED3 /* GMTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
 		F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
 		F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMTestViewController.xib; sourceTree = "<group>"; };
+		F18EF3722241DEFE008B46BC /* UI.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UI.md; sourceTree = "<group>"; };
+		F18EF37322422926008B46BC /* GMAppProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMAppProfile.h; sourceTree = "<group>"; };
+		F18EF37422422926008B46BC /* GMAppProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMAppProfile.m; sourceTree = "<group>"; };
 		F1A0923C21ED8896003C1856 /* GMCalculateLandmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMCalculateLandmark.h; sourceTree = "<group>"; };
 		F1A0923D21ED8896003C1856 /* GMCalculateLandmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMCalculateLandmark.m; sourceTree = "<group>"; };
 		F1BB6796219AFCBF007BDA24 /* GMFaceTrackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMFaceTrackViewController.h; sourceTree = "<group>"; };
@@ -256,27 +260,34 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		F102F0CD21C3A8710054898F /* View */ = {
+		F102F0CD21C3A8710054898F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				F15D739A21C746DA005CBF05 /* DebugView */,
-				F102F0CE21C3B4020054898F /* GMFloatableView.h */,
-				F102F0CF21C3B4020054898F /* GMFloatableView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F13F83D221A3FD43000DE61B /* CocoaCategory */ = {
-			isa = PBXGroup;
-			children = (
+				F18EF3722241DEFE008B46BC /* UI.md */,
 				F13F83D321A3FD87000DE61B /* UIColor+GM.h */,
 				F13F83D421A3FD87000DE61B /* UIColor+GM.m */,
 				F111557921B7BFB300AA2DEA /* UIView+GM.h */,
 				F111557A21B7BFB300AA2DEA /* UIView+GM.m */,
+				F15D739A21C746DA005CBF05 /* DebugView */,
+				F102F0CE21C3B4020054898F /* GMFloatableView.h */,
+				F102F0CF21C3B4020054898F /* GMFloatableView.m */,
+				F18EF37322422926008B46BC /* GMAppProfile.h */,
+				F18EF37422422926008B46BC /* GMAppProfile.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F13F83D221A3FD43000DE61B /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				F17CF9D32178330A009F2ED3 /* GMCore.h */,
+				F17CF9D42178330A009F2ED3 /* GMCore.m */,
+				F17CF9CD21771584009F2ED3 /* GMHttpManager.h */,
+				F17CF9CE21771584009F2ED3 /* GMHttpManager.m */,
 				F111557C21B7CBD300AA2DEA /* NSString+GM.h */,
 				F111557D21B7CBD300AA2DEA /* NSString+GM.m */,
 			);
-			path = CocoaCategory;
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		F13F83D821A55350000DE61B /* 3DScene */ = {
@@ -358,10 +369,8 @@
 			isa = PBXGroup;
 			children = (
 				F14547D721A2AA3300E26638 /* GMMacro.h */,
-				F17CF9D32178330A009F2ED3 /* GMCore.h */,
-				F17CF9D42178330A009F2ED3 /* GMCore.m */,
-				F17CF9CD21771584009F2ED3 /* GMHttpManager.h */,
-				F17CF9CE21771584009F2ED3 /* GMHttpManager.m */,
+				F13F83D221A3FD43000DE61B /* Foundation */,
+				F102F0CD21C3A8710054898F /* UI */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -392,10 +401,8 @@
 		F1BB6799219BF2BF007BDA24 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				F13F83D221A3FD43000DE61B /* CocoaCategory */,
 				F1BB679A219BF313007BDA24 /* GMAVUtility.h */,
 				F1BB679B219BF313007BDA24 /* GMAVUtility.m */,
-				F102F0CD21C3A8710054898F /* View */,
 				F15D73A621C8E599005CBF05 /* algorithm */,
 			);
 			path = Utility;
@@ -622,6 +629,7 @@
 				F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */,
 				F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */,
 				F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */,
+				F18EF37522422926008B46BC /* GMAppProfile.m in Sources */,
 				F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */,
 				F12EB7C821CA3E4A0049C8A8 /* GM1DWaveFilter.m in Sources */,
 				F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */,

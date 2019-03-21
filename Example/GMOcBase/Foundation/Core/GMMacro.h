@@ -24,13 +24,13 @@ __strong __typeof(&*weakSelf)self = weakSelf_gm;
 + (instancetype)sharedObject;
 
 #define IMPLEMENT_SIGNALTON(__TYPE__)       \
-+ (instancetype)sharedObject {              \
-static dispatch_once_t __once;              \
-static __TYPE__ * __instance = nil;         \
-dispatch_once(&__once, ^{                   \
-__instance = [[__TYPE__ alloc] init];       \
-});                                         \
-return __instance;                          \
+    + (instancetype)sharedObject {          \
+        static dispatch_once_t __once;      \
+        static __TYPE__ * __instance = nil; \
+        dispatch_once(&__once, ^{                   \
+            __instance = [[__TYPE__ alloc] init];   \
+        });                                         \
+    return __instance;                          \
 }
 
 //高宽比
