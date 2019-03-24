@@ -10,7 +10,6 @@
 #import "GMFloatableView.h"
 #import "GMDebugControlView.h"
 #import "GMFaceTrack.h"
-#import "GMMacro.h"
 #import "UIView+GM.h"
 #import "GM2DProcess.h"
 #import "GMCalculateLandmark.h"
@@ -65,7 +64,7 @@
 - (void)beginFaceTrack {
     self.faceTrack = [[GMFaceTrack alloc] init];
     self.faceTrack.delegate = self;
-    UIView * resultView = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 160, 160*heightWidthRadio)];
+    UIView * resultView = [[UIView alloc] initWithFrame:CGRectMake(100, 40, 160, 160* APP_PROFILE.screenWHRatio)];
     [self.faceTrack showPreviewOnView:resultView withFrame:resultView.bounds];
     //[self.faceTrack start];
     [self.view addSubview:resultView];

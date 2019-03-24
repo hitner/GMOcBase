@@ -27,7 +27,7 @@ DECLARE_SIGNALTON()
 - (CGFloat)screenHeight;
 /** 宽除以高的值
  */
-- (CGFloat)screenRatio;
+- (CGFloat)screenWHRatio;
 
 @end
 

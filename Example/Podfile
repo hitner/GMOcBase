@@ -1,4 +1,3 @@
-source 'https://gitlab.lizhi.fm/iOSPods/LizhiSpecs.git'
 
 use_frameworks!
 

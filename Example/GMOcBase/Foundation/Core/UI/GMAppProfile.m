@@ -41,7 +41,7 @@ IMPLEMENT_SIGNALTON(GMAppProfile)
 }
 /** 宽除以高的值
  */
-- (CGFloat)screenRatio {
+- (CGFloat)screenWHRatio {
     return self.screenSize.width/self.screenSize.height;
 }
 @end
