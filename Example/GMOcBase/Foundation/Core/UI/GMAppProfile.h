@@ -11,9 +11,24 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define APP_PROFILE [GMAppProfile sharedObject]
+
 @interface GMAppProfile : NSObject
-@property (nonatomic,readonly) BOOL isIphoneXSerial;
 DECLARE_SIGNALTON()
+@property (nonatomic,readonly) BOOL isIphoneXSerial;
+
+//44 or 20
+@property (nonatomic,readonly) CGFloat statusBarHeight;
+
+
+@property (nonatomic,readonly) CGSize screenSize;
+
+- (CGFloat)screenWidth;
+- (CGFloat)screenHeight;
+/** 宽除以高的值
+ */
+- (CGFloat)screenRatio;
+
 @end
 
 NS_ASSUME_NONNULL_END

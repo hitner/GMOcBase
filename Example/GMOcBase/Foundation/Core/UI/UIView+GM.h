@@ -16,12 +16,29 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)midY;
 - (CGFloat)halfHeight;
 
-- (void)roundingCorners:(UIRectCorner)corners;
+/* 增加圆角4个角的圆角 */
+- (void)maskCorners:(UIRectCorner)corners;
 
+/* 使之能够手指拖动 */
 - (void)enableFloatable:(BOOL)constrainToBound;
 
 /* 添加模糊效果，作为subview*/
 - (UIVisualEffectView *)addBlurEffect:(UIBlurEffectStyle)style;
+
+/* 添加颜色渐变层 */
+- (CAGradientLayer *)addGradientWithLeftColor:(UIColor*) startColor
+                      rightColor:(UIColor*) endColor;
+
+- (CAGradientLayer *)addGradientWithTopColor:(UIColor*) startColor
+                    bottomColor:(UIColor*) endColor;
+
+- (CAGradientLayer *)addGradientWithColors:(NSArray<UIColor*>*) colors
+                                 locations:(NSArray<NSNumber*>*)locations
+                                startPoint:(CGPoint)startPoint
+                                  endPoint:(CGPoint)endPoint;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

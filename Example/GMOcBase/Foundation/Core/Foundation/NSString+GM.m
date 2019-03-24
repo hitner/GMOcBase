@@ -22,7 +22,7 @@
     }
 }
 
-- (NSInteger)integerValueOfHex {
+- (NSInteger)hexIntegerValue {
     unsigned long long outVal = 0;
     NSScanner* scanner = [NSScanner scannerWithString:self];
     BOOL ret = [scanner scanHexLongLong:&outVal];
@@ -30,4 +30,21 @@
     return outVal;
 }
 
+/* 计算最适合的长度 */
+- (CGFloat)fitWidthWithFontSize:(CGFloat)fontSize {
+    NSAssert(fontSize > 1.0, @"font size error");
+    return [self fitSizeWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
+                            font:[UIFont systemFontOfSize:fontSize]].width;
+}
+
+/* 计算最适合size */
+- (CGSize)fitSizeWithSize:(CGSize)size
+                     font:(UIFont*)font {
+    NSAssert(font, @"font is nil");
+    CGRect labelRect = [self boundingRectWithSize:size
+                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                       attributes:@{NSFontAttributeName :font}
+                                          context:nil];
+    return labelRect.size;
+}
 @end

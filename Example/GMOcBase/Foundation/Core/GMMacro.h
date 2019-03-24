@@ -34,7 +34,8 @@ __strong __typeof(&*weakSelf)self = weakSelf_gm;
 }
 
 //高宽比
-#define heightWidthRadio (CGRectGetHeight([UIScreen mainScreen].bounds)/CGRectGetWidth([UIScreen mainScreen].bounds))
+#define HALF_MINUS(x,y) ((x-y)/2.0)
+#define HALF_SUM(x,y) ((x+y)/2.0)
 
 
 #endif /* GMMacro_h */

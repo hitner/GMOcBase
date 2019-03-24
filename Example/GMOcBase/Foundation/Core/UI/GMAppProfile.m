@@ -14,7 +14,14 @@ IMPLEMENT_SIGNALTON(GMAppProfile)
 
 - (instancetype)init {
     self = [super init];
-    //-----
+    [self initReadonlyValue];
+    
+    return self;
+}
+
+- (void)initReadonlyValue {
+    _screenSize = [[UIScreen mainScreen] bounds].size;
+    
     _isIphoneXSerial = NO;
     if (@available(iOS 11.0, *)) {
         UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
@@ -22,7 +29,19 @@ IMPLEMENT_SIGNALTON(GMAppProfile)
             _isIphoneXSerial = YES;
         }
     }
-    //-----
-    return self;
+    
+}
+
+- (CGFloat)screenWidth {
+    return self.screenSize.width;
+}
+
+- (CGFloat)screenHeight {
+    return self.screenSize.height;
+}
+/** 宽除以高的值
+ */
+- (CGFloat)screenRatio {
+    return self.screenSize.width/self.screenSize.height;
 }
 @end

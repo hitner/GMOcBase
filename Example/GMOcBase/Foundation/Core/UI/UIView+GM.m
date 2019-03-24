@@ -22,7 +22,7 @@
     return CGRectGetHeight(self.frame)/2.f;
 }
 
-- (void)roundingCorners:(UIRectCorner)corners {
+- (void)maskCorners:(UIRectCorner)corners {
     CGFloat radii = [self halfHeight];
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
                                                    byRoundingCorners:corners
@@ -88,4 +88,39 @@
     return effectView;
 }
 
+
+- (CAGradientLayer *)addGradientWithLeftColor:(UIColor*) startColor
+                                   rightColor:(UIColor*) endColor {
+    
+    return [self addGradientWithColors:@[startColor, endColor]
+                             locations:@[@(0),@(1)]
+                            startPoint:CGPointMake(0, 0.5)
+                              endPoint:CGPointMake(1, 0.5)];
+}
+
+- (CAGradientLayer *)addGradientWithTopColor:(UIColor*) startColor
+                                 bottomColor:(UIColor*) endColor {
+    return [self addGradientWithColors:@[startColor, endColor]
+                             locations:@[@(0),@(1)]
+                            startPoint:CGPointMake(0.5, 0)
+                              endPoint:CGPointMake(0.5, 1)];
+}
+
+- (CAGradientLayer *)addGradientWithColors:(NSArray<UIColor*>*) colors
+                                 locations:(NSArray<NSNumber*>*)locations
+                                startPoint:(CGPoint)startPoint
+                                  endPoint:(CGPoint)endPoint {
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = self.bounds;
+    NSMutableArray *cgcolors = [NSMutableArray array];
+    for (UIColor *color in colors) {
+        [cgcolors addObject:(id)color.CGColor];
+    }
+    gradientLayer.colors = cgcolors;
+    gradientLayer.locations = locations;
+    gradientLayer.startPoint = startPoint;
+    gradientLayer.endPoint = endPoint;
+    [self.layer addSublayer:gradientLayer];
+    return gradientLayer;
+}
 @end
