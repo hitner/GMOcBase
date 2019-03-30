@@ -7,6 +7,8 @@
 //
 
 #import "GMMainTabBarController.h"
+//Core
+#import "UIViewController+GM.h"
 
 #import "GMTestViewController.h"
 
@@ -29,7 +31,6 @@
 - (instancetype)init {
     self = [super init];
     UIViewController * vc1 = [[GMTestViewController alloc] init];
-    vc1.view.backgroundColor = [UIColor redColor];
     UIViewController * vc2 = [[UIViewController alloc] init];
     UIViewController * vc3 = [[UIViewController alloc] init];
     
@@ -39,12 +40,14 @@
     vc2.tabBarItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemContacts tag:1];
 
     self.viewControllers = @[vc1, vc2, vc3];
+    [self setNavigationTitle:@"首页"];
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 /*

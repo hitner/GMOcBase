@@ -12,19 +12,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (GM)
 
-/* 将json字符串转化为NSDictionary或NSArray */
+/// 将json字符串转化为NSDictionary或NSArray
 - (id)jsonObject;
 
-/* 16进制字符串转整数 */
+/// 16进制字符串转整数
 - (NSInteger)hexIntegerValue;
 
-/* 计算最适合的长度 */
+/// 计算最适合的长度
 - (CGFloat)fitWidthWithFontSize:(CGFloat)fontSize;
 
-/* 计算最适合size */
+/// 计算最适合size
 - (CGSize)fitSizeWithSize:(CGSize)size
                       font:(UIFont*)font;
 
+/// 移除头尾空白符（不含换行）
+- (NSString*)stringByTrimmingWhitespace;
+
+/// 移除头尾的空白和换行
+- (NSString*)stringByTrimmingWhitespaceAndNewline;
 @end
 
 NS_ASSUME_NONNULL_END

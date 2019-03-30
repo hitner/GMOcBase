@@ -8,6 +8,7 @@
 
 #import "GMAppDelegate.h"
 
+#import "GMApperance.h"
 #import "GMNavigationViewController.h"
 
 @implementation GMAppDelegate
@@ -22,6 +23,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window setRootViewController: [GMNavigationViewController sharedObject]];
     [self.window makeKeyAndVisible];
+    
+    [[GMApperance sharedObject] initNavigationBarApperance];
     return YES;
 }
 

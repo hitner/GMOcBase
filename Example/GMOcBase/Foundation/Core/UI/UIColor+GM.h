@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (GM)
 
+/// from hex integer
++ (instancetype)RGB:(NSInteger)hexValue;
+
 + (instancetype)colorFromRGBInteger:(NSInteger)hexvalue alpha:(CGFloat)alpha;
 
 /**

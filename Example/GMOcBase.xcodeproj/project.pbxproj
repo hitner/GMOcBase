@@ -46,6 +46,12 @@
 		F1A0923E21ED8896003C1856 /* GMCalculateLandmark.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A0923D21ED8896003C1856 /* GMCalculateLandmark.m */; };
 		F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6797219AFCBF007BDA24 /* GMFaceTrackViewController.m */; };
 		F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB679B219BF313007BDA24 /* GMAVUtility.m */; };
+		F1C0DD22224E1DAE004013EC /* UIButton+App.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C0DD21224E1DAE004013EC /* UIButton+App.m */; };
+		F1C188B5224B16BA00A30B6F /* UIViewController+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C188B4224B16BA00A30B6F /* UIViewController+GM.m */; };
+		F1C188BE224CC94000A30B6F /* UIImageView+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C188BD224CC94000A30B6F /* UIImageView+GM.m */; };
+		F1C188C1224CD5D500A30B6F /* UIImage+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C188C0224CD5D500A30B6F /* UIImage+GM.m */; };
+		F1C188C5224DC8F400A30B6F /* GMApperance.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C188C3224DC8F400A30B6F /* GMApperance.m */; };
+		F1C188C8224DC96800A30B6F /* GMPrimeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C188C7224DC96800A30B6F /* GMPrimeButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +137,18 @@
 		F1BB6797219AFCBF007BDA24 /* GMFaceTrackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMFaceTrackViewController.m; sourceTree = "<group>"; };
 		F1BB679A219BF313007BDA24 /* GMAVUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMAVUtility.h; sourceTree = "<group>"; };
 		F1BB679B219BF313007BDA24 /* GMAVUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMAVUtility.m; sourceTree = "<group>"; };
+		F1C0DD20224E1DAE004013EC /* UIButton+App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+App.h"; sourceTree = "<group>"; };
+		F1C0DD21224E1DAE004013EC /* UIButton+App.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+App.m"; sourceTree = "<group>"; };
+		F1C188B3224B16BA00A30B6F /* UIViewController+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GM.h"; sourceTree = "<group>"; };
+		F1C188B4224B16BA00A30B6F /* UIViewController+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GM.m"; sourceTree = "<group>"; };
+		F1C188BC224CC94000A30B6F /* UIImageView+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+GM.h"; sourceTree = "<group>"; };
+		F1C188BD224CC94000A30B6F /* UIImageView+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+GM.m"; sourceTree = "<group>"; };
+		F1C188BF224CD5D400A30B6F /* UIImage+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+GM.h"; sourceTree = "<group>"; };
+		F1C188C0224CD5D500A30B6F /* UIImage+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GM.m"; sourceTree = "<group>"; };
+		F1C188C3224DC8F400A30B6F /* GMApperance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMApperance.m; sourceTree = "<group>"; };
+		F1C188C4224DC8F400A30B6F /* GMApperance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMApperance.h; sourceTree = "<group>"; };
+		F1C188C6224DC96800A30B6F /* GMPrimeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMPrimeButton.h; sourceTree = "<group>"; };
+		F1C188C7224DC96800A30B6F /* GMPrimeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMPrimeButton.m; sourceTree = "<group>"; };
 		FACF5AFE41AAE9E1697894CD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -268,6 +286,12 @@
 				F13F83D421A3FD87000DE61B /* UIColor+GM.m */,
 				F111557921B7BFB300AA2DEA /* UIView+GM.h */,
 				F111557A21B7BFB300AA2DEA /* UIView+GM.m */,
+				F1C188B3224B16BA00A30B6F /* UIViewController+GM.h */,
+				F1C188B4224B16BA00A30B6F /* UIViewController+GM.m */,
+				F1C188BC224CC94000A30B6F /* UIImageView+GM.h */,
+				F1C188BD224CC94000A30B6F /* UIImageView+GM.m */,
+				F1C188BF224CD5D400A30B6F /* UIImage+GM.h */,
+				F1C188C0224CD5D500A30B6F /* UIImage+GM.m */,
 				F15D739A21C746DA005CBF05 /* DebugView */,
 				F102F0CE21C3B4020054898F /* GMFloatableView.h */,
 				F102F0CF21C3B4020054898F /* GMFloatableView.m */,
@@ -353,6 +377,7 @@
 			children = (
 				F17CF9CB21771405009F2ED3 /* Core */,
 				F1BB6799219BF2BF007BDA24 /* Utility */,
+				F1C188C2224DC8F400A30B6F /* SpecificApp */,
 				F17CF9CC2177152C009F2ED3 /* BaseBusiness */,
 			);
 			path = Foundation;
@@ -408,6 +433,19 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		F1C188C2224DC8F400A30B6F /* SpecificApp */ = {
+			isa = PBXGroup;
+			children = (
+				F1C188C3224DC8F400A30B6F /* GMApperance.m */,
+				F1C188C4224DC8F400A30B6F /* GMApperance.h */,
+				F1C188C6224DC96800A30B6F /* GMPrimeButton.h */,
+				F1C188C7224DC96800A30B6F /* GMPrimeButton.m */,
+				F1C0DD20224E1DAE004013EC /* UIButton+App.h */,
+				F1C0DD21224E1DAE004013EC /* UIButton+App.m */,
+			);
+			path = SpecificApp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -460,7 +498,7 @@
 				ORGANIZATIONNAME = hitner;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = RGU37X3Z9W;
+						DevelopmentTeam = 8RCJH95LG5;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -472,6 +510,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -574,25 +613,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				F15D73A521C88C90005CBF05 /* GMFaceTrack.m in Sources */,
+				F1C188C1224CD5D500A30B6F /* UIImage+GM.m in Sources */,
 				F15D73AC21C8E722005CBF05 /* GM2DProcess.m in Sources */,
 				F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */,
 				F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */,
 				F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */,
 				F18EF37522422926008B46BC /* GMAppProfile.m in Sources */,
+				F1C188BE224CC94000A30B6F /* UIImageView+GM.m in Sources */,
 				F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */,
 				F12EB7C821CA3E4A0049C8A8 /* GM1DWaveFilter.m in Sources */,
 				F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */,
 				F102F0D021C3B4020054898F /* GMFloatableView.m in Sources */,
+				F1C188C8224DC96800A30B6F /* GMPrimeButton.m in Sources */,
 				F15D739D21C79AA9005CBF05 /* GMDebugControlView.m in Sources */,
 				6003F59E195388D20070C39A /* GMAppDelegate.m in Sources */,
 				F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */,
 				F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */,
 				F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */,
+				F1C188C5224DC8F400A30B6F /* GMApperance.m in Sources */,
+				F1C0DD22224E1DAE004013EC /* UIButton+App.m in Sources */,
 				F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				F1A0923E21ED8896003C1856 /* GMCalculateLandmark.m in Sources */,
 				F111557E21B7CBD300AA2DEA /* NSString+GM.m in Sources */,
 				F111557B21B7BFB300AA2DEA /* UIView+GM.m in Sources */,
+				F1C188B5224B16BA00A30B6F /* UIViewController+GM.m in Sources */,
 				F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */,
 				F15D73A021C79C4B005CBF05 /* GMDebugItem.m in Sources */,
 			);
@@ -722,13 +767,13 @@
 			baseConfigurationReference = 2A22D64ED3BDAED90DB3A791 /* Pods-GMOcBase_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RGU37X3Z9W;
+				DEVELOPMENT_TEAM = 8RCJH95LG5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = huaian.lizhi.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -739,13 +784,13 @@
 			baseConfigurationReference = 4CB33F27FD973891F7305E0A /* Pods-GMOcBase_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RGU37X3Z9W;
+				DEVELOPMENT_TEAM = 8RCJH95LG5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = huaian.lizhi.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

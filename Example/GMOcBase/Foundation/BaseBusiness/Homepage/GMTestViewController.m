@@ -8,10 +8,16 @@
 
 #import "GMTestViewController.h"
 
+//VC
 #import "GMMainTabBarController.h"
-
-#import "GMCore.h"
 #import "GMFaceTrackViewController.h"
+//core
+#import "UIViewController+GM.h"
+#import "GMCore.h"
+//App
+#import "GMPrimeButton.h"
+#import "UIButton+App.h"
+
 #import "GMAVUtility.h"
 
 
@@ -27,7 +33,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-   
+    GMPrimeButton * button = [[GMPrimeButton alloc] initWithFrame:CGRectMake(0, 200, 100, 44)];
+    [button setTitle:@"LOGIN" forState:UIControlStateNormal];
+    [self.view addSubview:button];
+    
+    UIButton * b1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    
+    [b1 setTitle:@"KKKKKKj" forState:UIControlStateNormal];
+    b1.backgroundColor = [UIColor yellowColor];
+    b1.tintColor = [UIColor blackColor];
+    b1.frame = CGRectMake(0, 250, 100, 44);
+    [self.view addSubview:b1];
+    
+    UIButton  * b2  = [UIButton primeButtonWithFrame:CGRectMake(10, 300, 100, 44) title:@"ksjdf"];
+    [self.view addSubview:b2];
 }
 
 
@@ -49,35 +68,19 @@
 
 
 - (IBAction)touchUpInsideButton:(id)sender {
-    NSMutableArray * ma = [[NSMutableArray alloc] initWithArray:@[@(1),@(3),@(2)]];
-    [ma sortUsingComparator:^NSComparisonResult(NSNumber*  _Nonnull obj1, NSNumber*  _Nonnull obj2) {
-        if (obj1.integerValue > obj2.integerValue) {
-            return NSOrderedAscending;
-        }
-        else {
-            return NSOrderedDescending;
-        }
-    }];
+//    NSMutableArray * ma = [[NSMutableArray alloc] initWithArray:@[@(1),@(3),@(2)]];
+//    [ma sortUsingComparator:^NSComparisonResult(NSNumber*  _Nonnull obj1, NSNumber*  _Nonnull obj2) {
+//        if (obj1.integerValue > obj2.integerValue) {
+//            return NSOrderedAscending;
+//        }
+//        else {
+//            return NSOrderedDescending;
+//        }
+//    }];
+    UIViewController * test = [[UIViewController alloc]init];
+    [test setNavigationTitle:@"你好啊"];
+    [self.navigationController pushViewController:test animated:YES];
     
-    /*[[GMCore singletonCore].concurrentQueue addOperationWithBlock:^{
-        NSLog(@"start operation");
-        CGFloat k = 9.2324234f;
-        CGFloat sum = k;
-        for (NSInteger i = 0; i < 0x99FFFFF; i++) {
-            if (i%2) {
-                sum -= (sum*0.49988);
-            }
-            else {
-                sum += (sum*1.947349);
-            }
-        }
-        NSLog(@"finish operation");
-        
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            NSLog(@"sum:%@", @(sum));
-        }];
-        
-    }];*/
 }
 
 

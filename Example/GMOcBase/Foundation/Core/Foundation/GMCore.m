@@ -10,16 +10,7 @@
 
 @implementation GMCore
 
-+ (instancetype)singletonCore;
-{
-    static GMCore *_sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedInstance = [[self alloc] init];
-    });
-    
-    return _sharedInstance;
-}
+IMPLEMENT_SIGNALTON(GMCore)
 
 - (instancetype)init {
     self = [super init];
@@ -30,4 +21,7 @@
     return self;
 }
 
+- (NSOperationQueue*)mainQueue {
+    return [NSOperationQueue mainQueue];
+}
 @end

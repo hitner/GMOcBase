@@ -8,10 +8,19 @@
 
 #import "UIColor+GM.h"
 
+
+
 @implementation UIColor (GM)
 
++ (instancetype)RGB:(NSInteger)hexValue {
+    return [self colorFromRGBInteger:hexValue alpha:1.0];
+}
+
 + (instancetype)colorFromRGBInteger:(NSInteger)hexvalue alpha:(CGFloat)alpha {
-    return [UIColor colorWithRed:hexvalue>>16 green:(hexvalue>>8)&0xFF blue:hexvalue&0xFF alpha:alpha];
+    return [UIColor colorWithRed:(hexvalue>>16)/255.f
+                           green:((hexvalue>>8)&0xFF)/255.f
+                            blue:(hexvalue&0xFF)/255.f
+                           alpha:alpha];
 }
 
 /**

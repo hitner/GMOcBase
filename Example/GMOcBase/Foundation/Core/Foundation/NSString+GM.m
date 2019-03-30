@@ -47,4 +47,14 @@
                                           context:nil];
     return labelRect.size;
 }
+
+/// 移除头尾空白符（不含换行）
+- (NSString*)stringByTrimmingWhitespace {
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
+/// 移除头尾的空白和换行
+- (NSString*)stringByTrimmingWhitespaceAndNewline {
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
 @end
