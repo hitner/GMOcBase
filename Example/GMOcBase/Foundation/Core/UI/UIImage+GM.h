@@ -11,13 +11,20 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (GM)
+
+/// 异步返回图片
++ (void)imageWithIcon:(NSString *)icon
+           foregroundColor:(UIColor *)iconColor
+           backgroundColor:(UIColor *)bgColor
+                      font:(UIFont*)font
+               result:( void (^) (UIImage*) ) block;
+
+
+/// font 的某个字符转图片
 + (UIImage *)imageWithIcon:(NSString *)icon
            foregroundColor:(UIColor *)iconColor
            backgroundColor:(UIColor *)bgColor
-                      size:(CGFloat)fontSize
-                  fontFile:(NSString *)fontName;
-
-
+                      font:(UIFont*)font;
 @end
 
 NS_ASSUME_NONNULL_END

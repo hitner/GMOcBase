@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 DECLARE_SIGNALTON()
 
+- (void)initAll;
+
 - (void)initNavigationBarApperance;
 
 @property(nonatomic, readonly) UIColor * primeColor;

@@ -17,6 +17,9 @@
 //App
 #import "GMPrimeButton.h"
 #import "UIButton+App.h"
+#import "UIImageView+App.h"
+#import "UIImage+App.h"
+#import "GMIcons.h"
 
 #import "GMAVUtility.h"
 
@@ -47,6 +50,19 @@
     
     UIButton  * b2  = [UIButton primeButtonWithFrame:CGRectMake(10, 300, 100, 44) title:@"ksjdf"];
     [self.view addSubview:b2];
+    
+    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 200, 24, 24)];
+    [self.view addSubview:imageView];
+    
+    UIImage * image = [UIImage imageWithIcon:kIconFontKaraokeHasLyric foregroundColor:[UIColor redColor] backgroundColor:[UIColor yellowColor] size:24.f];
+    imageView.image = image;
+    
+    UIImageView * imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(240,425 , 40, 40)];
+    [self.view addSubview:imageView2];
+    [imageView2 setIcon:kIconFontCommonExpand
+       foregroundColor:[UIColor blackColor]
+       backgroundColor:[UIColor yellowColor]];
+    
 }
 
 

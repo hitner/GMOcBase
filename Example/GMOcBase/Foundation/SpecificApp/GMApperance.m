@@ -15,8 +15,18 @@ IMPLEMENT_SIGNALTON(GMApperance)
 
 - (instancetype)init {
     self = [super init];
-    _primeColor = [UIColor RGB:0xA0522D];
+    if (self) {
+        [self initReadonly_];
+    }
     return self;
+}
+
+- (void)initReadonly_ {
+    _primeColor = [UIColor RGB:0xA0522D];
+}
+
+- (void)initAll {
+    
 }
 
 - (void)initNavigationBarApperance {

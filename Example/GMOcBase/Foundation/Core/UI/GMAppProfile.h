@@ -25,10 +25,12 @@ DECLARE_SIGNALTON()
 
 - (CGFloat)screenWidth;
 - (CGFloat)screenHeight;
-/** 宽除以高的值
+/**
+ 宽除以高的值
  */
 - (CGFloat)screenWHRatio;
 
+- (void)logInfo;
 @end
 
 NS_ASSUME_NONNULL_END

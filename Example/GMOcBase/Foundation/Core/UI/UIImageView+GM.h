@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  will set in async
  */
 - (void)setIcon:(NSString*)iconName
-       fontFile:(NSString*)fileName
+       fontFile:(NSString*)fontFamily
 foregroundColor:(UIColor*) iconColor
 backgroundColor:(UIColor*) backColor;
 

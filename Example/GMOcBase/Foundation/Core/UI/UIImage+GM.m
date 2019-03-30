@@ -9,14 +9,31 @@
 #import "UIImage+GM.h"
 
 @implementation UIImage (GM)
++ (void)imageWithIcon:(NSString *)icon
+      foregroundColor:(UIColor *)iconColor
+      backgroundColor:(UIColor *)bgColor
+                 font:(UIFont*)font
+               result:( void (^) (UIImage*) ) block;
+{
+    [[GMCore sharedObject].concurrentQueue addOperationWithBlock:^{
+        UIImage * image = [UIImage imageWithIcon:icon
+                                 foregroundColor:iconColor
+                                 backgroundColor:bgColor
+                                            font:font];
+        if (block) {
+            [[GMCore sharedObject].mainQueue addOperationWithBlock:^{
+                block(image);
+            }];
+        }
+    }];
+}
+
+/// font 的某个字符转图片
 + (UIImage *)imageWithIcon:(NSString *)icon
            foregroundColor:(UIColor *)iconColor
            backgroundColor:(UIColor *)bgColor
-                      size:(CGFloat)fontSize
-                  fontFile:(NSString *)fontName
+                      font:(UIFont*)font
 {
-    //LZLogDurationBegin;
-    UIFont *font = [UIFont systemFontOfSize:fontSize];
     if (icon == nil || [icon length] == 0 || font == nil) {
         return nil;
     }
@@ -36,21 +53,22 @@
                                  NSParagraphStyleAttributeName: style,
                                  };
     
-    // Calc size
     NSAttributedString*attString = [[NSAttributedString alloc]
                                     initWithString:icon
                                     attributes:attributes];
-    // get the target bounding rect in order to center the icon within the UIImage:
-    NSStringDrawingContext *ctx = [[NSStringDrawingContext alloc] init];
-    CGRect textRect = [attString boundingRectWithSize:CGSizeMake(font.pointSize, font.pointSize)
+    //NSStringDrawingContext *ctx = [[NSStringDrawingContext alloc] init];
+    
+    // Calc size
+    /*CGRect textRect = [attString boundingRectWithSize:CGSizeMake(font.pointSize, font.pointSize)
                                               options:0
                                               context:ctx];
     textRect.origin.x = 0.f;
-    textRect.origin.y = 0.f;
+    textRect.origin.y = 0.f;*/
     
     
     // Draw
-    UIGraphicsBeginImageContextWithOptions(textRect.size, NO, [[UIScreen mainScreen] scale]);
+    CGSize rectSize = CGSizeMake(font.pointSize, font.pointSize);
+    UIGraphicsBeginImageContextWithOptions(rectSize, NO, [[UIScreen mainScreen] scale]);
     
     //// Text Drawing
     [attString drawAtPoint:CGPointZero];

@@ -16,7 +16,10 @@ __weak __typeof(&*self)weakSelf_gm = self;
 
 //局域定义了一个__strong的self指针指向self_weak
 #define strongifySelf \
-__strong __typeof(&*weakSelf)self = weakSelf_gm;
+__strong __typeof(&*weakSelf_gm)self = weakSelf_gm;
+
+#define strongifySelfReturnIfNil strongifySelf \
+if(!self) { return;}
 
 //=================================================================================
 //单例

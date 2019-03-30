@@ -44,4 +44,16 @@ IMPLEMENT_SIGNALTON(GMAppProfile)
 - (CGFloat)screenWHRatio {
     return self.screenSize.width/self.screenSize.height;
 }
+
+- (void)logInfo {
+    
+    NSLog(@"HomeDirectory:%@",NSHomeDirectory());
+    //字体
+    for (NSString * family in [UIFont familyNames]) {
+        NSLog(@"familyNames:%@", family);
+        for (NSString * name in [UIFont fontNamesForFamilyName:family]) {
+            NSLog(@"     font name: %@",name);
+        }
+    }
+}
 @end

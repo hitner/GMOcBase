@@ -17,15 +17,15 @@
 foregroundColor:(UIColor*) iconColor
 backgroundColor:(UIColor*) backColor
 {
-    [[GMCore sharedObject].concurrentQueue addOperationWithBlock:^{
-        UIImage * image= [UIImage imageWithIcon:iconName
-                                foregroundColor:iconColor
-                                backgroundColor:backColor
-                                           size:MIN(CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))
-                                       fontFile:fileName];
-        [[GMCore sharedObject].mainQueue addOperationWithBlock:^{
-            [self setImage:image];
-        }];
+    CGFloat size = MIN(CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
+    weakifySelf
+    [UIImage imageWithIcon:iconName
+           foregroundColor:iconColor
+           backgroundColor:backColor
+                      font:[UIFont fontWithName:fileName size:size]
+                    result:^(UIImage * _Nonnull image) {
+                        strongifySelfReturnIfNil
+        self.image = image;
     }];
 }
 
