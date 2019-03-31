@@ -56,21 +56,9 @@
     NSAttributedString*attString = [[NSAttributedString alloc]
                                     initWithString:icon
                                     attributes:attributes];
-    //NSStringDrawingContext *ctx = [[NSStringDrawingContext alloc] init];
-    
-    // Calc size
-    /*CGRect textRect = [attString boundingRectWithSize:CGSizeMake(font.pointSize, font.pointSize)
-                                              options:0
-                                              context:ctx];
-    textRect.origin.x = 0.f;
-    textRect.origin.y = 0.f;*/
-    
-    
     // Draw
     CGSize rectSize = CGSizeMake(font.pointSize, font.pointSize);
     UIGraphicsBeginImageContextWithOptions(rectSize, NO, [[UIScreen mainScreen] scale]);
-    
-    //// Text Drawing
     [attString drawAtPoint:CGPointZero];
     
     //Image returns
@@ -78,5 +66,10 @@
     UIGraphicsEndImageContext();
 
     return image;
+}
+
+- (void) imageWithURLString:(NSString*)url
+                     result:( void (^) (UIImage* image, NSError*) ) block {
+    
 }
 @end

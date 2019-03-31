@@ -18,9 +18,16 @@ foregroundColor:(UIColor*) iconColor
 backgroundColor:(UIColor*) backColor
 {
     [self setIcon:iconName
-         fontFile:kIconFamilyName
+         fontFamily:kIconFamilyName
   foregroundColor:iconColor
   backgroundColor:backColor];
 }
 
+
+- (void)setIcon:(NSString*)iconName
+foregroundColor:(UIColor*) iconColor {
+    [self setIcon:iconName
+  foregroundColor:iconColor
+  backgroundColor:[UIColor clearColor]];
+}
 @end

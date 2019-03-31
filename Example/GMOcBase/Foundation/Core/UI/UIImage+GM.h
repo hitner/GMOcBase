@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (GM)
 
-/// 异步返回图片
+/// 异步返回font字体下的某个字符的图片
 + (void)imageWithIcon:(NSString *)icon
            foregroundColor:(UIColor *)iconColor
            backgroundColor:(UIColor *)bgColor
@@ -20,11 +20,15 @@ NS_ASSUME_NONNULL_BEGIN
                result:( void (^) (UIImage*) ) block;
 
 
-/// font 的某个字符转图片
+/// 同步 font 的某个字符转图片
 + (UIImage *)imageWithIcon:(NSString *)icon
            foregroundColor:(UIColor *)iconColor
            backgroundColor:(UIColor *)bgColor
                       font:(UIFont*)font;
+
+/// 异步获得http url的图片
+- (void) imageWithURLString:(NSString*)url
+                     result:( void (^) (UIImage* image, NSError*) ) block;
 @end
 
 NS_ASSUME_NONNULL_END

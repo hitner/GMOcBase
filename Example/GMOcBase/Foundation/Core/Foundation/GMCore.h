@@ -17,6 +17,13 @@ DECLARE_SIGNALTON()
 
 /// 主线程执行队列 等价于[NSOperationQueue mainQueue]
 - (NSOperationQueue*)mainQueue;
+
+/// get cached object. main thread only!
+- (id)idCacheObjectForKey:(NSString*)key;
+///add id to memoryCache. main thread only!
+- (void)addIdCache:(id)object forKey:(NSString*)key;
+///remove id chached object. main thread only!
+- (void)removeIdCacheObjectForKey:(NSString*)key;
 @end
 
 NS_ASSUME_NONNULL_END

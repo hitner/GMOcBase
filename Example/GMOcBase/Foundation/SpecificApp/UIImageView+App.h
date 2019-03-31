@@ -16,6 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setIcon:(NSString*)iconName
 foregroundColor:(UIColor*) iconColor
 backgroundColor:(UIColor*) backColor;
+
+/// 异步设置icon
+- (void)setIcon:(NSString*)iconName
+foregroundColor:(UIColor*) iconColor;
+
+/// asynch set portrait
+- (void)setPortraitWithUrl:(NSString*)url;
 @end
 
 NS_ASSUME_NONNULL_END
