@@ -57,4 +57,8 @@ IMPLEMENT_SIGNALTON(GMCore)
 - (void)removeIdCacheObjectForKey:(NSString*)key {
     [self.idCache removeObjectForKey:key];
 }
+
+- (void)initLogger {
+    
+}
 @end

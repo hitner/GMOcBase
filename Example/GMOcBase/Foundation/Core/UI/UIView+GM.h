@@ -12,9 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (GM)
 
-- (CGFloat)midX;
-- (CGFloat)midY;
+- (CGFloat)midHorizontal;
+- (CGFloat)midVertical;
 - (CGFloat)halfHeight;
+- (CGFloat)topY;
+- (CGFloat)bottomY;
+- (CGFloat)leftX;
+- (CGFloat)rightX;
 
 /* 增加圆角4个角的圆角 */
 - (void)maskCorners:(UIRectCorner)corners;

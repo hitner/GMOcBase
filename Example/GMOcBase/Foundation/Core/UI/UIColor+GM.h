@@ -30,6 +30,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)colorFromRGBAString:(NSString*)hexStr;
 
+/// convinient black color alpha
++ (instancetype)blackColorWithAlpha:(CGFloat)alpha;
+
+/// convinient white color with alpha
++ (instancetype)whiteColorWithAlpha:(CGFloat)alpha;
 @end
 
 NS_ASSUME_NONNULL_END

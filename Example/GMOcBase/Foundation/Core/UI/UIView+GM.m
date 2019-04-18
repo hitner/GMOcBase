@@ -10,16 +10,29 @@
 
 @implementation UIView (GM)
 
-- (CGFloat)midX {
+- (CGFloat)midHorizontal {
     return CGRectGetMidX(self.frame);
 }
 
-- (CGFloat)midY {
+- (CGFloat)midVertical {
     return CGRectGetMidY(self.frame);
 }
 
 - (CGFloat)halfHeight {
     return CGRectGetHeight(self.frame)/2.f;
+}
+
+- (CGFloat)topY {
+    return CGRectGetMinY(self.frame);
+}
+- (CGFloat)bottomY {
+    return CGRectGetMaxY(self.frame);
+}
+- (CGFloat)leftX {
+    return CGRectGetMinX(self.frame);
+}
+- (CGFloat)rightX {
+    return CGRectGetMaxX(self.frame);
 }
 
 - (void)maskCorners:(UIRectCorner)corners {

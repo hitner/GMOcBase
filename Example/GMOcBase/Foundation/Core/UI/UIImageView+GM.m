@@ -8,7 +8,7 @@
 
 #import "UIImageView+GM.h"
 #import "UIImage+GM.h"
-
+#import "GMHttpManager.h"
 
 @implementation UIImageView (GM)
 
@@ -55,28 +55,21 @@ backgroundColor:(UIColor*) backColor
                 [self setImage:cachedImage];
                 return;
             }
-             else {
-                 // log warning
-                 [[GMCore sharedObject] removeIdCacheObjectForKey:url];
-             }
+            else {
+                // log warning
+                [[GMCore sharedObject] removeIdCacheObjectForKey:url];
+            }
         }
     }
     
     weakifySelf
-    [[GMCore sharedObject].concurrentQueue addOperationWithBlock:^{
-        NSURL *URL = [NSURL URLWithString:url];
-        NSError * error;
-        NSData * data = [NSData dataWithContentsOfURL:URL options:0 error:&error];
-        if (data && !error) {
-            UIImage * image = [UIImage imageWithData:data];
-            
-            [[GMCore sharedObject].mainQueue addOperationWithBlock:^{
-                strongifySelfReturnIfNil
-                self.image = image;
-                if (cached) {
-                    [[GMCore sharedObject] addIdCache:image forKey:url];
-                }
-            }];
+    [UIImage imageWithURLString:url result:^(UIImage * _Nonnull image, NSError * _Nonnull error) {
+        strongifySelfReturnIfNil
+        if (image && !error) {
+            [self setImage:image];
+            if (cached) {
+                [[GMCore sharedObject] addIdCache:image forKey:url];
+            }
         }
     }];
 }

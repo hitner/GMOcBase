@@ -36,9 +36,16 @@ if(!self) { return;}
     return __instance;                          \
 }
 
-//高宽比
+///差值的二分之一
 #define HALF_MINUS(x,y) ((x-y)/2.0)
+///和值得二分之一
 #define HALF_SUM(x,y) ((x+y)/2.0)
 
+//LOG 部分
+
+#define GMLogDebug(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
+#define GMLogInfo(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
+#define GMLogWarn(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
+#define GMLogError(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
 
 #endif /* GMMacro_h */

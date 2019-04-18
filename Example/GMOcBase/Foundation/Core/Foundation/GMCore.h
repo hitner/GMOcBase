@@ -20,10 +20,15 @@ DECLARE_SIGNALTON()
 
 /// get cached object. main thread only!
 - (id)idCacheObjectForKey:(NSString*)key;
+
 ///add id to memoryCache. main thread only!
 - (void)addIdCache:(id)object forKey:(NSString*)key;
+
 ///remove id chached object. main thread only!
 - (void)removeIdCacheObjectForKey:(NSString*)key;
+
+/// init Logger
+- (void)initLogger;
 @end
 
 NS_ASSUME_NONNULL_END

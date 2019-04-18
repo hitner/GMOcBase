@@ -3,7 +3,7 @@ use_frameworks!
 
 target 'GMOcBase_Example' do
   pod 'GMOcBase', :path => '../'
-
+  pod 'CocoaLumberjack', :git => 'https://github.com/CocoaLumberjack/CocoaLumberjack.git', :tag => '3.5.2'
   target 'GMOcBase_Tests' do
     inherit! :search_paths
 

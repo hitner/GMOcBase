@@ -37,4 +37,13 @@
 + (instancetype)colorFromRGBAString:(NSString*)hexStr {
     return nil;
 }
+
++ (instancetype)blackColorWithAlpha:(CGFloat)alpha {
+    return [[UIColor blackColor] colorWithAlphaComponent:alpha];
+}
+
+/// convinient white color with alpha
++ (instancetype)whiteColorWithAlpha:(CGFloat)alpha {
+    return [[UIColor blackColor] colorWithAlphaComponent:alpha];
+}
 @end

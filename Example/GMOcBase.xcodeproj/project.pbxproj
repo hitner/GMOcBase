@@ -27,6 +27,7 @@
 		F111557B21B7BFB300AA2DEA /* UIView+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F111557A21B7BFB300AA2DEA /* UIView+GM.m */; };
 		F111557E21B7CBD300AA2DEA /* NSString+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F111557D21B7CBD300AA2DEA /* NSString+GM.m */; };
 		F12EB7C821CA3E4A0049C8A8 /* GM1DWaveFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = F12EB7C721CA3E4A0049C8A8 /* GM1DWaveFilter.m */; };
+		F13E6220225C7AB4004F8C17 /* GMFormatterVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = F13E621F225C7AB4004F8C17 /* GMFormatterVendor.m */; };
 		F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83D421A3FD87000DE61B /* UIColor+GM.m */; };
 		F13F83DA21A55389000DE61B /* dog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F13F83D921A55389000DE61B /* dog.scnassets */; };
 		F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */; };
@@ -47,6 +48,8 @@
 		F1B1D420224F6EE200EDD767 /* lizhifm.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1B1D41F224F6ED500EDD767 /* lizhifm.ttf */; };
 		F1B1D424224FBC5600EDD767 /* UIImage+App.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1D423224FBC5600EDD767 /* UIImage+App.m */; };
 		F1B1D42A224FBD5100EDD767 /* UIImageView+App.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1D429224FBD5100EDD767 /* UIImageView+App.m */; };
+		F1B1D42D2250933900EDD767 /* GMURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1D42C2250933900EDD767 /* GMURLSessionManager.m */; };
+		F1B1D4302250E52C00EDD767 /* GMIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1D42F2250E52C00EDD767 /* GMIconButton.m */; };
 		F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB6797219AFCBF007BDA24 /* GMFaceTrackViewController.m */; };
 		F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB679B219BF313007BDA24 /* GMAVUtility.m */; };
 		F1C0DD22224E1DAE004013EC /* UIButton+App.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C0DD21224E1DAE004013EC /* UIButton+App.m */; };
@@ -103,6 +106,8 @@
 		F111557D21B7CBD300AA2DEA /* NSString+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+GM.m"; sourceTree = "<group>"; };
 		F12EB7C621CA3E4A0049C8A8 /* GM1DWaveFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GM1DWaveFilter.h; sourceTree = "<group>"; };
 		F12EB7C721CA3E4A0049C8A8 /* GM1DWaveFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GM1DWaveFilter.m; sourceTree = "<group>"; };
+		F13E621E225C7AB4004F8C17 /* GMFormatterVendor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMFormatterVendor.h; sourceTree = "<group>"; };
+		F13E621F225C7AB4004F8C17 /* GMFormatterVendor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMFormatterVendor.m; sourceTree = "<group>"; };
 		F13F83D321A3FD87000DE61B /* UIColor+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+GM.h"; sourceTree = "<group>"; };
 		F13F83D421A3FD87000DE61B /* UIColor+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GM.m"; sourceTree = "<group>"; };
 		F13F83D921A55389000DE61B /* dog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = dog.scnassets; sourceTree = "<group>"; };
@@ -142,6 +147,10 @@
 		F1B1D423224FBC5600EDD767 /* UIImage+App.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+App.m"; sourceTree = "<group>"; };
 		F1B1D428224FBD5100EDD767 /* UIImageView+App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+App.h"; sourceTree = "<group>"; };
 		F1B1D429224FBD5100EDD767 /* UIImageView+App.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+App.m"; sourceTree = "<group>"; };
+		F1B1D42B2250933900EDD767 /* GMURLSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMURLSessionManager.h; sourceTree = "<group>"; };
+		F1B1D42C2250933900EDD767 /* GMURLSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMURLSessionManager.m; sourceTree = "<group>"; };
+		F1B1D42E2250E52C00EDD767 /* GMIconButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMIconButton.h; sourceTree = "<group>"; };
+		F1B1D42F2250E52C00EDD767 /* GMIconButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMIconButton.m; sourceTree = "<group>"; };
 		F1BB6796219AFCBF007BDA24 /* GMFaceTrackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMFaceTrackViewController.h; sourceTree = "<group>"; };
 		F1BB6797219AFCBF007BDA24 /* GMFaceTrackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMFaceTrackViewController.m; sourceTree = "<group>"; };
 		F1BB679A219BF313007BDA24 /* GMAVUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMAVUtility.h; sourceTree = "<group>"; };
@@ -319,6 +328,10 @@
 				F17CF9CE21771584009F2ED3 /* GMHttpManager.m */,
 				F111557C21B7CBD300AA2DEA /* NSString+GM.h */,
 				F111557D21B7CBD300AA2DEA /* NSString+GM.m */,
+				F1B1D42B2250933900EDD767 /* GMURLSessionManager.h */,
+				F1B1D42C2250933900EDD767 /* GMURLSessionManager.m */,
+				F13E621E225C7AB4004F8C17 /* GMFormatterVendor.h */,
+				F13E621F225C7AB4004F8C17 /* GMFormatterVendor.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -465,6 +478,8 @@
 				F1B1D423224FBC5600EDD767 /* UIImage+App.m */,
 				F1B1D428224FBD5100EDD767 /* UIImageView+App.h */,
 				F1B1D429224FBD5100EDD767 /* UIImageView+App.m */,
+				F1B1D42E2250E52C00EDD767 /* GMIconButton.h */,
+				F1B1D42F2250E52C00EDD767 /* GMIconButton.m */,
 			);
 			path = SpecificApp;
 			sourceTree = "<group>";
@@ -638,6 +653,7 @@
 			files = (
 				F15D73A521C88C90005CBF05 /* GMFaceTrack.m in Sources */,
 				F1C188C1224CD5D500A30B6F /* UIImage+GM.m in Sources */,
+				F1B1D4302250E52C00EDD767 /* GMIconButton.m in Sources */,
 				F15D73AC21C8E722005CBF05 /* GM2DProcess.m in Sources */,
 				F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */,
 				F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */,
@@ -647,7 +663,9 @@
 				F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */,
 				F12EB7C821CA3E4A0049C8A8 /* GM1DWaveFilter.m in Sources */,
 				F1B1D42A224FBD5100EDD767 /* UIImageView+App.m in Sources */,
+				F13E6220225C7AB4004F8C17 /* GMFormatterVendor.m in Sources */,
 				F1BB679C219BF313007BDA24 /* GMAVUtility.m in Sources */,
+				F1B1D42D2250933900EDD767 /* GMURLSessionManager.m in Sources */,
 				F102F0D021C3B4020054898F /* GMFloatableView.m in Sources */,
 				F1C188C8224DC96800A30B6F /* GMPrimeButton.m in Sources */,
 				F15D739D21C79AA9005CBF05 /* GMDebugControlView.m in Sources */,

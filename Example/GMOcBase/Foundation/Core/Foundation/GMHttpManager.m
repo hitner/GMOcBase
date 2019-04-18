@@ -7,17 +7,28 @@
 //
 
 #import "GMHttpManager.h"
+#import "GMURLSessionManager.h"
 
 @implementation GMHttpManager
 
-+ (instancetype)sharedManager {
-    static GMHttpManager *_sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedInstance = [[GMHttpManager alloc] init];
-    });
-    
-    return _sharedInstance;
-}
+IMPLEMENT_SIGNALTON(GMHttpManager)
 
+- (void)dataGETWithUrlString:(NSString*)url
+                    result:(void(^)(NSData* image, NSError* error))callback {
+    NSURLSessionDataTask * dataTask =  [[GMURLSessionManager sharedObject].commonMainQueueSession
+                                        dataTaskWithURL:[NSURL URLWithString:url]
+        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    if (data && !error) {
+        if (callback) {
+            callback(data, nil);
+        }
+    }
+    else {
+        if (callback) {
+            callback(nil, error);
+        }
+    }
+    }];
+    [dataTask resume];
+}
 @end

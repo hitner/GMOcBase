@@ -8,6 +8,8 @@
 
 #import "UIImage+GM.h"
 
+#import "GMHttpManager.h"
+
 @implementation UIImage (GM)
 + (void)imageWithIcon:(NSString *)icon
       foregroundColor:(UIColor *)iconColor
@@ -68,8 +70,21 @@
     return image;
 }
 
-- (void) imageWithURLString:(NSString*)url
++ (void) imageWithURLString:(NSString*)url
                      result:( void (^) (UIImage* image, NSError*) ) block {
-    
+    [[GMHttpManager sharedObject] dataGETWithUrlString:url
+                                                result:^(NSData * _Nonnull data, NSError * _Nonnull error) {
+                                                    if (data && !error) {
+                                                        UIImage * image = [UIImage imageWithData:data];
+                                                        if (block) {
+                                                            block(image, error);
+                                                        }
+                                                    }
+                                                    else {
+                                                        if (block) {
+                                                            block(nil, error);
+                                                        }
+                                                    }
+                                                }];
 }
 @end
