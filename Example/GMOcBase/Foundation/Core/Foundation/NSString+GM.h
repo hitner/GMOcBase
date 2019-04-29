@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (GM)
+/// 把NSArray/NSDictionary 转为NSString
++ (instancetype)jsonStringFromId:(id)object;
 
 /// 将json字符串转化为NSDictionary或NSArray
 - (id)jsonObject;

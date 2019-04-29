@@ -37,6 +37,9 @@
 		F15D73A221C79E71005CBF05 /* DebugView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F15D73A121C79E71005CBF05 /* DebugView.xib */; };
 		F15D73A521C88C90005CBF05 /* GMFaceTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = F15D73A421C88C90005CBF05 /* GMFaceTrack.m */; };
 		F15D73AC21C8E722005CBF05 /* GM2DProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = F15D73AB21C8E722005CBF05 /* GM2DProcess.m */; };
+		F164B92D22771E2000856926 /* NSDictionary+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F164B92C22771E2000856926 /* NSDictionary+GM.m */; };
+		F164B93022771F3D00856926 /* NSData+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F164B92F22771F3D00856926 /* NSData+GM.m */; };
+		F17A4B6C2272B86A0046A256 /* GMUrlRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = F17A4B6B2272B86A0046A256 /* GMUrlRouter.m */; };
 		F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9CE21771584009F2ED3 /* GMHttpManager.m */; };
 		F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */; };
 		F17CF9D52178330A009F2ED3 /* GMCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D42178330A009F2ED3 /* GMCore.m */; };
@@ -45,6 +48,7 @@
 		F17CF9DD217834E1009F2ED3 /* GMTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */; };
 		F18EF37522422926008B46BC /* GMAppProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = F18EF37422422926008B46BC /* GMAppProfile.m */; };
 		F1A0923E21ED8896003C1856 /* GMCalculateLandmark.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A0923D21ED8896003C1856 /* GMCalculateLandmark.m */; };
+		F1AF7C5D2275B22A00B48A05 /* NSArray+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AF7C5C2275B22A00B48A05 /* NSArray+GM.m */; };
 		F1B1D420224F6EE200EDD767 /* lizhifm.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1B1D41F224F6ED500EDD767 /* lizhifm.ttf */; };
 		F1B1D424224FBC5600EDD767 /* UIImage+App.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1D423224FBC5600EDD767 /* UIImage+App.m */; };
 		F1B1D42A224FBD5100EDD767 /* UIImageView+App.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1D429224FBD5100EDD767 /* UIImageView+App.m */; };
@@ -125,6 +129,12 @@
 		F15D73A421C88C90005CBF05 /* GMFaceTrack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMFaceTrack.m; sourceTree = "<group>"; };
 		F15D73AA21C8E722005CBF05 /* GM2DProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GM2DProcess.h; sourceTree = "<group>"; };
 		F15D73AB21C8E722005CBF05 /* GM2DProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GM2DProcess.m; sourceTree = "<group>"; };
+		F164B92B22771E2000856926 /* NSDictionary+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+GM.h"; sourceTree = "<group>"; };
+		F164B92C22771E2000856926 /* NSDictionary+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+GM.m"; sourceTree = "<group>"; };
+		F164B92E22771F3D00856926 /* NSData+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+GM.h"; sourceTree = "<group>"; };
+		F164B92F22771F3D00856926 /* NSData+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+GM.m"; sourceTree = "<group>"; };
+		F17A4B6A2272B86A0046A256 /* GMUrlRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMUrlRouter.h; sourceTree = "<group>"; };
+		F17A4B6B2272B86A0046A256 /* GMUrlRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMUrlRouter.m; sourceTree = "<group>"; };
 		F17CF9CD21771584009F2ED3 /* GMHttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMHttpManager.h; sourceTree = "<group>"; };
 		F17CF9CE21771584009F2ED3 /* GMHttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMHttpManager.m; sourceTree = "<group>"; };
 		F17CF9D021772158009F2ED3 /* GMMainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMainTabBarController.h; sourceTree = "<group>"; };
@@ -141,6 +151,8 @@
 		F18EF37422422926008B46BC /* GMAppProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMAppProfile.m; sourceTree = "<group>"; };
 		F1A0923C21ED8896003C1856 /* GMCalculateLandmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMCalculateLandmark.h; sourceTree = "<group>"; };
 		F1A0923D21ED8896003C1856 /* GMCalculateLandmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMCalculateLandmark.m; sourceTree = "<group>"; };
+		F1AF7C5B2275B22A00B48A05 /* NSArray+GM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+GM.h"; sourceTree = "<group>"; };
+		F1AF7C5C2275B22A00B48A05 /* NSArray+GM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+GM.m"; sourceTree = "<group>"; };
 		F1B1D41F224F6ED500EDD767 /* lizhifm.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lizhifm.ttf; sourceTree = "<group>"; };
 		F1B1D421224F792000EDD767 /* GMIcons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMIcons.h; sourceTree = "<group>"; };
 		F1B1D422224FBC5600EDD767 /* UIImage+App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+App.h"; sourceTree = "<group>"; };
@@ -322,12 +334,18 @@
 		F13F83D221A3FD43000DE61B /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				F164B92E22771F3D00856926 /* NSData+GM.h */,
+				F164B92F22771F3D00856926 /* NSData+GM.m */,
+				F111557C21B7CBD300AA2DEA /* NSString+GM.h */,
+				F111557D21B7CBD300AA2DEA /* NSString+GM.m */,
+				F1AF7C5B2275B22A00B48A05 /* NSArray+GM.h */,
+				F1AF7C5C2275B22A00B48A05 /* NSArray+GM.m */,
+				F164B92B22771E2000856926 /* NSDictionary+GM.h */,
+				F164B92C22771E2000856926 /* NSDictionary+GM.m */,
 				F17CF9D32178330A009F2ED3 /* GMCore.h */,
 				F17CF9D42178330A009F2ED3 /* GMCore.m */,
 				F17CF9CD21771584009F2ED3 /* GMHttpManager.h */,
 				F17CF9CE21771584009F2ED3 /* GMHttpManager.m */,
-				F111557C21B7CBD300AA2DEA /* NSString+GM.h */,
-				F111557D21B7CBD300AA2DEA /* NSString+GM.m */,
 				F1B1D42B2250933900EDD767 /* GMURLSessionManager.h */,
 				F1B1D42C2250933900EDD767 /* GMURLSessionManager.m */,
 				F13E621E225C7AB4004F8C17 /* GMFormatterVendor.h */,
@@ -394,6 +412,15 @@
 			path = algorithm;
 			sourceTree = "<group>";
 		};
+		F17A4B692272B8380046A256 /* UrlRouter */ = {
+			isa = PBXGroup;
+			children = (
+				F17A4B6A2272B86A0046A256 /* GMUrlRouter.h */,
+				F17A4B6B2272B86A0046A256 /* GMUrlRouter.m */,
+			);
+			path = UrlRouter;
+			sourceTree = "<group>";
+		};
 		F17CF9C921771393009F2ED3 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +484,7 @@
 		F1BB6799219BF2BF007BDA24 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F17A4B692272B8380046A256 /* UrlRouter */,
 				F1BB679A219BF313007BDA24 /* GMAVUtility.h */,
 				F1BB679B219BF313007BDA24 /* GMAVUtility.m */,
 				F15D73A621C8E599005CBF05 /* algorithm */,
@@ -669,6 +697,8 @@
 				F102F0D021C3B4020054898F /* GMFloatableView.m in Sources */,
 				F1C188C8224DC96800A30B6F /* GMPrimeButton.m in Sources */,
 				F15D739D21C79AA9005CBF05 /* GMDebugControlView.m in Sources */,
+				F164B92D22771E2000856926 /* NSDictionary+GM.m in Sources */,
+				F17A4B6C2272B86A0046A256 /* GMUrlRouter.m in Sources */,
 				6003F59E195388D20070C39A /* GMAppDelegate.m in Sources */,
 				F1B1D424224FBC5600EDD767 /* UIImage+App.m in Sources */,
 				F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */,
@@ -677,12 +707,14 @@
 				F1C188C5224DC8F400A30B6F /* GMApperance.m in Sources */,
 				F1C0DD22224E1DAE004013EC /* UIButton+App.m in Sources */,
 				F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */,
+				F164B93022771F3D00856926 /* NSData+GM.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				F1A0923E21ED8896003C1856 /* GMCalculateLandmark.m in Sources */,
 				F111557E21B7CBD300AA2DEA /* NSString+GM.m in Sources */,
 				F111557B21B7BFB300AA2DEA /* UIView+GM.m in Sources */,
 				F1C188B5224B16BA00A30B6F /* UIViewController+GM.m in Sources */,
 				F17CF9CF21771584009F2ED3 /* GMHttpManager.m in Sources */,
+				F1AF7C5D2275B22A00B48A05 /* NSArray+GM.m in Sources */,
 				F15D73A021C79C4B005CBF05 /* GMDebugItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

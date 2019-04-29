@@ -7,8 +7,13 @@
 //
 
 #import "NSString+GM.h"
+#import "NSData+GM.h"
 
 @implementation NSString (GM)
+
++ (instancetype)jsonStringFromId:(id)object {
+    return [[NSString alloc] initWithData:[NSData jsonStringFromId:object] encoding:NSUTF8StringEncoding];
+}
 
 - (id)jsonObject {
     NSError * error ;
