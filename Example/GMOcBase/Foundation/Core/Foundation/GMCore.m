@@ -19,7 +19,7 @@
 
 @implementation GMCore
 
-IMPLEMENT_SIGNALTON(GMCore)
+IMPLEMENT_SIGNALTON()
 
 - (instancetype)init {
     self = [super init];

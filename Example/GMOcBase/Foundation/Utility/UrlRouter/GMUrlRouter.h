@@ -15,6 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GMUrlRouter : NSObject
 DECLARE_SIGNALTON()
 
+- (void)registerUrlKey:(NSString*)key viewControllerClass:(Class)vcClass;
+
+- (BOOL)navigateToUrl:(NSString*)url;
+
+
 
 @end
 

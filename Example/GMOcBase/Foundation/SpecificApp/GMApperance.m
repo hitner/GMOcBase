@@ -11,7 +11,7 @@
 
 @implementation GMApperance
 
-IMPLEMENT_SIGNALTON(GMApperance)
+IMPLEMENT_SIGNALTON()
 
 - (instancetype)init {
     self = [super init];

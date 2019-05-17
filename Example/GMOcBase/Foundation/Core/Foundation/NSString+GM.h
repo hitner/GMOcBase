@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 将json字符串转化为NSDictionary或NSArray
 - (id)jsonObject;
 
+/// 按base64解码
+- (NSData*)base64Data;
 /// 16进制字符串转整数
 - (NSInteger)hexIntegerValue;
 

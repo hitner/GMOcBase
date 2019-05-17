@@ -9,5 +9,5 @@
 #import "GMFormatterVendor.h"
 
 @implementation GMFormatterVendor
-IMPLEMENT_SIGNALTON(GMFormatterVendor)
+IMPLEMENT_SIGNALTON()
 @end

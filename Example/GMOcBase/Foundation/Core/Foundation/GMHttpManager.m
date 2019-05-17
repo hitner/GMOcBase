@@ -11,7 +11,7 @@
 
 @implementation GMHttpManager
 
-IMPLEMENT_SIGNALTON(GMHttpManager)
+IMPLEMENT_SIGNALTON()
 
 - (void)dataGETWithUrlString:(NSString*)url
                     result:(void(^)(NSData* image, NSError* error))callback {

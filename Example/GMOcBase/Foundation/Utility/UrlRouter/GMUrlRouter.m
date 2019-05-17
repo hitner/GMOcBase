@@ -8,6 +8,19 @@
 
 #import "GMUrlRouter.h"
 
+@interface GMUrlRouter()
+
+@end
+
 @implementation GMUrlRouter
 
+IMPLEMENT_SIGNALTON()
+
+- (void)registerUrlKey:(NSString*)key viewControllerClass:(Class)vcClass {
+    
+}
+
+- (BOOL)navigateToUrl:(NSString *)url {
+    return YES;
+}
 @end

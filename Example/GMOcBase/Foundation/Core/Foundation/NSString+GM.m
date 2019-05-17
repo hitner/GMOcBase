@@ -27,6 +27,10 @@
     }
 }
 
+- (NSData*)base64Data {
+    return [[NSData alloc] initWithBase64EncodedString:self options:NSDataBase64DecodingIgnoreUnknownCharacters];
+}
+
 - (NSInteger)hexIntegerValue {
     unsigned long long outVal = 0;
     NSScanner* scanner = [NSScanner scannerWithString:self];

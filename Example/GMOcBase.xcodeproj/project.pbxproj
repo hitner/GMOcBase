@@ -256,8 +256,8 @@
 		6003F593195388D20070C39A /* Example for GMOcBase */ = {
 			isa = PBXGroup;
 			children = (
-				F17CF9CA217713CE009F2ED3 /* TopBusiness */,
 				F17CF9C921771393009F2ED3 /* Foundation */,
+				F17CF9CA217713CE009F2ED3 /* TopBusiness */,
 				6003F59C195388D20070C39A /* GMAppDelegate.h */,
 				6003F59D195388D20070C39A /* GMAppDelegate.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,

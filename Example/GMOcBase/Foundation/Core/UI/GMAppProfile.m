@@ -10,7 +10,7 @@
 
 @implementation GMAppProfile
 
-IMPLEMENT_SIGNALTON(GMAppProfile)
+IMPLEMENT_SIGNALTON()
 
 - (instancetype)init {
     self = [super init];

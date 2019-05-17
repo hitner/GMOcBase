@@ -9,7 +9,7 @@
 #import "GMURLSessionManager.h"
 
 @implementation GMURLSessionManager
-IMPLEMENT_SIGNALTON(GMURLSessionManager)
+IMPLEMENT_SIGNALTON()
 
 -(instancetype)init {
     self = [super init];

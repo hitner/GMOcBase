@@ -26,14 +26,14 @@ if(!self) { return;}
 #define DECLARE_SIGNALTON()\
 + (instancetype)sharedObject;
 
-#define IMPLEMENT_SIGNALTON(__TYPE__)       \
-    + (instancetype)sharedObject {          \
-        static dispatch_once_t __once;      \
-        static __TYPE__ * __instance = nil; \
-        dispatch_once(&__once, ^{                   \
-            __instance = [[__TYPE__ alloc] init];   \
-        });                                         \
-    return __instance;                          \
+#define IMPLEMENT_SIGNALTON()\
+    + (instancetype)sharedObject {           \
+        static dispatch_once_t __once;       \
+        static id __instance = nil;  \
+        dispatch_once(&__once, ^{            \
+            __instance = [[self alloc] init];\
+        });                                  \
+    return __instance;                       \
 }
 
 ///差值的二分之一
