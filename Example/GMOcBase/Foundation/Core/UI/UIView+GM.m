@@ -35,6 +35,46 @@
     return CGRectGetMaxX(self.frame);
 }
 
+- (CGRect)rightFrameAnchor:(GMAlignAnchor)alignAnchor
+                         leftMargin:(CGFloat)margin
+                              width:(CGFloat)width
+                             height:(CGFloat)height {
+    NSAssert(alignAnchor == GMAlignAnchorTop
+             || alignAnchor == GMAlignAnchorBottom
+             || alignAnchor == GMAlignAnchorTopBottomCenter, @"align anchor error");
+    
+    CGFloat y = [self topY];
+    if (alignAnchor == GMAlignAnchorTopBottomCenter) {
+        y = y + (CGRectGetHeight(self.frame) - height)/2.0;
+    }
+    else if (alignAnchor == GMAlignAnchorBottom) {
+        y = y + CGRectGetHeight(self.frame) - height;
+    }
+    
+    return CGRectMake([self rightX] + margin, y, width, height);
+    
+}
+
+- (CGRect)bottomFrameAnchor:(GMAlignAnchor)alignAnchor
+                           topMargin:(CGFloat)margin
+                               width:(CGFloat)width
+                              height:(CGFloat)height {
+    NSAssert(alignAnchor == GMAlignAnchorLeft
+             || alignAnchor == GMAlignAnchorLeftRightCenter
+             || alignAnchor == GMAlignAnchorRight, @"align anchor error");
+    
+    CGFloat x = [self leftX];
+    if (alignAnchor == GMAlignAnchorLeftRightCenter) {
+        x = x + (CGRectGetWidth(self.frame) - width)/2.0;
+    }
+    else if (alignAnchor == GMAlignAnchorRight) {
+        x = x + CGRectGetWidth(self.frame) - width;
+    }
+    
+    return CGRectMake(x, [self bottomY] + margin, width, height);
+}
+
+
 - (void)maskCorners:(UIRectCorner)corners {
     CGFloat radii = [self halfHeight];
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds

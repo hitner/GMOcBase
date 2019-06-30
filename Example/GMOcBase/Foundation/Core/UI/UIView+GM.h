@@ -10,6 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum : NSUInteger {
+    GMAlignAnchorTop,
+    GMAlignAnchorTopBottomCenter,
+    GMAlignAnchorBottom,
+    GMAlignAnchorLeft,
+    GMAlignAnchorLeftRightCenter,
+    GMAlignAnchorRight,
+} GMAlignAnchor;
+
+
 @interface UIView (GM)
 
 - (CGFloat)midHorizontal;
@@ -19,6 +29,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)bottomY;
 - (CGFloat)leftX;
 - (CGFloat)rightX;
+
+- (CGRect)rightFrameAnchor:(GMAlignAnchor)alignAnchor
+                         leftMargin:(CGFloat)margin
+                              width:(CGFloat)width
+                             height:(CGFloat)height;
+
+- (CGRect)bottomFrameAnchor:(GMAlignAnchor)alignAnchor
+                           topMargin:(CGFloat)margin
+                                     width:(CGFloat)width
+                                    height:(CGFloat)height;
 
 /* 增加圆角4个角的圆角 */
 - (void)maskCorners:(UIRectCorner)corners;
