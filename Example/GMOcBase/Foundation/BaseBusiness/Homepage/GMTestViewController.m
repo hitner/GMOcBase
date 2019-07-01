@@ -58,7 +58,7 @@
     imageView.image = image;
     
     
-    CGRect frame2 = [imageView rightFrameAnchor:GMAlignAnchorBottom leftMargin:20 width:140 height:140];
+    CGRect frame2 = GMRightAnchorTopFrame(imageView.frame, 20, 140,140);
     UIImageView * imageView2 = [[UIImageView alloc] initWithFrame:frame2];
     [imageView2 setImageWithUrlString:@"http://pic4.zhimg.com/80/v2-eba4fc3316322a93f5cecac5d0b905ac_hd.jpg"];
     [self.view addSubview:imageView2];

@@ -48,4 +48,18 @@ if(!self) { return;}
 #define GMLogWarn(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
 #define GMLogError(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
 
+
+#pragma mark - UI view part
+
+#define GMRightAnchorTopFrame(leftFrame,leftMargin,width,height) \
+CGRectMake(CGRectGetMaxX(leftFrame)+leftMargin, CGRectGetMinY(leftFrame), width, height)
+
+#define GMRightAnchorBottomFrame(leftFrame,leftMargin,width,height) \
+CGRectMake(CGRectGetMaxX(leftFrame)+leftMargin, \
+CGRectGetMinY(leftFrame) + (CGRectGetHeight(self.frame) - height)/2.0, width, height)
+
+#define GMRightAnchorCenterFrame(leftFrame,leftMargin,width,height) \
+CGRectMake(CGRectGetMaxX(leftFrame)+leftMargin, CGRectGetMinY(leftFrame), width, height)
+
+
 #endif /* GMMacro_h */
