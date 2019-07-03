@@ -51,15 +51,40 @@ if(!self) { return;}
 
 #pragma mark - UI view part
 
-#define GMRightAnchorTopFrame(leftFrame,leftMargin,width,height) \
+///右边，顶部对齐
+#define GMRightAlignTopFrame(leftFrame,leftMargin,width,height) \
 CGRectMake(CGRectGetMaxX(leftFrame)+leftMargin, CGRectGetMinY(leftFrame), width, height)
-
-#define GMRightAnchorBottomFrame(leftFrame,leftMargin,width,height) \
+///右边，底部对齐
+#define GMRightAlignBottomFrame(leftFrame,leftMargin,width,height) \
 CGRectMake(CGRectGetMaxX(leftFrame)+leftMargin, \
-CGRectGetMinY(leftFrame) + (CGRectGetHeight(self.frame) - height)/2.0, width, height)
+CGRectGetMinY(leftFrame) + (CGRectGetHeight(leftFrame) - height)/2.0, width, height)
+///右边，中间对齐
+#define GMRightAlignCenterFrame(leftFrame,leftMargin,width,height) \
+CGRectMake(CGRectGetMaxX(leftFrame)+leftMargin,\
+CGRectGetMaxY(leftFrame) - height, width, height)
 
-#define GMRightAnchorCenterFrame(leftFrame,leftMargin,width,height) \
-CGRectMake(CGRectGetMaxX(leftFrame)+leftMargin, CGRectGetMinY(leftFrame), width, height)
+///下边，左对齐
+#define GMBottomAlignLeftFrame(topFrame,topMargin,width,height) \
+CGRectMake(CGRectGetMinX(topFrame), CGRectGetMaxY(topFrame) + topMargin, width, height)
+///下边，中间对齐
+#define GMBottomAlignCenterFrame(topFrame,topMargin,width,height) \
+CGRectMake(CGRectGetMinX(topFrame)+(CGRectGetWidth(topFrame) - width)/2.0, CGRectGetMaxY(topFrame) + topMargin, width, height)
+///下边，右对齐
+#define GMBottomAlignRightFrame(topFrame,topMargin,width,height) \
+CGRectMake(CGRectGetMinY(topFrame) - width, CGRectGetMaxY(topFrame) + topMargin, width, height)
 
+///屏幕右边沿
+#define GMScreenRightEdgeFrame(rightMargin,y,width,height) \
+CGRectMake([APP_PROFILE screenWidth] - width - rightMargin, y, width, height)
+
+///左边，顶部对齐
+#define GMLeftAlignTopFrame(rightFrame,rightMargin,width,height) \
+CGRectMake(CGRectGetMinX(rightFrame)-rightMargin-width, CGRectGetMinY(leftFrame), width, height)
+///左边，底部对齐
+#define GMLeftAlignBottomFrame(rightFrame,rightMargin,width,height) \
+CGRectMake(CGRectGetMinX(rightFrame)-rightMargin-width, CGRectGetMaxY(leftFrame) -height, width, height)
+///左边的frame,中心对齐
+#define GMLeftAlignCenterFrame(rightFrame,rightMargin,width,height) \
+CGRectMake(CGRectGetMinX(rightFrame)-rightMargin-width, CGRectGetMinY(leftFrame)+(CGRectGetHeight(leftFrame) - height)/2.0, width, height)
 
 #endif /* GMMacro_h */

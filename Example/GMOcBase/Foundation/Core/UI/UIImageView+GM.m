@@ -9,8 +9,17 @@
 #import "UIImageView+GM.h"
 #import "UIImage+GM.h"
 #import "GMHttpManager.h"
+#import <objc/runtime.h>
+
+const char * kImageAssociatedUrl = "_kImageAssociatedUrl";
 
 @implementation UIImageView (GM)
+
++ (void)initialize
+{
+    
+}
+
 
 - (void)setIcon:(NSString*)iconName
      fontFamily:(NSString*)fileName
@@ -47,6 +56,16 @@ backgroundColor:(UIColor*) backColor
         return ;
     }
     
+    NSString * associatedUrl = objc_getAssociatedObject(self, kImageAssociatedUrl);
+    if (associatedUrl){
+        if ([associatedUrl isEqualToString:url]) {
+            return;
+        }
+        else {
+            
+        }
+    }
+    
     if (cached) {
         UIImage * cachedImage = [[GMCore sharedObject] idCacheObjectForKey:url];
         if (cachedImage) {
@@ -62,15 +81,23 @@ backgroundColor:(UIColor*) backColor
         }
     }
     
+    objc_setAssociatedObject(self,kImageAssociatedUrl,url,OBJC_ASSOCIATION_COPY_NONATOMIC);
     weakifySelf
     [UIImage imageWithURLString:url result:^(UIImage * _Nonnull image, NSError * _Nonnull error) {
         strongifySelfReturnIfNil
-        if (image && !error) {
-            [self setImage:image];
-            if (cached) {
-                [[GMCore sharedObject] addIdCache:image forKey:url];
+        NSString * associatedUrl = objc_getAssociatedObject(self, kImageAssociatedUrl);
+        if (associatedUrl && [associatedUrl isEqualToString:url]) {
+            if (image && !error) {
+                [self setImage:image];
+                if (cached) {
+                    [[GMCore sharedObject] addIdCache:image forKey:url];
+                }
             }
         }
     }];
+}
+
+- (void)setImage:(UIImage *)image {
+    
 }
 @end

@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
+    GMAlignAnchorUnavailable,
     GMAlignAnchorTop,
     GMAlignAnchorTopBottomCenter,
     GMAlignAnchorBottom,
@@ -61,6 +62,27 @@ typedef enum : NSUInteger {
                                 startPoint:(CGPoint)startPoint
                                   endPoint:(CGPoint)endPoint;
 
+///添加底部margin、x固定的约束
+- (void)constraintToBottomView:(UIView*)bottomView
+                  bottomMargin:(CGFloat)bottomMargin
+                         xAxis:(CGFloat)x
+                         width:(CGFloat)width
+                        height:(CGFloat)height;
+
+///添加底部margin、x轴对齐的约束
+- (void)constraintToBottomView:(UIView*)bottomView
+                  bottomMargin:(CGFloat)bottomMargin
+                        xAlign:(GMAlignAnchor)align
+                   alignMargin:(CGFloat)sideMargin
+                         width:(CGFloat)width
+                        height:(CGFloat)height;
+
+///添加superview底部margin、x轴对齐margin的约束
+- (void)constraintToSuperBottomMargin:(CGFloat)bottomMargin
+                              xAlign:(GMAlignAnchor)align
+                         alignMargin:(CGFloat)sideMargin
+                               width:(CGFloat)width
+                              height:(CGFloat)height;
 
 
 @end

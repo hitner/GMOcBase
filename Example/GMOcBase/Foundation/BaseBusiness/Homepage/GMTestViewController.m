@@ -36,6 +36,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
     GMPrimeButton * button = [[GMPrimeButton alloc] initWithFrame:CGRectMake(0, 200, 100, 44)];
     [button setTitle:@"LOGIN" forState:UIControlStateNormal];
     [self.view addSubview:button];
@@ -58,14 +59,22 @@
     imageView.image = image;
     
     
-    CGRect frame2 = GMRightAnchorTopFrame(imageView.frame, 20, 140,140);
+    CGRect frame2 = GMBottomAlignCenterFrame(imageView.frame, 20, 140,140);
     UIImageView * imageView2 = [[UIImageView alloc] initWithFrame:frame2];
-    [imageView2 setImageWithUrlString:@"http://pic4.zhimg.com/80/v2-eba4fc3316322a93f5cecac5d0b905ac_hd.jpg"];
+    [imageView2 setImageWithUrlString:@"https://cdnimg103.lizhi.fm/user/2018/07/06/2679250850695235586.jpg"];
     [self.view addSubview:imageView2];
-//    [imageView2 setIcon:kIconFontCommonExpand
-//       foregroundColor:[UIColor blackColor]
-//       backgroundColor:[UIColor yellowColor]];
     
+    UILabel * label = [[UILabel alloc] init];
+    label.backgroundColor = [UIColor blueColor];
+    label.text = @"你师父加，可视对讲拉收快递费，水电费";
+    [self.view addSubview:label];
+    [label constraintToSuperBottomMargin:20 xAlign:GMAlignAnchorLeft alignMargin:20 width:220 height:40];
+    
+    UILabel * label2 = [[UILabel alloc] init];
+    label2.backgroundColor = [UIColor greenColor];
+    label2.text = @"你师父加，可视对讲拉收快递费，水电费";
+    [self.view addSubview:label2];
+    [label2 constraintToBottomView:label bottomMargin:10 xAxis:50 width:200 height:40];
 }
 
 
@@ -96,6 +105,9 @@
 //            return NSOrderedDescending;
 //        }
 //    }];
+    NSInteger abc = 3;
+    NSString* a = [NSString stringWithFormat:@"kkk%@",abc];
+    
     UIViewController * test = [[UIViewController alloc]init];
     [test setNavigationTitle:@"你好啊"];
     [self.navigationController pushViewController:test animated:YES];

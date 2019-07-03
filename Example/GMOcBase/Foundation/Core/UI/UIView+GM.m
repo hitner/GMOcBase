@@ -176,4 +176,87 @@
     [self.layer addSublayer:gradientLayer];
     return gradientLayer;
 }
+
+#pragma mark - 布局约束部分
+///添加到左边、底部的约束,bottomView为nil表示距离底部的superView
+- (void)constraintToBottomView:(UIView*)bottomView
+                  bottomMargin:(CGFloat)bottomMargin
+                         xAxis:(CGFloat)x
+                         width:(CGFloat)width
+                        height:(CGFloat)height {
+    NSAssert(self.superview,@"must add to superview");
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSLayoutConstraint * bottomConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:bottomView attribute:NSLayoutAttributeTop multiplier:1.0 constant:-bottomMargin];
+    
+    NSLayoutConstraint * widthConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:width];
+    
+    NSLayoutConstraint * heightConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:height];
+    
+    if (self.superview) {
+        [self.leftAnchor constraintEqualToAnchor:self.superview.leftAnchor constant:x].active = YES;
+    };
+    
+    bottomConstraint.active = YES;
+    widthConstraint.active = YES;
+    heightConstraint.active = YES;
+}
+
+
+///添加底部margin、x轴对齐的约束
+- (void)constraintToBottomView:(UIView*)bottomView
+                  bottomMargin:(CGFloat)bottomMargin
+                        xAlign:(GMAlignAnchor)align
+                   alignMargin:(CGFloat)sideMargin
+                         width:(CGFloat)width
+                        height:(CGFloat)height {
+    NSAssert(align == GMAlignAnchorUnavailable ||
+             align == GMAlignAnchorLeft ||
+             align == GMAlignAnchorRight ||
+             align == GMAlignAnchorLeftRightCenter, @"align error");
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.widthAnchor constraintEqualToConstant:width].active = YES;
+    [self.heightAnchor constraintEqualToConstant:height].active = YES;
+    [self.bottomAnchor constraintEqualToAnchor:bottomView.topAnchor constant:-bottomMargin].active = YES;
+    
+    if (align == GMAlignAnchorLeft) {
+        [self.leftAnchor constraintEqualToAnchor:bottomView.leftAnchor constant:sideMargin].active = YES;
+    }
+    else if (align == GMAlignAnchorLeftRightCenter) {
+        [self.centerXAnchor constraintEqualToAnchor:bottomView.centerXAnchor constant:sideMargin].active = YES;
+    }
+    else if (align == GMAlignAnchorRight) {
+        [self.rightAnchor constraintEqualToAnchor:bottomView.rightAnchor constant:-sideMargin].active = YES;
+    }
+}
+
+///添加superview底部margin、x轴对齐margin的约束
+- (void)constraintToSuperBottomMargin:(CGFloat)bottomMargin
+                              xAlign:(GMAlignAnchor)align
+                         alignMargin:(CGFloat)sideMargin
+                               width:(CGFloat)width
+                              height:(CGFloat)height {
+    NSAssert(self.superview, @"must addTo superview");
+    NSAssert(align == GMAlignAnchorUnavailable ||
+             align == GMAlignAnchorLeft ||
+             align == GMAlignAnchorRight ||
+             align == GMAlignAnchorLeftRightCenter, @"align error");
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.widthAnchor constraintEqualToConstant:width].active = YES;
+    [self.heightAnchor constraintEqualToConstant:height].active = YES;
+    if (self.superview) {
+        [self.bottomAnchor constraintEqualToAnchor:self.superview.safeAreaLayoutGuide.bottomAnchor constant:-bottomMargin].active = YES;
+        
+        if (align == GMAlignAnchorLeft) {
+            [self.leftAnchor constraintEqualToAnchor:self.superview.leftAnchor constant:sideMargin].active = YES;
+        }
+        else if (align == GMAlignAnchorLeftRightCenter) {
+            [self.centerXAnchor constraintEqualToAnchor:self.superview.centerXAnchor constant:sideMargin].active = YES;
+        }
+        else if (align == GMAlignAnchorRight) {
+            [self.rightAnchor constraintEqualToAnchor:self.superview.rightAnchor constant:-sideMargin].active = YES;
+        }
+    }
+}
 @end
