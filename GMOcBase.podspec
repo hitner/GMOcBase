@@ -28,7 +28,7 @@ Develop ios project as soon as possible.
   s.source           = { :git => 'https://github.com/hitner/GMOcBase.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '8.0'
   s.prefix_header_contents = '#import "GMMacro.h"'
   s.source_files = 'GMOcBase/Core/**/*.{h,m}', 'GMOcBase/Utility/**/*.{h,m}'
   
