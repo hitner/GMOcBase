@@ -13,10 +13,10 @@
 
 IMPLEMENT_SIGNALTON()
 
-- (void)dataGETWithUrlString:(NSString*)url
-                    result:(void(^)(NSData* image, NSError* error))callback {
+- (NSURLSessionDataTask *)dataGETWithURL:(NSURL*)url
+                                  result:(void(^)(NSData* image, NSError* error))callback {
     NSURLSessionDataTask * dataTask =  [[GMURLSessionManager sharedObject].commonMainQueueSession
-                                        dataTaskWithURL:[NSURL URLWithString:url]
+                                        dataTaskWithURL:url
         completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
     if (data && !error) {
         if (callback) {
@@ -30,5 +30,6 @@ IMPLEMENT_SIGNALTON()
     }
     }];
     [dataTask resume];
+    return dataTask;
 }
 @end

@@ -22,7 +22,7 @@ backgroundColor:(UIColor*) backColor;
 foregroundColor:(UIColor*) iconColor;
 
 /// asynch set portrait
-- (void)setPortraitWithUrl:(NSString*)url;
+- (void)setPortraitURLString:(NSString*)url;
 @end
 
 NS_ASSUME_NONNULL_END

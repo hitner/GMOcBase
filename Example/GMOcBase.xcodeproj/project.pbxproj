@@ -31,6 +31,7 @@
 		F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83D421A3FD87000DE61B /* UIColor+GM.m */; };
 		F13F83DA21A55389000DE61B /* dog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F13F83D921A55389000DE61B /* dog.scnassets */; };
 		F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */; };
+		F1436DB522CEFF9B0058A45F /* GMEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = F1436DB422CEFF9B0058A45F /* GMEnum.m */; };
 		F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */; };
 		F15D739D21C79AA9005CBF05 /* GMDebugControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = F15D739C21C79AA9005CBF05 /* GMDebugControlView.m */; };
 		F15D73A021C79C4B005CBF05 /* GMDebugItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F15D739F21C79C4B005CBF05 /* GMDebugItem.m */; };
@@ -117,6 +118,8 @@
 		F13F83D921A55389000DE61B /* dog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = dog.scnassets; sourceTree = "<group>"; };
 		F13F83DB21A5646F000DE61B /* GMSceneExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMSceneExampleViewController.h; sourceTree = "<group>"; };
 		F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMSceneExampleViewController.m; sourceTree = "<group>"; };
+		F1436DB322CEFF9B0058A45F /* GMEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMEnum.h; sourceTree = "<group>"; };
+		F1436DB422CEFF9B0058A45F /* GMEnum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMEnum.m; sourceTree = "<group>"; };
 		F14547D721A2AA3300E26638 /* GMMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMacro.h; sourceTree = "<group>"; };
 		F14547D921A2B1C900E26638 /* GMNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMNavigationViewController.h; sourceTree = "<group>"; };
 		F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMNavigationViewController.m; sourceTree = "<group>"; };
@@ -350,6 +353,8 @@
 				F1B1D42C2250933900EDD767 /* GMURLSessionManager.m */,
 				F13E621E225C7AB4004F8C17 /* GMFormatterVendor.h */,
 				F13E621F225C7AB4004F8C17 /* GMFormatterVendor.m */,
+				F1436DB322CEFF9B0058A45F /* GMEnum.h */,
+				F1436DB422CEFF9B0058A45F /* GMEnum.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -707,6 +712,7 @@
 				F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */,
 				F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */,
 				F1C188C5224DC8F400A30B6F /* GMApperance.m in Sources */,
+				F1436DB522CEFF9B0058A45F /* GMEnum.m in Sources */,
 				F1C0DD22224E1DAE004013EC /* UIButton+App.m in Sources */,
 				F13F83D521A3FD87000DE61B /* UIColor+GM.m in Sources */,
 				F164B93022771F3D00856926 /* NSData+GM.m in Sources */,

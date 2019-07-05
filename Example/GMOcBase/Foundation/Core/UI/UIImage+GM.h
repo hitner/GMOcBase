@@ -27,8 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
                       font:(UIFont*)font;
 
 /// 异步获得http url的图片
-+ (void) imageWithURLString:(NSString*)url
-                     result:( void (^) (UIImage* image, NSError*) ) block;
++ (NSURLSessionDataTask *) imageWithURL:(NSURL*)url
+                                 result:( void (^) (UIImage* image, NSError*) ) block;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,9 +9,10 @@
 #import "UIImageView+GM.h"
 #import "UIImage+GM.h"
 #import "GMHttpManager.h"
+#import "GMEnum.h"
 #import <objc/runtime.h>
 
-const char * kImageAssociatedUrl = "_kImageAssociatedUrl";
+const char * kImageViewAssociatedURLTask = "_kImageAssociatedUrl";
 
 @implementation UIImageView (GM)
 
@@ -39,65 +40,74 @@ backgroundColor:(UIColor*) backColor
 }
 
 
-/// 设置http url的图片(NSString*)
-- (void)setImageWithUrlString:(NSString*)url {
-    [self setImageWithUrlString:url memoryCached:NO];
-}
-
-/// 有内存缓存的图片，用于多次显示的情况
-- (void)setFrequentImageWithUrlString:(NSString *)url {
-    [self setImageWithUrlString:url memoryCached:YES];
+/// 异步设置http url的图片(NSString*)
+- (void)gm_setImageWithURL:(NSURL*)url {
+    [self gm_setImageWithURL:url placeholderImage:nil completionBlock:nil];
 }
 
 
-- (void)setImageWithUrlString:(NSString*)url
-                 memoryCached:(BOOL)cached {
-    if (!url || !url.length) {
-        return ;
+- (void)gm_setImageWithURL:(NSURL*)url
+          placeholderImage:(nullable UIImage*)image {
+     [self gm_setImageWithURL:url placeholderImage:image completionBlock:nil];
+}
+
+
+- (void)gm_setImageWithURL:(NSURL*)url
+          placeholderImage:(nullable UIImage*)image
+           completionBlock:(nullable GMImageCompletionBlock) block {
+    NSAssert(url,@"need a nonnull url");
+    if (!url) {
+        return;
     }
     
-    NSString * associatedUrl = objc_getAssociatedObject(self, kImageAssociatedUrl);
-    if (associatedUrl){
-        if ([associatedUrl isEqualToString:url]) {
+    NSURLSessionDataTask * associatedTask = objc_getAssociatedObject(self, kImageViewAssociatedURLTask);
+    if (associatedTask) {
+        if ([url isEqual:associatedTask.originalRequest.URL]) {
             return;
         }
         else {
-            
+            if (associatedTask.state == NSURLSessionTaskStateRunning ||
+                associatedTask.state == NSURLSessionTaskStateSuspended) {
+                [associatedTask cancel];
+            }
         }
     }
     
-    if (cached) {
-        UIImage * cachedImage = [[GMCore sharedObject] idCacheObjectForKey:url];
-        if (cachedImage) {
-            NSAssert([cachedImage isKindOfClass:[UIImage class]], @"");
-            if ([cachedImage isKindOfClass:[UIImage class]]) {
-                [self setImage:cachedImage];
+    weakifySelf
+    NSURLSessionDataTask * dataTask = [UIImage imageWithURL:url result:^(UIImage * _Nonnull image, NSError * _Nonnull error) {
+        strongifySelfReturnIfNil
+        NSURLSessionDataTask * origTask = objc_getAssociatedObject(self, kImageViewAssociatedURLTask);
+        NSString * failedReason = @"task not exist,may be cancelled";
+        if (origTask) {
+            if ([url isEqual:origTask.originalRequest.URL]) {
+                if (image && !error) {
+                    [self setImage:image];
+                }
+                if (block) {
+                    block(image,error,url);
+                }
                 return;
             }
             else {
-                // log warning
-                [[GMCore sharedObject] removeIdCacheObjectForKey:url];
+                failedReason = @"url not equal,may be replaced";
             }
         }
-    }
-    
-    objc_setAssociatedObject(self,kImageAssociatedUrl,url,OBJC_ASSOCIATION_COPY_NONATOMIC);
-    weakifySelf
-    [UIImage imageWithURLString:url result:^(UIImage * _Nonnull image, NSError * _Nonnull error) {
-        strongifySelfReturnIfNil
-        NSString * associatedUrl = objc_getAssociatedObject(self, kImageAssociatedUrl);
-        if (associatedUrl && [associatedUrl isEqualToString:url]) {
-            if (image && !error) {
-                [self setImage:image];
-                if (cached) {
-                    [[GMCore sharedObject] addIdCache:image forKey:url];
-                }
-            }
+        if (block) {
+            block(nil,[NSError errorWithDomain:GMImageViewURLError code:901 userInfo:@{NSLocalizedFailureReasonErrorKey:failedReason}], url);
         }
+        
     }];
+    objc_setAssociatedObject(self, kImageViewAssociatedURLTask, dataTask, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)setImage:(UIImage *)image {
+
+- (void)gm_cancelSetURLImage {
     
 }
+
+/// 会cancel已有的URL请求
+- (void)gm_setImage:(nullable UIImage*)image {
+    
+}
+
 @end

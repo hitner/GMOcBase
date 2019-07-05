@@ -10,28 +10,42 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// -[UIImageView setImage:]是否会cancel掉已有的URL请求
+#define GM_SET_IMAGE_CANCEL_URL 0
+
+
+typedef void(^GMImageCompletionBlock)(UIImage * _Nullable image, NSError * _Nullable error, NSURL * _Nullable imageURL);
+
 @interface UIImageView (GM)
 
 /**
  异步设置iconfont,大小是ImageView大小。故必须设置先设置frame!
  */
 - (void)setIcon:(NSString*)iconName
-       fontFamily:(NSString*)fontFamily
+     fontFamily:(NSString*)fontFamily
 foregroundColor:(UIColor*) iconColor
 backgroundColor:(UIColor*) backColor;
 
 
 
 /// 异步设置http url的图片(NSString*)
-- (void)setImageWithUrlString:(NSString*)url;
+- (void)gm_setImageWithURL:(NSURL*)url;
 
 
-/// 有内存缓存的图片，用于多次显示的情况
-- (void)setFrequentImageWithUrlString:(NSString *)url;
+- (void)gm_setImageWithURL:(NSURL*)url
+          placeholderImage:(nullable UIImage*)image;
 
-/// 一般不使用，请用快捷方法
-- (void)setImageWithUrlString:(NSString*)url
-                 memoryCached:(BOOL)cached;
+
+- (void)gm_setImageWithURL:(NSURL*)url
+          placeholderImage:(nullable UIImage*)image
+           completionBlock:(nullable GMImageCompletionBlock) block;
+
+
+- (void)gm_cancelSetURLImage;
+
+/// 会cancel已有的URL请求
+- (void)gm_setImage:(nullable UIImage*)image;
+
 @end
 
 NS_ASSUME_NONNULL_END

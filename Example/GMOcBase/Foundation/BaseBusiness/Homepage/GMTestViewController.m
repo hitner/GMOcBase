@@ -61,7 +61,7 @@
     
     CGRect frame2 = GMBottomAlignCenterFrame(imageView.frame, 20, 140,140);
     UIImageView * imageView2 = [[UIImageView alloc] initWithFrame:frame2];
-    [imageView2 setImageWithUrlString:@"https://cdnimg103.lizhi.fm/user/2018/07/06/2679250850695235586.jpg"];
+    [imageView2 gm_setImageWithURL:[NSURL URLWithString:@"https://cdnimg103.lizhi.fm/user/2018/07/06/2679250850695235586.jpg"]];
     [self.view addSubview:imageView2];
     
     UILabel * label = [[UILabel alloc] init];

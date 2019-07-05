@@ -70,10 +70,10 @@
     return image;
 }
 
-+ (void) imageWithURLString:(NSString*)url
-                     result:( void (^) (UIImage* image, NSError*) ) block {
-    [[GMHttpManager sharedObject] dataGETWithUrlString:url
-                                                result:^(NSData * _Nonnull data, NSError * _Nonnull error) {
++ (NSURLSessionDataTask *) imageWithURL:(NSURL*)url
+               result:( void (^) (UIImage* image, NSError*) ) block {
+    return [[GMHttpManager sharedObject] dataGETWithURL:url
+                                            result:^(NSData * _Nonnull data, NSError * _Nonnull error) {
                                                     if (data && !error) {
                                                         UIImage * image = [UIImage imageWithData:data];
                                                         if (block) {

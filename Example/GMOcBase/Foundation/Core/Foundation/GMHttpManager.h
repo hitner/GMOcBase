@@ -17,8 +17,8 @@ DECLARE_SIGNALTON()
 @property(nonatomic) LGHttp * mainHost;
 
 /// common data task, use sharedSession for image/
-- (void)dataGETWithUrlString:(NSString*)url
-                    result:(void(^)(NSData* image, NSError* error))callback;
+- (NSURLSessionDataTask *)dataGETWithURL:(NSURL*)url
+                                  result:(void(^)(NSData* image, NSError* error))callback;
 
 - (void)getWithPath:(NSString*) path
             success:(void(^)(NSDictionary*))success
