@@ -102,12 +102,20 @@ backgroundColor:(UIColor*) backColor
 
 
 - (void)gm_cancelSetURLImage {
-    
+    NSURLSessionDataTask * associatedTask = objc_getAssociatedObject(self, kImageViewAssociatedURLTask);
+    if (associatedTask) {
+        if (associatedTask.state == NSURLSessionTaskStateRunning ||
+                associatedTask.state == NSURLSessionTaskStateSuspended) {
+            [associatedTask cancel];
+            objc_setAssociatedObject(self, kImageViewAssociatedURLTask, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+    }
 }
 
 /// 会cancel已有的URL请求
 - (void)gm_setImage:(nullable UIImage*)image {
-    
+    [self gm_cancelSetURLImage];
+    [self setImage:image];
 }
 
 @end

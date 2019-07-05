@@ -7,7 +7,7 @@
 //
 
 #import "UIImage+GM.h"
-
+#import "GMCore.h"
 #import "GMHttpManager.h"
 
 @implementation UIImage (GM)

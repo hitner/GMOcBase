@@ -2,7 +2,8 @@ PODS:
   - CocoaLumberjack (3.5.2):
     - CocoaLumberjack/Core (= 3.5.2)
   - CocoaLumberjack/Core (3.5.2)
-  - GMOcBase (0.1.0)
+  - GMOcBase (0.1.0):
+    - CocoaLumberjack
 
 DEPENDENCIES:
   - CocoaLumberjack (from `https://github.com/CocoaLumberjack/CocoaLumberjack.git`, tag `3.5.2`)
@@ -22,8 +23,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CocoaLumberjack: dc170c62965700ab75f442502efa844f6121420a
-  GMOcBase: baa90c0db0455a3671a3b9da4205e638d89b3384
+  GMOcBase: 6328241fec0f9d75fa06bebeac3eb76312f9669a
 
-PODFILE CHECKSUM: 763b848ae2630859368905b5dbafae60aaed6c84
+PODFILE CHECKSUM: 5e2f175ced1fd60793125258cfdca5cd21e73c14
 
 COCOAPODS: 1.7.3

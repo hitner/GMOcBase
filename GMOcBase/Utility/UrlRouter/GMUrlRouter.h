@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 /**
- * 只做
+ * 只做 支持ulink，做到统一的处理
  */
 @interface GMUrlRouter : NSObject
 DECLARE_SIGNALTON()

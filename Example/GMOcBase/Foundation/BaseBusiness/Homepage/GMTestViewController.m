@@ -27,7 +27,7 @@
 #import "GMSceneExampleViewController.h"
 
 @interface GMTestViewController ()
-
+@property (nonatomic,weak) UIImageView * testImageView;
 @end
 
 @implementation GMTestViewController
@@ -61,7 +61,7 @@
     
     CGRect frame2 = GMBottomAlignCenterFrame(imageView.frame, 20, 140,140);
     UIImageView * imageView2 = [[UIImageView alloc] initWithFrame:frame2];
-    [imageView2 gm_setImageWithURL:[NSURL URLWithString:@"https://cdnimg103.lizhi.fm/user/2018/07/06/2679250850695235586.jpg"]];
+    self.testImageView = imageView2;
     [self.view addSubview:imageView2];
     
     UILabel * label = [[UILabel alloc] init];
@@ -96,46 +96,17 @@
 
 
 - (IBAction)touchUpInsideButton:(id)sender {
-//    NSMutableArray * ma = [[NSMutableArray alloc] initWithArray:@[@(1),@(3),@(2)]];
-//    [ma sortUsingComparator:^NSComparisonResult(NSNumber*  _Nonnull obj1, NSNumber*  _Nonnull obj2) {
-//        if (obj1.integerValue > obj2.integerValue) {
-//            return NSOrderedAscending;
-//        }
-//        else {
-//            return NSOrderedDescending;
-//        }
-//    }];
-    NSInteger abc = 3;
-    NSString* a = [NSString stringWithFormat:@"kkk%@",abc];
-    
-    UIViewController * test = [[UIViewController alloc]init];
-    [test setNavigationTitle:@"你好啊"];
-    [self.navigationController pushViewController:test animated:YES];
+    UIImage * image = [UIImage imageNamed:@"lizhi"];
+    [self.testImageView gm_setImageWithURL:[NSURL URLWithString:@"https://cdnimg103.lizhi.fm/user/2018/07/06/2679250850695235586.jpg"] placeholderImage:image];
     
 }
 
 
 - (IBAction)touchUpInsideGcdButton:(id)sender {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSLog(@"start operation");
-        CGFloat k = 9.2324234f;
-        CGFloat sum = k;
-        for (NSInteger i = 0; i < 0x99FFFFF; i++) {
-            if (i%2) {
-                sum -= (sum*0.49988);
-            }
-            else {
-                sum += (sum*1.947349);
-            }
-        }
-        NSLog(@"finish operation");
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"sum:%@", @(sum));
-        });
-        
-
-    });
+    UIImage * image = [UIImage imageNamed:@"lizhi_logo"];
+    //[self.testImageView gm_setImageWithURL:[NSURL URLWithString:@"https://cdnimg103.lizhi.fm/user/2018/07/06/2679250850695235586.jpg"] placeholderImage:image];
+    [self.testImageView gm_setImageWithURL:[NSURL URLWithString:@"https://cdn.lizhi.fm/studio/2019/06/10/2742105951893607990.jpg"]];
+    //[self.testImageView gm_setImage:image];
 }
 
 @end

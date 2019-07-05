@@ -21,23 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exv-Rh-LSm" customClass="GMPrimeButton">
-                    <rect key="frame" x="157" y="316" width="61" height="34"/>
+                    <rect key="frame" x="146" y="316" width="84" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="sdfasdf">
+                    <state key="normal" title="TestImage">
                         <color key="titleColor" red="1" green="0.2826233084" blue="0.97161599009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="touchUpInsideGcdButton:" destination="-1" eventType="touchUpInside" id="oEx-Cm-xCe"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nr1-aq-oaZ">
-                    <rect key="frame" x="149" y="137" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.89586681174134053" green="0.89714216321243523" blue="0.18171249310303683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="tintColor" red="1" green="0.2826233084" blue="0.97161599009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="touchUpInsideButton:" destination="-1" eventType="touchUpInside" id="v3Y-5v-7cJ"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVY-U3-BD1">
@@ -64,6 +54,16 @@
                         <constraint firstAttribute="height" constant="100" id="j5J-rl-ee0"/>
                     </constraints>
                     <state key="normal" image="lizhi"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nr1-aq-oaZ">
+                    <rect key="frame" x="269" y="318" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.89586681174134053" green="0.89714216321243523" blue="0.18171249310303683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="1" green="0.2826233084" blue="0.97161599009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="touchUpInsideButton:" destination="-1" eventType="touchUpInside" id="v3Y-5v-7cJ"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

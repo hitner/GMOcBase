@@ -28,9 +28,9 @@ Develop ios project as soon as possible.
   s.source           = { :git => 'https://github.com/hitner/GMOcBase.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'GMOcBase/Logic/*.{h,m}', 'GMOcBase/UI/*.{h,m}'
+  s.ios.deployment_target = '10.0'
+  s.prefix_header_contents = '#import "GMMacro.h"'
+  s.source_files = 'GMOcBase/Core/**/*.{h,m}', 'GMOcBase/Utility/**/*.{h,m}'
   
   # s.resource_bundles = {
   #   'GMOcBase' => ['GMOcBase/Assets/*.png']
@@ -38,5 +38,5 @@ Develop ios project as soon as possible.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'CocoaLumberjack'
 end

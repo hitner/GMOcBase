@@ -7,6 +7,7 @@
 //
 
 #import "GMURLSessionManager.h"
+#import "GMCore.h"
 
 @implementation GMURLSessionManager
 IMPLEMENT_SIGNALTON()
