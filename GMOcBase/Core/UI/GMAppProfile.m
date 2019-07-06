@@ -50,10 +50,10 @@ IMPLEMENT_SIGNALTON()
     NSLog(@"HomeDirectory:%@",NSHomeDirectory());
     //字体
     for (NSString * family in [UIFont familyNames]) {
-        NSLog(@"familyNames:%@", family);
-        for (NSString * name in [UIFont fontNamesForFamilyName:family]) {
-            NSLog(@"     font name: %@",name);
-        }
+        NSLog(@"familyNames:%@, font counts:%ld", family,[UIFont fontNamesForFamilyName:family].count);
+//        for (NSString * name in [UIFont fontNamesForFamilyName:family]) {
+//            NSLog(@"-font name: %@",name);
+//        }
     }
 }
 @end

@@ -13,6 +13,7 @@
 #import "GMFaceTrackViewController.h"
 //core
 #import "UIViewController+GM.h"
+#import "UIAlertController+GM.h"
 #import "GMCore.h"
 //App
 #import "GMPrimeButton.h"
@@ -77,6 +78,10 @@
     [label2 constraintToBottomView:label bottomMargin:10 xAxis:50 width:200 height:40];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"view Did appear");
+    [super viewDidAppear:animated];
+}
 
 
 - (IBAction)touchUpInsideFaceTrack:(id)sender {
@@ -96,9 +101,12 @@
 
 
 - (IBAction)touchUpInsideButton:(id)sender {
-    UIImage * image = [UIImage imageNamed:@"lizhi"];
-    [self.testImageView gm_setImageWithURL:[NSURL URLWithString:@"https://cdnimg103.lizhi.fm/user/2018/07/06/2679250850695235586.jpg"] placeholderImage:image];
+//    UIImage * image = [UIImage imageNamed:@"lizhi"];
+//    [self.testImageView gm_setImageWithURL:[NSURL URLWithString:@"https://cdnimg103.lizhi.fm/user/2018/07/06/2679250850695235586.jpg"] placeholderImage:image];
     
+//    UIAlertController * alert = [UIAlertController alertControllerWithContent:@"你尚未登录"];
+    UIAlertController * alert = [UIAlertController actionSheetControllerWithTitle:@"你还是看得见开始卡三等奖，可是大家？" content:nil cancelText:nil cancelAction:nil changeText:nil changeAction:nil];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
