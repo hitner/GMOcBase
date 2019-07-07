@@ -105,6 +105,7 @@ static GMToastView * __gm_toastView_110 ;
 
 @interface GMToastWaitingView : GMToastView
 @property (nonatomic) UILabel * label;
+@property (nonatomic) UIActivityIndicatorView * indicatorView;
 @property (nonatomic) GMBlockVoid completionBlock;
 +(instancetype)addToWindowWithInfo:(NSString*)info
                           duration:(NSTimeInterval) interval
@@ -120,7 +121,6 @@ static GMToastView * __gm_toastView_110 ;
     GMToastWaitingView * waitingView = [[GMToastWaitingView alloc] initWithFrame:superView.bounds];
     [waitingView trigTimer:duration];
     [waitingView.label setText:info];
-    [waitingView.label sizeToFit];
     waitingView.completionBlock = block;
     
     [superView addSubview:waitingView];
@@ -133,10 +133,19 @@ static GMToastView * __gm_toastView_110 ;
     
     CGRect containerframe = GMCenterFrame(self.bounds,GMToastWidth,GMToastHeight);
     UIView * containerView = [[UIView alloc] initWithFrame:containerframe];
+    containerView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.3];
     [self addSubview:containerView];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:self.bounds];
+    UIActivityIndicatorView * indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicatorView.frame = GMHorizontalCenterFrame(containerView.bounds, 30, CGRectGetWidth(indicatorView.frame), CGRectGetHeight(indicatorView.frame));
+    [containerView addSubview:indicatorView];
+    [indicatorView startAnimating];
+    self.indicatorView = indicatorView;
+    
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(indicatorView.frame) + 30, GMToastWidth, 30)];
     label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
     self.label = label;
     [containerView addSubview:label];
     return self;
@@ -145,6 +154,7 @@ static GMToastView * __gm_toastView_110 ;
 
 - (void)autoTimeoutForTimer:(NSTimer *)timer {
     GMBlockVoid block =  self.completionBlock;
+    [self.indicatorView stopAnimating];
     [super autoTimeoutForTimer:timer];
     if (block) {
         block();

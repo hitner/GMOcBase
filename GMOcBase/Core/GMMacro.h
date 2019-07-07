@@ -51,9 +51,17 @@ if(!self) { return;}
 
 #pragma mark - View frame与布局
 
+///相对于bounds的布局
 #define GMCenterFrame(superBounds, width, height) \
 CGRectMake(CGRectGetMinX(superBounds)+(CGRectGetWidth(superBounds)-width)/2.0, \
 CGRectGetMinY(superBounds)+(CGRectGetHeight(superBounds) - height)/2.0, width, height)
+
+#define GMHorizontalCenterFrame(superBounds, y, width, height) \
+CGRectMake(CGRectGetMinX(superBounds)+(CGRectGetWidth(superBounds)-width)/2.0, \
+y, width, height)
+
+#define GMVerticalCenterFrame(superBounds, x, width, height) \
+CGRectMake(x,CGRectGetMinY(superBounds)+(CGRectGetHeight(superBounds) - height)/2.0, width, height)
 
 ///右边，顶部对齐
 #define GMRightAlignTopFrame(leftFrame,leftMargin,width,height) \
