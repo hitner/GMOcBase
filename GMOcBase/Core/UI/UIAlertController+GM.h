@@ -37,8 +37,10 @@ NS_ASSUME_NONNULL_BEGIN
                               destructiveText:(nullable NSString*)changeText
                             destructiveAction:(nullable GMBlockVoid)changeBlock;
 
+/// 通用形式，注意已经有一个cancel了
 +(instancetype)actionSheetControllerWithTitle:(nullable NSString*)title
                                  alertActions:(NSArray<UIAlertAction*>*)actions;
+
 
 
 +(instancetype)actionSheetControllerWithTitle:(nullable NSString*)title

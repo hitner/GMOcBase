@@ -7,28 +7,35 @@
 
 #import "GMToast.h"
 
-#define GMToastWidth 200.f
-#define GMToastHeight 220.f
+
 
 @interface GMToastView : UIView
 @property(nonatomic) NSTimer * timer;
+@property(nonatomic) GMBlockVoid autoDismissBlock;
 - (void)dismiss;
 
 - (void)replaceWithInfo:(NSString*)info
                duration:(NSTimeInterval)interval
              completion:(GMBlockVoid)block;
+
+- (void)autoTimeoutForTimer:(NSTimer*)timer;
 @end
 
+/// must be unique
+static GMToastView * __gm_toastView_110 ;
 
 @implementation GMToastView
 
+- (void)autoTimeoutForTimer:(NSTimer *)timer {
+    [self.timer invalidate];
+    self.timer = nil;
+    [self removeWithAnimation];
+    __gm_toastView_110 = nil;
+}
+
 - (void)trigTimer:(NSTimeInterval)interval {
     if (interval > 0) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:interval repeats:NO block:^(NSTimer * _Nonnull timer) {
-            [self.timer invalidate];
-            self.timer = nil;
-            [self removeWithAnimation];
-        }];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(autoTimeoutForTimer:) userInfo:nil repeats:NO];
     }
 }
 
@@ -60,43 +67,94 @@
 
 #pragma mark - TipView
 
+#define GMToastWidth 200.f
+#define GMToastHeight 220.f
 @interface GMToastTipView : GMToastView
 + (instancetype)addToWindowWithTip:(NSString*)tip
                   duration:(NSTimeInterval)duration;
+@property(nonatomic) UILabel * label;
 @end
 
 @implementation GMToastTipView
+
 + (instancetype)addToWindowWithTip:(NSString*)tip
                           duration:(NSTimeInterval)duration {
-    CGRect frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, 200, 100);
-    GMToastView * toastView = [[GMToastView alloc] init];
-    toastView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-    [toastView setInfo:info isLoading:interval == 0];
-    [toastView trigTimer:interval];
+    UIView* superView = [UIApplication sharedApplication].delegate.window;
+    CGRect frame = GMCenterFrame(superView.bounds,GMToastWidth,GMToastHeight);
+    GMToastTipView * toastView = [[GMToastTipView alloc] initWithFrame:frame];
+    [toastView trigTimer:duration];
+    [toastView.label setText:tip];
+    [toastView.label sizeToFit];
+    [superView addSubview:toastView];
     return toastView;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    self.userInteractionEnabled = NO;
+    UILabel *label = [[UILabel alloc] initWithFrame:self.bounds];
+    label.textColor = [UIColor whiteColor];
+    self.label = label;
+    [self addSubview:label];
+    return self;
 }
 @end
 
 #pragma mark - WaitingView
 
 @interface GMToastWaitingView : GMToastView
+@property (nonatomic) UILabel * label;
+@property (nonatomic) GMBlockVoid completionBlock;
 +(instancetype)addToWindowWithInfo:(NSString*)info
                           duration:(NSTimeInterval) interval
                         completion:(GMBlockVoid)block;
 @end
 
 @implementation GMToastWaitingView
+
 +(instancetype)addToWindowWithInfo:(NSString*)info
-                          duration:(NSTimeInterval) interval
+                          duration:(NSTimeInterval) duration
                         completion:(GMBlockVoid)block {
+    UIView* superView = [UIApplication sharedApplication].delegate.window;
+    GMToastWaitingView * waitingView = [[GMToastWaitingView alloc] initWithFrame:superView.bounds];
+    [waitingView trigTimer:duration];
+    [waitingView.label setText:info];
+    [waitingView.label sizeToFit];
+    waitingView.completionBlock = block;
     
+    [superView addSubview:waitingView];
+    return waitingView;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    self.backgroundColor = [UIColor clearColor];
+    
+    CGRect containerframe = GMCenterFrame(self.bounds,GMToastWidth,GMToastHeight);
+    UIView * containerView = [[UIView alloc] initWithFrame:containerframe];
+    [self addSubview:containerView];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:self.bounds];
+    label.textColor = [UIColor whiteColor];
+    self.label = label;
+    [containerView addSubview:label];
+    return self;
+}
+
+
+- (void)autoTimeoutForTimer:(NSTimer *)timer {
+    GMBlockVoid block =  self.completionBlock;
+    [super autoTimeoutForTimer:timer];
+    if (block) {
+        block();
+    }
 }
 @end
 
 
 #pragma mark - GMToast interface
-/// must be unique
-static GMToastView * __gm_toastView_110 ;
+
 
 @implementation GMToast
 
@@ -124,7 +182,6 @@ static GMToastView * __gm_toastView_110 ;
     else {
         __gm_toastView_110 = [GMToastTipView addToWindowWithTip:info duration:interval];
     }
-    
 }
 
 
@@ -156,9 +213,6 @@ static GMToastView * __gm_toastView_110 ;
                                                       completion:block];
     
 }
-
-        
-
 
 
 + (void)dismiss {

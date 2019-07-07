@@ -5,6 +5,10 @@
 [![License](https://img.shields.io/cocoapods/l/GMOcBase.svg?style=flat)](https://cocoapods.org/pods/GMOcBase)
 [![Platform](https://img.shields.io/cocoapods/p/GMOcBase.svg?style=flat)](https://cocoapods.org/pods/GMOcBase)
 
+## Careful
+
+GMOcBase only support ios 10.0 and greater.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -13,11 +17,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-GMOcBase is available through [CocoaPods](https://cocoapods.org). To install
+GMOcBase is not available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'GMOcBase'
+pod 'GMOcBase', :git => "https://github.com/hitner/GMOcBase.git"
 ```
 
 ## Author

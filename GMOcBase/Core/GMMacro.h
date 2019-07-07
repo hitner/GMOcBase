@@ -51,8 +51,9 @@ if(!self) { return;}
 
 #pragma mark - View frame与布局
 
-#define GMCenterFame(superFrame, width, height) \
-CGRectMake((CGRectGet(superFrame)-width)/2.0, \
+#define GMCenterFrame(superBounds, width, height) \
+CGRectMake(CGRectGetMinX(superBounds)+(CGRectGetWidth(superBounds)-width)/2.0, \
+CGRectGetMinY(superBounds)+(CGRectGetHeight(superBounds) - height)/2.0, width, height)
 
 ///右边，顶部对齐
 #define GMRightAlignTopFrame(leftFrame,leftMargin,width,height) \
