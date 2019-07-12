@@ -22,10 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 无限的Toast，禁止其他操作
 + (void)waitingWithInfo:(nullable NSString*)info;
 
-/// 禁止其它操作，加在Window上面的视图,在dismiss的时候执行回调, interval 为0表示永远
+/// 禁止其它操作，加在Window上面的视图,在dismiss的时候执行回调, interval 为0表示永远,block YES表示手动dismiss,NO表示超时产生
 + (void)waitingWithInfo:(nullable NSString*)info
                duration:(NSTimeInterval) interval
-             completion:(nullable GMBlockVoid)block;
+             completion:(nullable GMBlockBool)block;
 
 + (void)dismiss;
 @end

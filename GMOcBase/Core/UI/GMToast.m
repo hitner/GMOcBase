@@ -106,7 +106,7 @@ static GMToastView * __gm_toastView_110 ;
 @interface GMToastWaitingView : GMToastView
 @property (nonatomic) UILabel * label;
 @property (nonatomic) UIActivityIndicatorView * indicatorView;
-@property (nonatomic) GMBlockVoid completionBlock;
+@property (nonatomic) GMBlockBool completionBlock;
 +(instancetype)addToWindowWithInfo:(NSString*)info
                           duration:(NSTimeInterval) interval
                         completion:(GMBlockVoid)block;
@@ -116,7 +116,7 @@ static GMToastView * __gm_toastView_110 ;
 
 +(instancetype)addToWindowWithInfo:(NSString*)info
                           duration:(NSTimeInterval) duration
-                        completion:(GMBlockVoid)block {
+                        completion:(GMBlockBool)block {
     UIView* superView = [UIApplication sharedApplication].delegate.window;
     GMToastWaitingView * waitingView = [[GMToastWaitingView alloc] initWithFrame:superView.bounds];
     [waitingView trigTimer:duration];
@@ -203,7 +203,7 @@ static GMToastView * __gm_toastView_110 ;
 /// 禁止其它操作，加在Window上面的视图,在dismiss的时候执行回调, interval 为0表示永远
 + (void)waitingWithInfo:(nullable NSString*)info
                duration:(NSTimeInterval) interval
-             completion:(nullable GMBlockVoid)block {
+             completion:(nullable GMBlockBool)block {
     if (__gm_toastView_110) {
         if ([__gm_toastView_110 isKindOfClass:[GMToastTipView class]]) {
             //waitingView has hight priority
@@ -213,7 +213,7 @@ static GMToastView * __gm_toastView_110 ;
             //replace with new text
             [__gm_toastView_110 replaceWithInfo:info
                                        duration:interval
-                                     completion:nil];
+                                     completion:block];
             return;
         }
     }
