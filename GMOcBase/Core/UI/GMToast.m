@@ -11,12 +11,12 @@
 
 @interface GMToastView : UIView
 @property(nonatomic) NSTimer * timer;
-@property(nonatomic) GMBlockVoid autoDismissBlock;
+@property(nonatomic) GMBlockBool autoDismissBlock;
 - (void)dismiss;
 
 - (void)replaceWithInfo:(NSString*)info
                duration:(NSTimeInterval)interval
-             completion:(GMBlockVoid)block;
+             completion:(GMBlockBool)block;
 
 - (void)autoTimeoutForTimer:(NSTimer*)timer;
 @end
@@ -53,7 +53,7 @@ static GMToastView * __gm_toastView_110 ;
 
 - (void)replaceWithInfo:(NSString*)info
                duration:(NSTimeInterval)interval
-             completion:(GMBlockVoid)block{
+             completion:(GMBlockBool)block{
     if (self.timer) {
         [self.timer invalidate];
         self.timer = nil;
@@ -109,7 +109,7 @@ static GMToastView * __gm_toastView_110 ;
 @property (nonatomic) GMBlockBool completionBlock;
 +(instancetype)addToWindowWithInfo:(NSString*)info
                           duration:(NSTimeInterval) interval
-                        completion:(GMBlockVoid)block;
+                        completion:(GMBlockBool)block;
 @end
 
 @implementation GMToastWaitingView
@@ -153,11 +153,11 @@ static GMToastView * __gm_toastView_110 ;
 
 
 - (void)autoTimeoutForTimer:(NSTimer *)timer {
-    GMBlockVoid block =  self.completionBlock;
+    GMBlockBool block =  self.completionBlock;
     [self.indicatorView stopAnimating];
     [super autoTimeoutForTimer:timer];
     if (block) {
-        block();
+        block(NO);
     }
 }
 @end

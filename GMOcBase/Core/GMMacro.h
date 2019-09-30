@@ -49,7 +49,7 @@ if(!self) { return;}
 #define GMLogError(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
 
 
-#pragma mark - View frame与布局
+#pragma mark - 相对于父view获得frame
 
 ///相对于bounds的布局
 #define GMCenterFrame(superBounds, width, height) \
@@ -63,17 +63,21 @@ y, width, height)
 #define GMVerticalCenterFrame(superBounds, x, width, height) \
 CGRectMake(x,CGRectGetMinY(superBounds)+(CGRectGetHeight(superBounds) - height)/2.0, width, height)
 
+#define GMMarginBottomSubviewFrame(superBounds, x, marginBottom, width, height) \
+CGRectMake(x,CGRectGetMaxY(superBounds)-marginBottom-height, width, height)
+#pragma mark - 相对于兄弟view获得frame
+
 ///右边，顶部对齐
 #define GMRightAlignTopFrame(leftFrame,leftMargin,width,height) \
 CGRectMake(CGRectGetMaxX(leftFrame)+leftMargin, CGRectGetMinY(leftFrame), width, height)
 ///右边，底部对齐
 #define GMRightAlignBottomFrame(leftFrame,leftMargin,width,height) \
 CGRectMake(CGRectGetMaxX(leftFrame)+leftMargin, \
-CGRectGetMinY(leftFrame) + (CGRectGetHeight(leftFrame) - height)/2.0, width, height)
+CGRectGetMaxY(leftFrame) - height, width, height)
 ///右边，中间对齐
 #define GMRightAlignCenterFrame(leftFrame,leftMargin,width,height) \
 CGRectMake(CGRectGetMaxX(leftFrame)+leftMargin,\
-CGRectGetMaxY(leftFrame) - height, width, height)
+CGRectGetMinY(leftFrame) + (CGRectGetHeight(leftFrame) - height)/2.0, width, height)
 
 ///下边，左对齐
 #define GMBottomAlignLeftFrame(topFrame,topMargin,width,height) \

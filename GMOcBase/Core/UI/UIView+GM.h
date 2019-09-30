@@ -40,12 +40,13 @@ typedef enum : NSUInteger {
                            topMargin:(CGFloat)margin
                                      width:(CGFloat)width
                                     height:(CGFloat)height;
-
-/* 增加圆角4个角的圆角 */
-- (void)maskCorners:(UIRectCorner)corners;
-
+#pragma mark - 增加行为和能力
 /* 使之能够手指拖动 */
 - (void)enableFloatable:(BOOL)constrainToBound;
+
+#pragma mark - 增加显示特效
+/* 增加圆角4个角的圆角 */
+- (void)maskCorners:(UIRectCorner)corners;
 
 /* 添加模糊效果，作为subview*/
 - (UIVisualEffectView *)addBlurEffect:(UIBlurEffectStyle)style;
@@ -61,6 +62,9 @@ typedef enum : NSUInteger {
                                  locations:(NSArray<NSNumber*>*)locations
                                 startPoint:(CGPoint)startPoint
                                   endPoint:(CGPoint)endPoint;
+
+- (CAShapeLayer *)addAnimationArc;
+#pragma mark - 布局与约束
 
 ///添加底部margin、x固定的约束
 - (void)constraintToBottomView:(UIView*)bottomView
