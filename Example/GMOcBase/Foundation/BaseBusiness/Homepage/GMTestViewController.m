@@ -16,7 +16,6 @@
 #import "UIAlertController+GM.h"
 #import "GMCore.h"
 #import "GMToast.h"
-#import "GMArcView.h"
 //App
 #import "GMPrimeButton.h"
 #import "UIButton+App.h"
@@ -26,8 +25,11 @@
 
 #import "GMAVUtility.h"
 
+#import "GMWarmUp.h"
 
 #import "GMSceneExampleViewController.h"
+
+#import "GMWebViewController.h"
 
 @interface GMTestViewController ()
 @property (nonatomic,weak) UIImageView * testImageView;
@@ -129,7 +131,7 @@
 
 
 
-- (IBAction)touchUpInsideButton:(id)sender {
+- (IBAction)touchUpInsideButton:(UIButton*)sender {
 //    UIImage * image = [UIImage imageNamed:@"lizhi"];
 //    [self.testImageView gm_setImageWithURL:[NSURL URLWithString:@"https://cdnimg103.lizhi.fm/user/2018/07/06/2679250850695235586.jpg"] placeholderImage:image];
     
@@ -138,15 +140,14 @@
 //    [self presentViewController:alert animated:YES completion:nil];
     //[GMToast tip:@"kkkkkk"];
     //[GMToast waitingWithInfo:@"锆石似的几十块的"];
-    GMArcView * view = [[GMArcView alloc] initWithFrame:GMCenterFrame(self.view.bounds, 170, 170)];
-    view.backgroundColor = [UIColor blueColor];
-    view.trackLineWidth = 5.0;
-    view.radius = 40;
-    view.trackInitColor = [UIColor redColor];
-    [self.view addSubview:view];
-    [view startProgress:0 withEnd:1 inDuration:10 completionBlock:^{
-        ;
-    }];
+    if ([sender.currentTitle isEqualToString:@"WarmUp"]) {
+        [[GMWarmUp sharedObject] warmUp];
+        [sender setTitle:@"StopWarm" forState:UIControlStateNormal];
+    }
+    else {
+        [[GMWarmUp sharedObject] stopWarm];
+        [sender setTitle:@"WarmUp" forState:UIControlStateNormal];
+    }
 }
 
 
@@ -155,6 +156,11 @@
     //[self.testImageView gm_setImageWithURL:[NSURL URLWithString:@"https://cdnimg103.lizhi.fm/user/2018/07/06/2679250850695235586.jpg"] placeholderImage:image];
     [self.testImageView gm_setImageWithURL:[NSURL URLWithString:@"https://cdn.lizhi.fm/studio/2019/06/10/2742105951893607990.jpg"]];
     //[self.testImageView gm_setImage:image];
+}
+- (IBAction)touchUpInsideWebView:(id)sender {
+    GMWebViewController * webVC = [[GMWebViewController alloc] initWithWebURL:[NSURL URLWithString:@"https://liveamuactivity.lizhifm.com/static/game-center/index.html?alert=1"]];
+    [self.navigationController pushViewController:webVC animated:YES];
+    
 }
 
 @end

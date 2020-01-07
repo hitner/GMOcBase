@@ -40,6 +40,7 @@
 		F1C0DD22224E1DAE004013EC /* UIButton+App.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C0DD21224E1DAE004013EC /* UIButton+App.m */; };
 		F1C188C5224DC8F400A30B6F /* GMApperance.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C188C3224DC8F400A30B6F /* GMApperance.m */; };
 		F1C188C8224DC96800A30B6F /* GMPrimeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C188C7224DC96800A30B6F /* GMPrimeButton.m */; };
+		F1EAE8FB234192E0004A8235 /* GMWarmUp.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EAE8FA234192E0004A8235 /* GMWarmUp.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,8 @@
 		F1C188C4224DC8F400A30B6F /* GMApperance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMApperance.h; sourceTree = "<group>"; };
 		F1C188C6224DC96800A30B6F /* GMPrimeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMPrimeButton.h; sourceTree = "<group>"; };
 		F1C188C7224DC96800A30B6F /* GMPrimeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMPrimeButton.m; sourceTree = "<group>"; };
+		F1EAE8F9234192E0004A8235 /* GMWarmUp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMWarmUp.h; sourceTree = "<group>"; };
+		F1EAE8FA234192E0004A8235 /* GMWarmUp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMWarmUp.m; sourceTree = "<group>"; };
 		FACF5AFE41AAE9E1697894CD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -288,7 +291,6 @@
 		F17CF9CA217713CE009F2ED3 /* TopBusiness */ = {
 			isa = PBXGroup;
 			children = (
-				F1EAE8F7234190E8004A8235 /* Support */,
 			);
 			path = TopBusiness;
 			sourceTree = "<group>";
@@ -300,6 +302,7 @@
 				F14547DC21A2BA5600E26638 /* Framework */,
 				F14547D821A2AC7700E26638 /* Homepage */,
 				F1BB6795219ADCC1007BDA24 /* FaceTrack */,
+				F1EAE8F8234192CF004A8235 /* Others */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 			);
 			path = BaseBusiness;
@@ -345,12 +348,13 @@
 			path = SpecificApp;
 			sourceTree = "<group>";
 		};
-		F1EAE8F7234190E8004A8235 /* Support */ = {
+		F1EAE8F8234192CF004A8235 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				F1EAE8F9234192E0004A8235 /* GMWarmUp.h */,
+				F1EAE8FA234192E0004A8235 /* GMWarmUp.m */,
 			);
-			name = Support;
-			path = GMOcBase/TopBusiness/Support;
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,6 +531,7 @@
 				F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */,
 				F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */,
 				F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */,
+				F1EAE8FB234192E0004A8235 /* GMWarmUp.m in Sources */,
 				F1B1D42A224FBD5100EDD767 /* UIImageView+App.m in Sources */,
 				F1C188C8224DC96800A30B6F /* GMPrimeButton.m in Sources */,
 				6003F59E195388D20070C39A /* GMAppDelegate.m in Sources */,
