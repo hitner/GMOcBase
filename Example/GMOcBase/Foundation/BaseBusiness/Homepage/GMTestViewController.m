@@ -11,6 +11,7 @@
 //VC
 #import "GMMainTabBarController.h"
 #import "GMFaceTrackViewController.h"
+#import "GMCrashCasesTableViewController.h"
 //core
 #import "UIViewController+GM.h"
 #import "UIAlertController+GM.h"
@@ -161,6 +162,10 @@
     GMWebViewController * webVC = [[GMWebViewController alloc] initWithWebURL:[NSURL URLWithString:@"https://liveamuactivity.lizhifm.com/static/game-center/index.html?alert=1"]];
     [self.navigationController pushViewController:webVC animated:YES];
     
+}
+- (IBAction)touchUpInsideCrashReport:(id)sender {
+    GMCrashCasesTableViewController * crashVC = [[GMCrashCasesTableViewController alloc] init];
+    [self.navigationController pushViewController:crashVC animated:YES];
 }
 
 @end

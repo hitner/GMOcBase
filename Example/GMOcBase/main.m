@@ -8,9 +8,11 @@
 
 @import UIKit;
 #import "GMAppDelegate.h"
+#include "crash_report.h"
 
 int main(int argc, char * argv[])
 {
+    //initSignalHandler();
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([GMAppDelegate class]));
     }

@@ -13,10 +13,113 @@
 
 #import "GMNavigationViewController.h"
 
+#include <execinfo.h>
+#include <mach/exc.h>
+#include <mach/thread_act.h>
+#include <pthread.h>
+
+
+void exceptionHandler(NSException *exception) {
+    NSArray * stackSymbols = exception.callStackSymbols;
+    for (NSString * one in stackSymbols) {
+        NSLog(@"%@",one);
+    }
+}
+
+void cpp_exception_handler() {
+    
+}
+
+
+void ignore_signal_handler() {
+    NSLog(@" ignoarl signal handler");
+    
+    NSSetUncaughtExceptionHandler(exceptionHandler);
+    
+    
+    struct sigaction act;
+    act.__sigaction_u = (union __sigaction_u)SIG_DFL;
+    
+    sigaction(SIGTRAP, &act, NULL);
+    sigaction(SIGABRT, &act, NULL);
+    sigaction(SIGSEGV, &act, NULL);
+    //sigaction(SIGINT, &act, NULL);
+    //cannot 
+}
+
+void common_crash_handler(int sig,siginfo_t* signalInfo, void* userContext) {
+    //thread_suspend(0);
+    ignore_signal_handler();
+    NSLog(@"crash for signal %d", sig);
+    void* callstack[128];
+    int i, frames = backtrace(callstack, 128);
+    NSLog(@"has frames:%@",@(frames));
+    char** strs = backtrace_symbols(callstack, frames);
+    for (i = 0; i < frames; ++i) {
+        NSLog(@"%s\n", strs[i]);
+    }
+    free(strs);
+}
+
+const int kExceptionSignals[] = {
+   // Core-generating signals.
+  SIGABRT, SIGBUS, SIGFPE, SIGILL, SIGQUIT, SIGSEGV, SIGSYS, SIGTRAP, SIGEMT,
+  SIGXCPU, SIGXFSZ,
+  // Non-core-generating but terminating signals.
+  SIGALRM, SIGHUP, SIGINT, SIGPIPE, SIGPROF, SIGTERM, SIGUSR1, SIGUSR2,
+  SIGVTALRM, SIGXCPU, SIGXFSZ, SIGIO,
+};
+const int kNumHandledSignals =
+sizeof(kExceptionSignals) / sizeof(kExceptionSignals[0]);
+
+void initSignalHandler() {
+    NSLog(@"now init signal handler");
+    
+    NSSetUncaughtExceptionHandler(exceptionHandler);
+    //std::set_terminate(cpp_exception_handler);
+    static stack_t sigstk;
+    if ((sigstk.ss_sp = malloc(SIGSTKSZ*10)) == NULL) {
+        perror("malloc fail");
+    }
+    sigstk.ss_size = SIGSTKSZ*10;
+    sigstk.ss_flags = 0;
+    if (sigaltstack(&sigstk,0) < 0)
+        perror("sigaltstack");
+    
+    
+    for (int i = 0; i < kNumHandledSignals; ++i) {
+      struct sigaction sa;
+      memset(&sa, 0, sizeof(sa));
+      sigemptyset(&sa.sa_mask);
+      sigaddset(&sa.sa_mask, kExceptionSignals[i]);
+      sa.sa_sigaction = common_crash_handler;
+      sa.sa_flags = SA_SIGINFO;
+
+      if (sigaction(kExceptionSignals[i], &sa, 0) == -1) {
+        return ;
+      }
+    }
+    /*
+    struct sigaction act;
+    memset(&act, 0, sizeof(act));
+    act.__sigaction_u = (union __sigaction_u)common_crash_handler;
+    act.sa_flags = SA_ONSTACK |SA_SIGINFO |SA_64REGSET;
+    sigemptyset(&act.sa_mask);
+    
+    
+    sigaction(SIGTRAP, &act, NULL);
+    sigaction(SIGABRT, &act, NULL);
+    sigaction(SIGSEGV, &act, NULL);
+    sigaction(SIGBUS, &act, NULL);
+     */
+}
+
+
 @implementation GMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    initSignalHandler();
     // Override point for customization after application launch.
     [[GMCore sharedObject] initLogger];
     [[GMAppProfile sharedObject] logInfo];

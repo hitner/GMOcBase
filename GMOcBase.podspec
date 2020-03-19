@@ -30,7 +30,7 @@ Develop ios project as soon as possible.
 
   s.ios.deployment_target = '8.0'
   s.prefix_header_contents = '#import "GMMacro.h"'
-  s.source_files = 'GMOcBase/Core/**/*.{h,m}', 'GMOcBase/Utility/**/*.{h,m}'
+  s.source_files = 'GMOcBase/Core/**/*.{h,m}', 'GMOcBase/Utility/**/*.{h,m}', 'GMOcBase/CrashReport/**/*.{h,m,c,cpp,hpp}'
   
   # s.resource_bundles = {
   #   'GMOcBase' => ['GMOcBase/Assets/*.png']

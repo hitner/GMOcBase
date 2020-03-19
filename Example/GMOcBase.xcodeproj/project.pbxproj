@@ -31,6 +31,7 @@
 		F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D7217834C6009F2ED3 /* GMBaseViewController.m */; };
 		F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */; };
 		F17CF9DD217834E1009F2ED3 /* GMTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */; };
+		F1978A0A23C46067003EF7D6 /* GMTestItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1978A0923C46067003EF7D6 /* GMTestItemViewController.swift */; };
 		F1A0923E21ED8896003C1856 /* GMCalculateLandmark.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A0923D21ED8896003C1856 /* GMCalculateLandmark.m */; };
 		F1B1D420224F6EE200EDD767 /* lizhifm.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1B1D41F224F6ED500EDD767 /* lizhifm.ttf */; };
 		F1B1D424224FBC5600EDD767 /* UIImage+App.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1D423224FBC5600EDD767 /* UIImage+App.m */; };
@@ -95,6 +96,8 @@
 		F17CF9D9217834E1009F2ED3 /* GMTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
 		F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
 		F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMTestViewController.xib; sourceTree = "<group>"; };
+		F1978A0823C46066003EF7D6 /* GMOcBase_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GMOcBase_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		F1978A0923C46067003EF7D6 /* GMTestItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMTestItemViewController.swift; sourceTree = "<group>"; };
 		F1A0923C21ED8896003C1856 /* GMCalculateLandmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMCalculateLandmark.h; sourceTree = "<group>"; };
 		F1A0923D21ED8896003C1856 /* GMCalculateLandmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMCalculateLandmark.m; sourceTree = "<group>"; };
 		F1B1D41F224F6ED500EDD767 /* lizhifm.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lizhifm.ttf; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 				F17CF9D9217834E1009F2ED3 /* GMTestViewController.h */,
 				F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */,
 				F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */,
+				F1978A0923C46067003EF7D6 /* GMTestItemViewController.swift */,
+				F1978A0823C46066003EF7D6 /* GMOcBase_Example-Bridging-Header.h */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = 8RCJH95LG5;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 					6003F5AD195388D20070C39A = {
@@ -531,6 +537,7 @@
 				F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */,
 				F1BB6798219AFCBF007BDA24 /* GMFaceTrackViewController.m in Sources */,
 				F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */,
+				F1978A0A23C46067003EF7D6 /* GMTestItemViewController.swift in Sources */,
 				F1EAE8FB234192E0004A8235 /* GMWarmUp.m in Sources */,
 				F1B1D42A224FBD5100EDD767 /* UIImageView+App.m in Sources */,
 				F1C188C8224DC96800A30B6F /* GMPrimeButton.m in Sources */,
@@ -670,6 +677,7 @@
 			baseConfigurationReference = 2A22D64ED3BDAED90DB3A791 /* Pods-GMOcBase_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8RCJH95LG5;
@@ -677,10 +685,15 @@
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = huaian.lizhi.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "GMOcBase/Foundation/BaseBusiness/Homepage/GMOcBase_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -690,6 +703,7 @@
 			baseConfigurationReference = 4CB33F27FD973891F7305E0A /* Pods-GMOcBase_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8RCJH95LG5;
@@ -697,10 +711,13 @@
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = huaian.lizhi.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "GMOcBase/Foundation/BaseBusiness/Homepage/GMOcBase_Example-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -709,6 +726,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC04ECFBAA657CBED4E0BBF9 /* Pods-GMOcBase_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -733,6 +751,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1760F6F8782165FEFB5FCE65 /* Pods-GMOcBase_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

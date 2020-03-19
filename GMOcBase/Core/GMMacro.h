@@ -105,10 +105,13 @@ CGRectMake(CGRectGetMinX(rightFrame)-rightMargin-width, CGRectGetMinY(leftFrame)
 
 #pragma mark - block typedef
 
+#ifdef __OBJC__
+
 typedef void(^GMBlockVoid)(void);
 typedef void(^GMBlockBool)(BOOL param);
 typedef void(^GMBlockInteger)(NSInteger param);
 typedef void(^GMBlockId)(id param);
 
+#endif
 
 #endif /* GMMacro_h */
