@@ -27,6 +27,7 @@
 		F13F83DD21A5646F000DE61B /* GMSceneExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F83DC21A5646F000DE61B /* GMSceneExampleViewController.m */; };
 		F14547DB21A2B1C900E26638 /* GMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */; };
 		F15D73A521C88C90005CBF05 /* GMFaceTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = F15D73A421C88C90005CBF05 /* GMFaceTrack.m */; };
+		F15F4F15242391EA00AEDBDF /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15F4F14242391E900AEDBDF /* Bugly.framework */; };
 		F17CF9D221772158009F2ED3 /* GMMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */; };
 		F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D7217834C6009F2ED3 /* GMBaseViewController.m */; };
 		F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */; };
@@ -89,6 +90,7 @@
 		F14547DA21A2B1C900E26638 /* GMNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMNavigationViewController.m; sourceTree = "<group>"; };
 		F15D73A321C88C90005CBF05 /* GMFaceTrack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMFaceTrack.h; sourceTree = "<group>"; };
 		F15D73A421C88C90005CBF05 /* GMFaceTrack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMFaceTrack.m; sourceTree = "<group>"; };
+		F15F4F14242391E900AEDBDF /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		F17CF9D021772158009F2ED3 /* GMMainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMainTabBarController.h; sourceTree = "<group>"; };
 		F17CF9D121772158009F2ED3 /* GMMainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMMainTabBarController.m; sourceTree = "<group>"; };
 		F17CF9D6217834C6009F2ED3 /* GMBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMBaseViewController.h; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F15F4F15242391EA00AEDBDF /* Bugly.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -182,6 +185,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F15F4F14242391E900AEDBDF /* Bugly.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -681,6 +685,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8RCJH95LG5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";
@@ -707,6 +715,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8RCJH95LG5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMOcBase/GMOcBase-Prefix.pch";
 				INFOPLIST_FILE = "GMOcBase/GMOcBase-Info.plist";

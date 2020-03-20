@@ -18,6 +18,7 @@
 #include <mach/thread_act.h>
 #include <pthread.h>
 
+#import <Bugly/Bugly.h>
 
 void exceptionHandler(NSException *exception) {
     NSArray * stackSymbols = exception.callStackSymbols;
@@ -99,19 +100,6 @@ void initSignalHandler() {
         return ;
       }
     }
-    /*
-    struct sigaction act;
-    memset(&act, 0, sizeof(act));
-    act.__sigaction_u = (union __sigaction_u)common_crash_handler;
-    act.sa_flags = SA_ONSTACK |SA_SIGINFO |SA_64REGSET;
-    sigemptyset(&act.sa_mask);
-    
-    
-    sigaction(SIGTRAP, &act, NULL);
-    sigaction(SIGABRT, &act, NULL);
-    sigaction(SIGSEGV, &act, NULL);
-    sigaction(SIGBUS, &act, NULL);
-     */
 }
 
 
@@ -119,7 +107,8 @@ void initSignalHandler() {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    initSignalHandler();
+    //initSignalHandler();
+    [Bugly startWithAppId:@"d0badc38d6"];
     // Override point for customization after application launch.
     [[GMCore sharedObject] initLogger];
     [[GMAppProfile sharedObject] logInfo];
