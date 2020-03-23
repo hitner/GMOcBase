@@ -31,6 +31,8 @@
 		F17CF9D8217834C6009F2ED3 /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9D7217834C6009F2ED3 /* GMBaseViewController.m */; };
 		F17CF9DC217834E1009F2ED3 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */; };
 		F17CF9DD217834E1009F2ED3 /* GMTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */; };
+		F1826BF82428AD580010668E /* libBreakpad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1826BF52428AA280010668E /* libBreakpad.a */; };
+		F1826BFC2428B3360010668E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1826BFB2428B3360010668E /* libc++.tbd */; };
 		F1978A0A23C46067003EF7D6 /* GMTestItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1978A0923C46067003EF7D6 /* GMTestItemViewController.swift */; };
 		F1A0923E21ED8896003C1856 /* GMCalculateLandmark.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A0923D21ED8896003C1856 /* GMCalculateLandmark.m */; };
 		F1B1D420224F6EE200EDD767 /* lizhifm.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1B1D41F224F6ED500EDD767 /* lizhifm.ttf */; };
@@ -51,6 +53,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6003F589195388D20070C39A;
 			remoteInfo = GMOcBase;
+		};
+		F1826BF42428AA280010668E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1826BF02428AA280010668E /* Breakpad.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = Breakpad;
+		};
+		F1826BF92428AD970010668E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1826BF02428AA280010668E /* Breakpad.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = Breakpad;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -96,6 +112,8 @@
 		F17CF9D9217834E1009F2ED3 /* GMTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
 		F17CF9DA217834E1009F2ED3 /* GMTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
 		F17CF9DB217834E1009F2ED3 /* GMTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMTestViewController.xib; sourceTree = "<group>"; };
+		F1826BF02428AA280010668E /* Breakpad.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Breakpad.xcodeproj; path = ../../../../great_opensource/breakpad/src/client/ios/Breakpad.xcodeproj; sourceTree = "<group>"; };
+		F1826BFB2428B3360010668E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		F1978A0823C46066003EF7D6 /* GMOcBase_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GMOcBase_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		F1978A0923C46067003EF7D6 /* GMTestItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMTestItemViewController.swift; sourceTree = "<group>"; };
 		F1A0923C21ED8896003C1856 /* GMCalculateLandmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMCalculateLandmark.h; sourceTree = "<group>"; };
@@ -126,6 +144,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1826BFC2428B3360010668E /* libc++.tbd in Frameworks */,
+				F1826BF82428AD580010668E /* libBreakpad.a in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -182,6 +202,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1826BFB2428B3360010668E /* libc++.tbd */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -195,6 +216,7 @@
 		6003F593195388D20070C39A /* Example for GMOcBase */ = {
 			isa = PBXGroup;
 			children = (
+				F1826BF02428AA280010668E /* Breakpad.xcodeproj */,
 				F17CF9C921771393009F2ED3 /* Foundation */,
 				F17CF9CA217713CE009F2ED3 /* TopBusiness */,
 				6003F59C195388D20070C39A /* GMAppDelegate.h */,
@@ -313,6 +335,14 @@
 			path = BaseBusiness;
 			sourceTree = "<group>";
 		};
+		F1826BF12428AA280010668E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1826BF52428AA280010668E /* libBreakpad.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F1B1D41E224F6E6300EDD767 /* Iconfont */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +408,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F1826BFA2428AD970010668E /* PBXTargetDependency */,
 			);
 			name = GMOcBase_Example;
 			productName = GMOcBase;
@@ -435,6 +466,12 @@
 			mainGroup = 6003F581195388D10070C39A;
 			productRefGroup = 6003F58B195388D20070C39A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F1826BF12428AA280010668E /* Products */;
+					ProjectRef = F1826BF02428AA280010668E /* Breakpad.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6003F589195388D20070C39A /* GMOcBase_Example */,
@@ -442,6 +479,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F1826BF52428AA280010668E /* libBreakpad.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBreakpad.a;
+			remoteRef = F1826BF42428AA280010668E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6003F588195388D20070C39A /* Resources */ = {
@@ -569,6 +616,11 @@
 			target = 6003F589195388D20070C39A /* GMOcBase_Example */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
 		};
+		F1826BFA2428AD970010668E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Breakpad;
+			targetProxy = F1826BF92428AD970010668E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -694,6 +746,8 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "GMOcBase/Foundation/BaseBusiness/Homepage/GMOcBase_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = /Users/liuzhuzhai/Documents/cs/great_opensource/breakpad/src;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -718,6 +772,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GMOcBase/Foundation/BaseBusiness/Homepage/GMOcBase_Example-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = /Users/liuzhuzhai/Documents/cs/great_opensource/breakpad/src;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

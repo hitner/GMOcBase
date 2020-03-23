@@ -18,6 +18,7 @@
 #include <mach/thread_act.h>
 #include <pthread.h>
 
+#import "client/ios/BreakpadController.h"
 
 void exceptionHandler(NSException *exception) {
     NSArray * stackSymbols = exception.callStackSymbols;
@@ -119,7 +120,8 @@ void initSignalHandler() {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    initSignalHandler();
+    [[BreakpadController sharedInstance] updateConfiguration:@{@BREAKPAD_URL:@"https://lizhi.fm/upload"}];
+    [[BreakpadController sharedInstance] start:YES];
     // Override point for customization after application launch.
     [[GMCore sharedObject] initLogger];
     [[GMAppProfile sharedObject] logInfo];
