@@ -86,16 +86,21 @@
     [label2 constraintToBottomView:label bottomMargin:10 xAxis:50 width:200 height:40];
     
     
+    UIView * shadowView2 = [[UIView alloc ] initWithFrame:CGRectMake(30, 400, 60, 60)];
+    shadowView2.backgroundColor = [UIColor redColor];
+    [self.view addSubview:shadowView2];
     
     UIView * shadowView = [[UIView alloc ] initWithFrame:CGRectMake(30, 440, 60, 60)];
-    shadowView.backgroundColor = [UIColor brownColor];
-    shadowView.layer.shadowOpacity = 1.0;
-    shadowView.layer.shadowColor = [UIColor redColor].CGColor;
-    shadowView.layer.shadowRadius = 0.f;
-    shadowView.layer.shadowOffset = CGSizeMake(0, 10);
-    CGRect shadowRect = CGRectInset(shadowView.bounds, 0, 10);  // inset top/bottom
-    //shadowView.layer.shadowPath = [[UIBezierPath bezierPathWithRect:shadowRect] CGPath];
-    shadowView.layer.shadowPath = CGPathCreateWithRect(CGRectMake(0, 60, 60, 5), NULL);
+    shadowView.backgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.5];
+    shadowView.opaque = YES;
+    NSLog(@"oqpua:%@",@(shadowView.opaque));
+//    shadowView.layer.shadowOpacity = 1.0;
+//    shadowView.layer.shadowColor = [UIColor redColor].CGColor;
+//    shadowView.layer.shadowRadius = 0.f;
+//    shadowView.layer.shadowOffset = CGSizeMake(0, 10);
+//    CGRect shadowRect = CGRectInset(shadowView.bounds, 0, 10);  // inset top/bottom
+//    //shadowView.layer.shadowPath = [[UIBezierPath bezierPathWithRect:shadowRect] CGPath];
+//    shadowView.layer.shadowPath = CGPathCreateWithRect(CGRectMake(0, 60, 60, 5), NULL);
     [self.view addSubview:shadowView];
 }
 

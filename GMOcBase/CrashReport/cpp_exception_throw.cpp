@@ -23,3 +23,9 @@ const char* MyException::what() const noexcept
 void throw_a_cpp_exception() {
     throw MyException();
 }
+
+
+
+void call_terminate(void) {
+    std::terminate();
+}

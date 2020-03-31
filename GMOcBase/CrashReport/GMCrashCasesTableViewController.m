@@ -20,7 +20,7 @@
     
     self.clearsSelectionOnViewWillAppear = NO;
     
-    self.cases = @[@"0 NSException", @"1 bad access", @"2 bad access on non-main thread", @"3 exception on othre thread", @"4 signal 5 breakpoint", @"5:deadlock", @"6:cpp exception", @"7:stack overflow"];
+    self.cases = @[@"0 NSException", @"1 bad access", @"2 bad access on non-main thread", @"3 exception on othre thread", @"4 signal 5 breakpoint", @"5:deadlock", @"6:cpp exception", @"7:stack overflow", @"8: std::terminate"];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView reloadData];
@@ -104,6 +104,11 @@
         {
             [self tryStackOverFlow];
             
+        }
+            break;
+        case 8:
+        {
+            call_terminate();
         }
             break;
         default:

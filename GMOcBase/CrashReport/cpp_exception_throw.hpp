@@ -13,6 +13,8 @@ extern "C" {
 #endif
 void throw_a_cpp_exception(void);
 
+void call_terminate(void);
+
 #ifdef __cplusplus
 }
 #endif
