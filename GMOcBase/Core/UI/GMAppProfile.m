@@ -47,10 +47,11 @@ IMPLEMENT_SIGNALTON()
 
 - (void)logInfo {
     
-    NSLog(@"HomeDirectory:%@",NSHomeDirectory());
+    //GMLogCommon(GMLogLevelDebug,nil,@"sdkf%@",@"nil");
+    GMLogDebug(@"HomeDirectory:%@",NSHomeDirectory());
     //字体
     for (NSString * family in [UIFont familyNames]) {
-        NSLog(@"familyNames:%@, font counts:%ld", family,[UIFont fontNamesForFamilyName:family].count);
+        GMLogInfo(@"familyNames:%@, font counts:%ld", family,[UIFont fontNamesForFamilyName:family].count);
 //        for (NSString * name in [UIFont fontNamesForFamilyName:family]) {
 //            NSLog(@"-font name: %@",name);
 //        }

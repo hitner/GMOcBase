@@ -7,7 +7,7 @@
 //
 @import AVFoundation;
 @import Vision;
-#define GMLog NSLog
+
 #import "GMFaceTrack.h"
 @interface GMFaceTrack()<AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -76,7 +76,7 @@
         frontVideoCaptureDevice = discoverySession.devices.firstObject;
     }
     if (!frontVideoCaptureDevice) {
-        GMLog(@"error, no front video device");
+        GMFaceLog(@"error, no front video device");
         return;
     }
     
@@ -84,7 +84,7 @@
     NSError * error;
     AVCaptureDeviceInput * deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:frontVideoCaptureDevice error:&error];
     if (error) {
-        GMLog(@"init device input error:%@",error);
+        GMFaceLog(@"init device input error:%@",error);
         return;
     }
 
@@ -304,7 +304,7 @@
 }
 
 - (void)trackResult:(NSArray<VNFaceObservation*> * )obsers {
-    GMLog(@"get the result");
+    GMFaceLog(@"get the result");
     if ([self.delegate respondsToSelector:@selector(faceObservation:inTrack:)]) {
         [self.delegate faceObservation:obsers.firstObject inTrack:self];
     }

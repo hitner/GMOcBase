@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define GMFaceLog(fmt,...) GMLogTagI(@[@"face"],fmt, ##__VA_ARGS__)
+
 @class GMFaceTrack;
 @class VNFaceObservation;
 @class AVCaptureVideoPreviewLayer;

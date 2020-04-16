@@ -10,6 +10,7 @@
 #define GMMacro_h
 
 
+
 //定义了一个__weak的self_weak_变量
 #define weakifySelf  \
 __weak __typeof(&*self)weakSelf_gm = self;
@@ -41,12 +42,6 @@ if(!self) { return;}
 ///和值得二分之一
 #define HALF_SUM(x,y) ((x+y)/2.0)
 
-#pragma mark - LOG 部分
-
-#define GMLogDebug(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
-#define GMLogInfo(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
-#define GMLogWarn(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
-#define GMLogError(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
 
 
 #pragma mark - 相对于父view获得frame
@@ -112,6 +107,8 @@ typedef void(^GMBlockBool)(BOOL param);
 typedef void(^GMBlockInteger)(NSInteger param);
 typedef void(^GMBlockId)(id param);
 
+#import "GMLog.h"
 #endif
+
 
 #endif /* GMMacro_h */
